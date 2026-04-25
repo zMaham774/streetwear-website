@@ -1,0 +1,947 @@
+/* ── CSS Variables ── */
+:root {
+  --bg:       #0a0a0a;
+  --text:     #f5f5f0;
+  --gold:     #c9a84c;
+  --dim:      #1a1a1a;
+  --gray:     #888880;
+  --anno-h:   34px;
+  --nav-h:    68px;
+}
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  cursor: none;           /* hide default cursor — custom cursor used */
+}
+
+/* ── Base ── */
+html { scroll-behavior: auto; }  /* Lenis handles smooth scroll */
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Open Sans', sans-serif;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* ── Grain texture overlay ── */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 99990;
+  opacity: 0.35;
+}
+
+/* CUSTOM CURSOR */
+
+#cur-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  transition: width .15s, height .15s;
+}
+
+#cur-ring {
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(201, 168, 76, 0.55);
+  border-radius: 50%;
+  position: fixed;
+  top: 0; left: 0;
+  pointer-events: none;
+  z-index: 99998;
+  transform: translate(-50%, -50%);
+  /* ring follows via JS lerp — no CSS transition needed */
+  transition: width .2s ease, height .2s ease,
+              background .2s ease, border-color .2s ease;
+}
+
+/* Cursor grows on hover */
+#cur-ring.hov {
+  width: 54px;
+  height: 54px;
+  background: rgba(201, 168, 76, 0.07);
+  border-color: var(--gold);
+}
+
+/* ANNOUNCEMENT BAR */
+
+#anno-bar {
+  background: var(--gold);
+  color: var(--bg);
+  height: var(--anno-h);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  z-index: 1100;
+  transition: transform .4s ease;
+}
+
+/* Scrolling ticker */
+.ticker-wrap {
+  display: flex;
+  white-space: nowrap;
+  animation: ticker 28s linear infinite;
+}
+
+.ticker-wrap span {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 0 2.2rem;
+}
+
+.ticker-sep {
+  font-size: 0.5rem;
+  opacity: 0.4;
+  align-self: center;
+}
+
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* MAIN HORIZONTAL NAVBAR */
+
+#nav {
+  position: fixed;
+  top: var(--anno-h);
+  left: 0; right: 0;
+  height: var(--nav-h);
+  z-index: 1000;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 0 2.2rem;
+  border-bottom: 1px solid transparent;
+  transition: top .4s ease,
+              background .4s ease,
+              backdrop-filter .4s ease,
+              border-color .4s ease,
+              transform .4s ease;
+}
+
+/* Frosted glass after scroll */
+#nav.scrolled {
+  top: 0;
+  background: rgba(10, 10, 10, 0.88);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom-color: rgba(201, 168, 76, 0.1);
+}
+
+/* Hide on scroll down */
+#nav.hide { transform: translateY(-100%); }
+
+/* ── Logo ── */
+.logo {
+  font-family: 'Bebas Neue', cursive !important;
+  font-size: 2.4rem !important;
+  letter-spacing: 0.18em !important;
+  color: var(--text) !important;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: color .3s;
+  line-height: 1;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.3);
+  padding-bottom: 2px;
+}
+
+.logo:hover { color: var(--gold) !important; }
+
+/* ── Center nav links ── */
+.nav-center {
+  list-style: none;
+  display: flex;
+  gap: 2.2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-center a {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text);
+  text-decoration: none;
+  position: relative;
+  transition: color .3s;
+}
+
+/* Underline reveal on hover */
+.nav-center a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px; left: 0;
+  width: 0; height: 1px;
+  background: var(--gold);
+  transition: width .3s ease;
+}
+
+.nav-center a:hover           { color: var(--gold); }
+.nav-center a:hover::after    { width: 100%; }
+
+/* ── Right icon group ── */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  justify-content: flex-end;
+}
+
+/* Logo inside nav-center */
+.nav-logo-item {
+  list-style: none;
+  padding: 0 2.5rem;
+}
+
+
+.icon-btn {
+  background: none;
+  border: none;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  position: relative;
+  transition: color .3s;
+}
+
+.icon-btn:hover { color: var(--gold); }
+
+/* Cart badge */
+.badge {
+  position: absolute;
+  top: -7px; right: -7px;
+  background: var(--gold);
+  color: var(--bg);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.5rem;
+  font-weight: 700;
+  width: 15px; height: 15px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Hamburger button ── */
+#ham {
+  background: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 3px;
+}
+
+#ham b {
+  display: block;
+  height: 1px;
+  background: var(--text);
+  transition: all .4s ease;
+}
+
+#ham b:nth-child(1) { width: 26px; }
+#ham b:nth-child(2) { width: 18px; margin-left: 8px; }
+#ham b:nth-child(3) { width: 26px; }
+
+/* Hover effect — all lines equalise */
+#ham:hover b              { background: var(--gold); }
+#ham:hover b:nth-child(2) { width: 26px; margin-left: 0; }
+
+/* Account btn hidden on mobile — shown via JS */
+#acc-btn { display: none; }
+
+/* FULL SCREEN MENU OVERLAY */
+
+#fs-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  display: none;          /* toggled by JS */
+  opacity: 0;
+  flex-direction: row;
+}
+
+/* ── Left panel ── */
+#fsl {
+  width: 55%;
+  height: 100%;
+  background: var(--bg);
+  border-right: 1px solid rgba(201, 168, 76, 0.12);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 4rem 2.5rem;
+  position: relative;
+  overflow-y: auto;
+}
+
+/* ── Right panel ── */
+#fsr {
+  width: 45%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+#fsr-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: brightness(0.55);
+}
+
+/* Gradient fade from left to blend panels */
+#fsr::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, var(--bg) 0%, transparent 35%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ── Close button ── */
+#fs-close {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  color: rgba(245, 245, 240, 0.45);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color .3s;
+  margin-bottom: 2rem;
+}
+
+#fs-close:hover { color: var(--gold); }
+
+#fs-close svg {
+  width: 14px; height: 14px;
+  transition: transform .3s;
+}
+
+#fs-close:hover svg { transform: rotate(90deg); }
+
+/* ── Section label ── */
+.fs-label {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+.fs-label-line {
+  width: 32px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.fs-label span {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(245, 245, 240, 0.3);
+}
+
+/* ── Menu navigation links ── */
+#fs-links {
+  list-style: none;
+  flex: 1;
+}
+
+#fs-links li { overflow: hidden; }
+
+#fs-links a {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(2.4rem, 4.2vw, 4rem);
+  letter-spacing: 0.06em;
+  color: var(--text);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  line-height: 1.05;
+  padding: 0.18rem 0;
+  transition: color .3s, padding-left .35s ease;
+}
+
+#fs-links a:hover {
+  color: var(--gold);
+  padding-left: 1.2rem;
+}
+
+/* Number prefix */
+#fs-links .n {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.68rem;
+  font-weight: 400;
+  color: var(--gold);
+  letter-spacing: 0.08em;
+  margin-right: 1rem;
+  opacity: 0.6;
+  transition: opacity .3s;
+}
+
+#fs-links a:hover .n { opacity: 1; }
+
+/* Sale link — always gold */
+#fs-links a.go { color: var(--gold); }
+
+/* ── Bottom bar ── */
+#fs-bot {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(245, 245, 240, 0.07);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.fs-contact a {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(245, 245, 240, 0.3);
+  text-decoration: none;
+  display: block;
+  margin-bottom: 0.35rem;
+  transition: color .3s;
+}
+
+.fs-contact a:hover    { color: var(--gold); }
+.fs-contact .fs-shop-link { color: var(--gold); margin-top: 0.6rem; }
+
+.fs-social {
+  display: flex;
+  gap: 1.4rem;
+}
+
+.fs-social a {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(245, 245, 240, 0.3);
+  text-decoration: none;
+  transition: color .3s;
+}
+
+.fs-social a:hover { color: var(--gold); }
+
+/* ── Right panel label overlay ── */
+#fsr-label {
+  position: absolute;
+  bottom: 2.5rem;
+  right: 2.5rem;
+  z-index: 3;
+  text-align: right;
+}
+
+#fsr-label p {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: rgba(245, 245, 240, 0.8);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.3rem;
+}
+
+#fsr-label span {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.58rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 768px) {
+
+  /* Hide center nav links on mobile */
+  .nav-center { display: none; }
+
+  /* Tighter navbar padding */
+  #nav { padding: 0 1.2rem; }
+
+  /* Full width left panel on mobile */
+  #fsl {
+    width: 100%;
+    padding: 2rem 1.8rem;
+  }
+
+  /* Hide right panel on mobile */
+  #fsr { display: none; }
+
+  /* Smaller menu links on small screens */
+  #fs-links a { font-size: 2.6rem; }
+
+  /* Smaller ticker text on mobile */
+  .ticker-wrap span { font-size: 0.55rem; letter-spacing: 0.16em; }
+}
+
+/* HERO SECTION */
+
+#hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  /* sits right under navbar + anno bar */
+  margin-top: 0;
+}
+
+/* ── Background image ── */
+#hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+#hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  transform-origin: center center;
+  /* GSAP will animate scale from 1.08 → 1 on load */
+}
+
+/* ── Overlay gradients ── */
+#hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(to right,  rgba(10,10,10,0.82) 0%,  rgba(10,10,10,0.35) 60%, transparent 100%),
+    linear-gradient(to top,    rgba(10,10,10,0.7)  0%,  transparent 50%),
+    linear-gradient(to bottom, rgba(10,10,10,0.5)  0%,  transparent 30%);
+}
+
+/* ── Content block ── */
+#hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 5rem;
+  max-width: 750px;
+  margin-top: calc(var(--anno-h) + var(--nav-h));
+  padding-bottom: 0;   
+}
+
+/* ── Top label ── */
+#hero-label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.8rem;
+  overflow: hidden;
+}
+
+#hero-label-text {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  white-space: nowrap;
+}
+
+.hero-line {
+  flex: 1;
+  max-width: 48px;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.6;
+  display: block;
+}
+
+/* ── Main heading ── */
+#hero-heading {
+  margin-bottom: 1rem;
+}
+
+/* Each line wraps an h1 — overflow hidden clips the reveal */
+.hero-line-wrap {
+  overflow: hidden;
+}
+
+.hero-h1 {
+  font-family: 'Bebas Neue', cursive;
+  font-size: clamp(4rem, 9vw, 8rem);
+  line-height: 0.88;
+  letter-spacing: 0.02em;
+  color: var(--text);
+  display: block;
+  /* GSAP animates from y:100% → y:0 per line */
+}
+
+/* Year line — slightly smaller + gold tint */
+.hero-h1-year {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(245, 245, 240, 0.5);
+  font-size: clamp(3rem, 8vw, 7rem);
+  letter-spacing: 0.06em;
+}
+
+/* ── Subtext ── */
+#hero-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  color: rgba(245, 245, 240, 0.65);
+  letter-spacing: 0.04em;
+  margin-bottom: 2.8rem;
+  /* GSAP animates this in after headings */
+}
+
+/* ── CTA Buttons ── */
+#hero-btns {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+/* Primary — solid gold */
+.hero-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--gold);
+  color: var(--bg);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  border: 1px solid var(--gold);
+  transition: background .35s ease, color .35s ease, gap .3s ease;
+}
+
+.hero-btn-primary:hover {
+  background: transparent;
+  color: var(--gold);
+  gap: 1rem;
+}
+
+/* Ghost — outline only */
+.hero-btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: rgba(245, 245, 240, 0.6);
+  border-bottom: 1px solid rgba(245, 245, 240, 0.25);
+  padding-bottom: 2px;
+  transition: color .3s, border-color .3s;
+}
+
+.hero-btn-ghost:hover {
+  color: var(--text);
+  border-color: var(--text);
+}
+
+/* ── Bottom bar ── */
+#hero-bottom {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 0; right: 0;
+  z-index: 3;
+  padding: 0 5rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+/* Left tag */
+#hero-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+#hero-tag span {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(245, 245, 240, 0.4);
+}
+
+.hero-tag-dot {
+  width: 6px !important;
+  height: 6px !important;
+  border-radius: 50% !important;
+  background: var(--gold) !important;
+  display: block !important;
+  flex-shrink: 0;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.7); }
+}
+
+/* Center scroll indicator */
+#hero-scroll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#hero-scroll span {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(245, 245, 240, 0.3);
+}
+
+#hero-scroll-line {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  animation: scrollLine 2s ease-in-out infinite;
+}
+
+@keyframes scrollLine {
+  0%   { transform: scaleY(0); transform-origin: top; opacity: 1; }
+  50%  { transform: scaleY(1); transform-origin: top; opacity: 1; }
+  100% { transform: scaleY(1); transform-origin: top; opacity: 0; }
+}
+
+/* Right edition info */
+#hero-edition {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.2rem;
+}
+
+#hero-edition span {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.55rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(245, 245, 240, 0.35);
+}
+
+.hero-edition-num {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: 0.9rem !important;
+  letter-spacing: 0.1em !important;
+  color: rgba(201, 168, 76, 0.6) !important;
+}
+
+/* HERO MOBILE */
+
+@media (max-width: 768px) {
+
+  #hero-content {
+    padding: 0 1.5rem;
+    margin-top: calc(var(--anno-h) + var(--nav-h));
+    max-width: 100%;
+  }
+
+  .hero-h1 {
+    font-size: clamp(4rem, 18vw, 6rem);
+  }
+
+  .hero-h1-year {
+    font-size: clamp(3rem, 15vw, 5rem);
+  }
+
+  #hero-bottom {
+    padding: 0 1.5rem;
+    bottom: 2rem;
+  }
+
+  #hero-tag,
+  #hero-edition { display: none; }
+
+  #hero-scroll { margin: 0 auto; }
+
+  #hero-btns {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
+/* MARQUEE SECTION */
+
+/* Left scroll animation */
+@keyframes marquee-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Right scroll animation */
+@keyframes marquee-right {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-marquee-left {
+  animation: marquee-left 20s linear infinite;
+}
+
+.animate-marquee-right {
+  animation: marquee-right 25s linear infinite;
+}
+
+/* Pause on hover */
+.marquee-track:hover .animate-marquee-left,
+.marquee-track:hover .animate-marquee-right {
+  animation-play-state: paused;
+}
+
+/* FEATURED COLLECTION */
+
+/* Quick Add button slide-up transition*/
+.quick-add-btn {
+  transition: transform 0.35s ease, background 0.25s ease, color 0.25s ease;
+}
+
+/* Card number offset, Creates asymmetric editorial layout */
+@media (min-width: 768px) {
+  [data-featured-card]:nth-child(2),
+  [data-featured-card]:nth-child(4) {
+    margin-top: 3rem;
+  }
+}
+
+/* BRANDS STRIP */
+
+/* Gold glow that appears behind brand name on hover */
+.brand-logo-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(201, 168, 76, 0.06) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.brand-logo-item:hover .brand-logo-glow {
+  opacity: 1;
+}
+
+/* Hide scrollbar on mobile brand strip */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* SPLIT SECTION */
+
+/* Clip the cursor ring color when over each panel */
+.split-panel {
+  cursor: none;
+}
+
+/* NEW ARRIVALS GRID */
+
+/* Fix grid row heights on desktop so asymmetric layout works */
+@media (min-width: 768px) {
+  #new-arrivals .grid {
+    grid-auto-rows: 280px;
+  }
+
+  /* Large card spans 2 rows */
+  #new-arrivals [data-arrivals-card]:first-child {
+    grid-row: span 2;
+    height: 100%;
+  }
+}
+
+/* BRAND STORY TEASER */
+
+/* Parallax image moves slower than scroll */
+#story-img {
+  will-change: transform;
+}
+
+/* INSTAGRAM GRID */
+
+/* First photo spans 2 columns but keeps square aspect on desktop */
+@media (min-width: 768px) {
+  #insta-grid .grid [data-insta-item]:first-child {
+    aspect-ratio: 2 / 1;
+  }
+}
+
+/* NEWSLETTER */
+
+/* Glow line expands when input is focused */
+#nl-email:focus ~ #nl-input-line,
+#nl-email:focus + #nl-input-line {
+  width: 100%;
+}
+
+/* Remove default input autofill yellow background */
+#nl-email:-webkit-autofill,
+#nl-email:-webkit-autofill:hover,
+#nl-email:-webkit-autofill:focus {
+  -webkit-text-fill-color: #f5f5f0;
+  -webkit-box-shadow: 0 0 0 1000px #111111 inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* FOOTER */
+
+.footer-link {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.78rem;
+  color: #888880;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: color 0.3s ease, padding-left 0.3s ease;
+  display: inline-block;
+}
+
+.footer-link:hover {
+  color: #f5f5f0;
+  padding-left: 6px;
+}
