@@ -200,3 +200,38 @@ gsap.from("#nav", {
   duration: 0.8, delay: 0.3,
   ease: "power3.out"
 });
+
+/* MANIFESTO SECTION ANIMATIONS */
+
+/* Set initial hidden state */
+gsap.set("[data-mf-left]", { opacity: 0, x: -60 });
+gsap.set("[data-mf-right]", { opacity: 0, x: 60 });
+
+/* Left slides in from left */
+gsap.to("[data-mf-left]", {
+  scrollTrigger: {
+    trigger: "#manifesto",
+    start: "top 75%",
+    toggleActions: "play none none none",
+    once: true
+  },
+  x: 0,
+  opacity: 1,
+  duration: 1,
+  ease: "power3.out"
+});
+
+/* Right slides in from right */
+gsap.to("[data-mf-right]", {
+  scrollTrigger: {
+    trigger: "#manifesto",
+    start: "top 75%",
+    toggleActions: "play none none none",
+    once: true
+  },
+  x: 0,
+  opacity: 1,
+  duration: 1,
+  delay: 0.15,
+  ease: "power3.out"
+});
