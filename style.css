@@ -945,3 +945,23 @@ body::after {
   color: #f5f5f0;
   padding-left: 6px;
 }
+
+/* ABOUT - STATS SECTION */
+
+/* Gold glow behind each stat on hover */
+.stat-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(201, 168, 76, 0.07) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.stat-item:hover .stat-glow {
+  opacity: 1;
+}

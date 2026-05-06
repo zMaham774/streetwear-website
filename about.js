@@ -235,3 +235,83 @@ gsap.to("[data-mf-right]", {
   delay: 0.15,
   ease: "power3.out"
 });
+
+/* STATS SECTION ANIMATIONS + COUNTER*/
+
+/* Set initial state */
+gsap.set("[data-stats-header]",  { opacity: 0, y: 30 });
+gsap.set("[data-stats-item]",    { opacity: 0, y: 40 });
+gsap.set("[data-stats-quote]",   { opacity: 0, y: 20 });
+
+/* Header fades in */
+gsap.to("[data-stats-header]", {
+  scrollTrigger: {
+    trigger: "#about-stats",
+    start: "top 80%",
+    toggleActions: "play none none none",
+    once: true
+  },
+  opacity: 1,
+  y: 0,
+  duration: 0.8,
+  ease: "power3.out"
+});
+
+/* Stat items stagger in */
+gsap.to("[data-stats-item]", {
+  scrollTrigger: {
+    trigger: "#about-stats",
+    start: "top 72%",
+    toggleActions: "play none none none",
+    once: true
+  },
+  opacity: 1,
+  y: 0,
+  duration: 0.7,
+  stagger: 0.12,
+  ease: "power3.out"
+});
+
+/* Bottom quote */
+gsap.to("[data-stats-quote]", {
+  scrollTrigger: {
+    trigger: "[data-stats-quote]",
+    start: "top 90%",
+    toggleActions: "play none none none",
+    once: true
+  },
+  opacity: 1,
+  y: 0,
+  duration: 0.6,
+  ease: "power3.out"
+});
+
+/* Animated counters */
+const counters = document.querySelectorAll(".counter");
+
+const countObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+
+    const el     = entry.target;
+    const target = +el.getAttribute("data-target");
+    const duration = 2000; // ms
+    const steps    = 60;
+    const increment = target / steps;
+    let current = 0;
+
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        el.textContent = target.toLocaleString();
+        clearInterval(timer);
+      } else {
+        el.textContent = Math.floor(current).toLocaleString();
+      }
+    }, duration / steps);
+
+    countObserver.unobserve(el); // only count once
+  });
+}, { threshold: 0.5 });
+
+counters.forEach(c => countObserver.observe(c));
