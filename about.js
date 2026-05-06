@@ -315,3 +315,82 @@ const countObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 
 counters.forEach(c => countObserver.observe(c));
+
+/* FOUNDER'S STORY ANIMATIONS */
+
+/* Section header */
+gsap.set("[data-founder-header]", { opacity: 0, y: 40 });
+gsap.to("[data-founder-header]", {
+  scrollTrigger: {
+    trigger: "#founder-story",
+    start: "top 80%",
+    toggleActions: "play none none none",
+    once: true
+  },
+  opacity: 1,
+  y: 0,
+  duration: 0.9,
+  ease: "power3.out"
+});
+
+/* Row 1 - image from left, text from right */
+gsap.set("[data-founder-img-left]",   { opacity: 0, x: -60 });
+gsap.set("[data-founder-text-right]", { opacity: 0, x: 60 });
+
+gsap.to("[data-founder-img-left]", {
+  scrollTrigger: {
+    trigger: "[data-founder-img-left]",
+    start: "top 78%",
+    toggleActions: "play none none none",
+    once: true
+  },
+  opacity: 1,
+  x: 0,
+  duration: 1,
+  ease: "power3.out"
+});
+
+gsap.to("[data-founder-text-right]", {
+  scrollTrigger: {
+    trigger: "[data-founder-text-right]",
+    start: "top 78%",
+    toggleActions: "play none none none",
+    once: true
+  },
+  opacity: 1,
+  x: 0,
+  duration: 1,
+  delay: 0.15,
+  ease: "power3.out"
+});
+
+/* Row 2 - text from left, image from right */
+gsap.set("[data-founder-text-left]",  { opacity: 0, x: -60 });
+gsap.set("[data-founder-img-right]",  { opacity: 0, x: 60 });
+
+gsap.to("[data-founder-text-left]", {
+  scrollTrigger: {
+    trigger: "[data-founder-text-left]",
+    start: "top 78%",
+    toggleActions: "play none none none",
+    once: true
+  },
+  opacity: 1,
+  x: 0,
+  duration: 1,
+  ease: "power3.out"
+});
+
+gsap.to("[data-founder-img-right]", {
+  scrollTrigger: {
+    trigger: "[data-founder-img-right]",
+    start: "top 78%",
+    toggleActions: "play none none none",
+    once: true
+  },
+  opacity: 1,
+  x: 0,
+  duration: 1,
+  delay: 0.15,
+  ease: "power3.out"
+});
