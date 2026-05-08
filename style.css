@@ -965,3 +965,27 @@ body::after {
 .stat-item:hover .stat-glow {
   opacity: 1;
 }
+
+/* TIMELINE SECTION */
+
+/* Mobile - left border line instead of center line */
+@media (max-width: 767px) {
+  .tl-item {
+    padding-left: 1.5rem;
+    border-left: 1px solid rgba(201, 168, 76, 0.2);
+    position: relative;
+  }
+
+  /* Gold dot on mobile */
+  .tl-item::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 8px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #c9a84c;
+    opacity: 0.6;
+  }
+}

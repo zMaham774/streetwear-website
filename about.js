@@ -394,3 +394,66 @@ gsap.to("[data-founder-img-right]", {
   delay: 0.15,
   ease: "power3.out"
 });
+
+/* TIMELINE ANIMATIONS */
+
+/* Header */
+gsap.set("[data-tl-header]", { opacity: 0, y: 40 });
+gsap.to("[data-tl-header]", {
+  scrollTrigger: {
+    trigger: "#timeline",
+    start: "top 80%",
+    toggleActions: "play none none none",
+    once: true
+  },
+  opacity: 1,
+  y: 0,
+  duration: 0.9,
+  ease: "power3.out"
+});
+
+/* Timeline fill line grows as one scroll */
+gsap.to("#tl-fill-line", {
+  scrollTrigger: {
+    trigger: "#timeline",
+    start: "top 60%",
+    end: "bottom 60%",
+    scrub: 1
+  },
+  height: "100%",
+  ease: "none"
+});
+
+/* Left items slide in from left */
+gsap.utils.toArray("[data-tl-left]").forEach(el => {
+  gsap.set(el, { opacity: 0, x: -40 });
+  gsap.to(el, {
+    scrollTrigger: {
+      trigger: el,
+      start: "top 82%",
+      toggleActions: "play none none none",
+      once: true
+    },
+    opacity: 1,
+    x: 0,
+    duration: 0.8,
+    ease: "power3.out"
+  });
+});
+
+/* Right items slide in from right */
+gsap.utils.toArray("[data-tl-right]").forEach(el => {
+  gsap.set(el, { opacity: 0, x: 40 });
+  gsap.to(el, {
+    scrollTrigger: {
+      trigger: el,
+      start: "top 82%",
+      toggleActions: "play none none none",
+      once: true
+    },
+    opacity: 1,
+    x: 0,
+    duration: 0.8,
+    ease: "power3.out"
+  });
+});
