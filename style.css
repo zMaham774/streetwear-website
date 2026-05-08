@@ -989,3 +989,23 @@ body::after {
     opacity: 0.6;
   }
 }
+
+/* VALUES SECTION */
+
+.val-card-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 50% 0%,
+    rgba(201, 168, 76, 0.06) 0%,
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.val-card:hover .val-card-glow {
+  opacity: 1;
+}
+

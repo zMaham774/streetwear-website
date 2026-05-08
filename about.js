@@ -457,3 +457,52 @@ gsap.utils.toArray("[data-tl-right]").forEach(el => {
     ease: "power3.out"
   });
 });
+
+/* VALUES SECTION ANIMATIONS */
+
+/* Header — left slides from left, right from right */
+gsap.set("[data-val-header-left]",  { opacity: 0, x: -50 });
+gsap.set("[data-val-header-right]", { opacity: 0, x: 50 });
+
+gsap.to("[data-val-header-left]", {
+  scrollTrigger: {
+    trigger: "#values",
+    start: "top 80%",
+    toggleActions: "play none none none",
+    once: true
+  },
+  opacity: 1,
+  x: 0,
+  duration: 0.9,
+  ease: "power3.out"
+});
+
+gsap.to("[data-val-header-right]", {
+  scrollTrigger: {
+    trigger: "#values",
+    start: "top 80%",
+    toggleActions: "play none none none",
+    once: true
+  },
+  opacity: 1,
+  x: 0,
+  duration: 0.9,
+  delay: 0.15,
+  ease: "power3.out"
+});
+
+/* Cards stagger up */
+gsap.set("[data-val-card]", { opacity: 0, y: 50 });
+gsap.to("[data-val-card]", {
+  scrollTrigger: {
+    trigger: "[data-val-card]",
+    start: "top 82%",
+    toggleActions: "play none none none",
+    once: true
+  },
+  opacity: 1,
+  y: 0,
+  duration: 0.7,
+  stagger: 0.12,
+  ease: "power3.out"
+});
