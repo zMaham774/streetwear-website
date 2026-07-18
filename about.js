@@ -10,21 +10,21 @@ gsap.ticker.lagSmoothing(0);
 lenis.on("scroll", ScrollTrigger.update);
 
 /* Custom Cursor */
-const dot  = document.getElementById("cur-dot");
+const dot = document.getElementById("cur-dot");
 const ring = document.getElementById("cur-ring");
 let mx = 0, my = 0, rx = 0, ry = 0;
 
 window.addEventListener("mousemove", e => {
   mx = e.clientX; my = e.clientY;
   dot.style.left = mx + "px";
-  dot.style.top  = my + "px";
+  dot.style.top = my + "px";
 });
 
 (function loop() {
   rx += (mx - rx) * 0.11;
   ry += (my - ry) * 0.11;
   ring.style.left = rx + "px";
-  ring.style.top  = ry + "px";
+  ring.style.top = ry + "px";
   requestAnimationFrame(loop);
 })();
 
@@ -40,7 +40,7 @@ if (window.innerWidth >= 768) {
 
 /* Navbar scroll */
 let lastScroll = 0;
-const nav  = document.getElementById("nav");
+const nav = document.getElementById("nav");
 const anno = document.getElementById("anno-bar");
 const ANNO_H = 34;
 
@@ -83,16 +83,16 @@ const menuImages = {
 };
 
 const menuLabels = {
-  home:     { t: '"Define Your Street"',    s: "AUREL — 2025 Collection" },
-  men:      { t: '"Built for the Streets"', s: "Men's Collection" },
-  women:    { t: '"Fierce. Fluid. Free."',  s: "Women's Collection" },
-  kids:     { t: '"Little Legends"',        s: "Kids' Collection" },
-  brands:   { t: '"Only the Icons"',        s: "Brand Directory" },
-  featured: { t: '"This Week\'s Drop"',     s: "Featured Arrivals" },
-  sale:     { t: '"Last Chance Prices"',    s: "Sale — Up to 50% Off" },
-  shop:     { t: '"The Full Archive"',      s: "Shop All Products" },
-  about:    { t: '"Born on the Streets"',   s: "Our Story" },
-  contact:  { t: '"Let\'s Talk"',           s: "Get in Touch" },
+  home: { t: '"Define Your Street"', s: "AUREL — 2025 Collection" },
+  men: { t: '"Built for the Streets"', s: "Men's Collection" },
+  women: { t: '"Fierce. Fluid. Free."', s: "Women's Collection" },
+  kids: { t: '"Little Legends"', s: "Kids' Collection" },
+  brands: { t: '"Only the Icons"', s: "Brand Directory" },
+  featured: { t: '"This Week\'s Drop"', s: "Featured Arrivals" },
+  sale: { t: '"Last Chance Prices"', s: "Sale — Up to 50% Off" },
+  shop: { t: '"The Full Archive"', s: "Shop All Products" },
+  about: { t: '"Born on the Streets"', s: "Our Story" },
+  contact: { t: '"Let\'s Talk"', s: "Get in Touch" },
 };
 
 const fsrImg = document.getElementById("fsr-img");
@@ -106,7 +106,7 @@ document.querySelectorAll("#fs-links a").forEach(link => {
     gsap.to(fsrImg, {
       opacity: 0, duration: 0.25,
       onComplete: () => {
-        fsrImg.src         = menuImages[p];
+        fsrImg.src = menuImages[p];
         fsrTxt.textContent = menuLabels[p].t;
         fsrSub.textContent = menuLabels[p].s;
         gsap.to(fsrImg, { opacity: 1, duration: 0.45 });
@@ -116,24 +116,25 @@ document.querySelectorAll("#fs-links a").forEach(link => {
 });
 
 function openMenu() {
-  const menu  = document.getElementById("fs-menu");
+  const menu = document.getElementById("fs-menu");
   const items = document.querySelectorAll("#fs-links li");
   lenis.stop();
   gsap.timeline()
     .set(menu, { display: "flex" })
-    .fromTo(menu,   { opacity: 0 },        { opacity: 1, duration: 0.35, ease: "power2.inOut" })
+    .fromTo(menu, { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power2.inOut" })
     .fromTo("#fsl", { x: -50, opacity: 0 }, { x: 0, opacity: 1, duration: 0.45, ease: "power3.out" }, "-=0.2")
-    .fromTo("#fsr", { opacity: 0 },          { opacity: 1, duration: 0.55, ease: "power2.out" }, "-=0.35")
-    .fromTo(items,  { y: 45, opacity: 0 },   { y: 0, opacity: 1, duration: 0.45, stagger: 0.055, ease: "power3.out" }, "-=0.3")
-    .fromTo(["#fs-close","#fs-bot"], { opacity: 0 }, { opacity: 1, duration: 0.35 }, "-=0.2");
+    .fromTo("#fsr", { opacity: 0 }, { opacity: 1, duration: 0.55, ease: "power2.out" }, "-=0.35")
+    .fromTo(items, { y: 45, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, stagger: 0.055, ease: "power3.out" }, "-=0.3")
+    .fromTo(["#fs-close", "#fs-bot"], { opacity: 0 }, { opacity: 1, duration: 0.35 }, "-=0.2");
 }
 
 function closeMenu() {
-  const menu  = document.getElementById("fs-menu");
+  const menu = document.getElementById("fs-menu");
   const items = document.querySelectorAll("#fs-links li");
   gsap.timeline()
     .to(items, { y: -25, opacity: 0, duration: 0.25, stagger: 0.04, ease: "power3.in" })
-    .to(menu,  { opacity: 0, duration: 0.35, ease: "power2.inOut",
+    .to(menu, {
+      opacity: 0, duration: 0.35, ease: "power2.inOut",
       onComplete: () => { menu.style.display = "none"; lenis.start(); }
     }, "-=0.1");
 }
@@ -239,9 +240,9 @@ gsap.to("[data-mf-right]", {
 /* STATS SECTION ANIMATIONS + COUNTER*/
 
 /* Set initial state */
-gsap.set("[data-stats-header]",  { opacity: 0, y: 30 });
-gsap.set("[data-stats-item]",    { opacity: 0, y: 40 });
-gsap.set("[data-stats-quote]",   { opacity: 0, y: 20 });
+gsap.set("[data-stats-header]", { opacity: 0, y: 30 });
+gsap.set("[data-stats-item]", { opacity: 0, y: 40 });
+gsap.set("[data-stats-quote]", { opacity: 0, y: 20 });
 
 /* Header fades in */
 gsap.to("[data-stats-header]", {
@@ -293,10 +294,10 @@ const countObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (!entry.isIntersecting) return;
 
-    const el     = entry.target;
+    const el = entry.target;
     const target = +el.getAttribute("data-target");
     const duration = 2000; // ms
-    const steps    = 60;
+    const steps = 60;
     const increment = target / steps;
     let current = 0;
 
@@ -334,7 +335,7 @@ gsap.to("[data-founder-header]", {
 });
 
 /* Row 1 - image from left, text from right */
-gsap.set("[data-founder-img-left]",   { opacity: 0, x: -60 });
+gsap.set("[data-founder-img-left]", { opacity: 0, x: -60 });
 gsap.set("[data-founder-text-right]", { opacity: 0, x: 60 });
 
 gsap.to("[data-founder-img-left]", {
@@ -365,8 +366,8 @@ gsap.to("[data-founder-text-right]", {
 });
 
 /* Row 2 - text from left, image from right */
-gsap.set("[data-founder-text-left]",  { opacity: 0, x: -60 });
-gsap.set("[data-founder-img-right]",  { opacity: 0, x: 60 });
+gsap.set("[data-founder-text-left]", { opacity: 0, x: -60 });
+gsap.set("[data-founder-img-right]", { opacity: 0, x: 60 });
 
 gsap.to("[data-founder-text-left]", {
   scrollTrigger: {
@@ -461,7 +462,7 @@ gsap.utils.toArray("[data-tl-right]").forEach(el => {
 /* VALUES SECTION ANIMATIONS */
 
 /* Header — left slides from left, right from right */
-gsap.set("[data-val-header-left]",  { opacity: 0, x: -50 });
+gsap.set("[data-val-header-left]", { opacity: 0, x: -50 });
 gsap.set("[data-val-header-right]", { opacity: 0, x: 50 });
 
 gsap.to("[data-val-header-left]", {
@@ -504,5 +505,54 @@ gsap.to("[data-val-card]", {
   y: 0,
   duration: 0.7,
   stagger: 0.12,
+  ease: "power3.out"
+});
+
+/* TEAM SECTION ANIMATIONS */
+
+/* Header - label/heading left, subtext right */
+gsap.set("[data-team-header]", { opacity: 0, x: -40 });
+gsap.set("[data-team-sub]", { opacity: 0, x: 40 });
+
+gsap.to("[data-team-header]", {
+  scrollTrigger: {
+    trigger: "#team",
+    start: "top 80%",
+    toggleActions: "play none none none",
+    once: true
+  },
+  opacity: 1,
+  x: 0,
+  duration: 0.9,
+  ease: "power3.out"
+});
+
+gsap.to("[data-team-sub]", {
+  scrollTrigger: {
+    trigger: "#team",
+    start: "top 80%",
+    toggleActions: "play none none none",
+    once: true
+  },
+  opacity: 1,
+  x: 0,
+  duration: 0.9,
+  delay: 0.15,
+  ease: "power3.out"
+});
+
+/* Team cards stagger up */
+gsap.set("[data-team-card]", { opacity: 0, y: 50 });
+gsap.to("[data-team-card]", {
+  scrollTrigger: {
+    trigger: "[data-team-card]",
+    start: "top 85%",
+    toggleActions: "play none none none",
+    once: true
+  },
+  opacity: 1,
+  y: 0,
+  duration: 0.7,
+  stagger: 0.1,
   ease: "power3.out"
 });
