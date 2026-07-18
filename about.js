@@ -556,3 +556,41 @@ gsap.to("[data-team-card]", {
   stagger: 0.1,
   ease: "power3.out"
 });
+
+/* ABOUT CTA ANIMATIONS */
+
+/* Set initial states */
+gsap.set("[data-cta-label]", { opacity: 0, y: 20 });
+gsap.set("[data-cta-heading]", { opacity: 0, y: 40 });
+gsap.set("[data-cta-sub]", { opacity: 0, y: 20 });
+gsap.set("[data-cta-btns]", { opacity: 0, y: 20 });
+gsap.set("[data-cta-stats]", { opacity: 0, y: 15 });
+
+/* Timeline sequence */
+const ctaTL = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#about-cta",
+    start: "top 75%",
+    toggleActions: "play none none none",
+    once: true
+  }
+});
+
+ctaTL
+  .to("[data-cta-label]", { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" })
+  .to("[data-cta-heading]", { opacity: 1, y: 0, duration: 0.9, ease: "power3.out" }, "-=0.3")
+  .to("[data-cta-sub]", { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, "-=0.5")
+  .to("[data-cta-btns]", { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, "-=0.4")
+  .to("[data-cta-stats]", { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, "-=0.3");
+
+/* Subtle parallax on background image */
+gsap.to("#cta-bg-img", {
+  scrollTrigger: {
+    trigger: "#about-cta",
+    start: "top bottom",
+    end: "bottom top",
+    scrub: true
+  },
+  y: "15%",
+  ease: "none"
+});
