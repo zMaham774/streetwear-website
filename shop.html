@@ -422,10 +422,376 @@
             </div>
         </section>
 
+        <!-- NEWSLETTER SIGNUP -->
+
+        <section id="newsletter" class="relative overflow-hidden bg-[#0d0d0d] border-t border-white/5">
+
+            <!-- Background decorative text -->
+            <div class="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
+                <span class="font-heading text-[18vw] text-white/[0.02] whitespace-nowrap select-none leading-none">
+                    SUBSCRIBE
+                </span>
+            </div>
+
+            <!-- Gold top border line -->
+            <div class="w-full h-px bg-gradient-to-r from-transparent via-[#c9a84c]/40 to-transparent"></div>
+
+            <div class="relative z-10 max-w-4xl mx-auto px-6 md:px-16 py-24 text-center">
+
+                <!-- Label -->
+                <div class="flex items-center justify-center gap-4 mb-6" data-nl-header>
+                    <span class="block w-8 h-px bg-[#c9a84c]/50"></span>
+                    <span class="text-[#c9a84c] text-[0.6rem] font-semibold tracking-[0.3em] uppercase font-body">
+                        Stay in the Loop
+                    </span>
+                    <span class="block w-8 h-px bg-[#c9a84c]/50"></span>
+                </div>
+
+                <!-- Heading -->
+                <h2 class="font-heading text-5xl md:text-7xl text-[#f5f5f0] leading-none
+               tracking-wide mb-4" data-nl-heading>
+                    Get Early Access
+                </h2>
+
+                <!-- Subtext -->
+                <p class="text-[#888880] text-sm font-body leading-relaxed max-w-md mx-auto mb-10" data-nl-sub>
+                    Be first to know about new drops, exclusive collabs and member-only
+                    discounts. No spam — just the culture.
+                </p>
+
+                <!-- Form -->
+                <form id="nl-form" class="flex flex-col sm:flex-row items-stretch gap-0 max-w-lg mx-auto mb-8"
+                    data-nl-form>
+
+                    <!-- Email input -->
+                    <div class="relative flex-1">
+                        <input type="email" id="nl-email" placeholder="your@email.com" required class="w-full bg-[#111111] border border-white/10
+                 text-[#f5f5f0] placeholder-[#888880]/50
+                 text-[0.75rem] font-body tracking-wider
+                 px-5 py-4 outline-none
+                 focus:border-[#c9a84c]/50
+                 transition-colors duration-300" />
+                        <!-- Input focus glow line -->
+                        <div id="nl-input-line" class="absolute bottom-0 left-0 h-px w-0 bg-[#c9a84c]
+                    transition-all duration-400">
+                        </div>
+                    </div>
+
+                    <!-- Submit button -->
+                    <button type="submit" id="nl-btn" class="bg-[#c9a84c] text-[#0a0a0a] font-body font-bold
+               text-[0.65rem] tracking-[0.25em] uppercase
+               px-8 py-4 border border-[#c9a84c]
+               hover:bg-transparent hover:text-[#c9a84c]
+               transition-all duration-300
+               flex items-center justify-center gap-2
+               whitespace-nowrap">
+                        <span id="nl-btn-text">Join the Drop List</span>
+                        <svg id="nl-btn-icon" width="13" height="13" fill="none" stroke="currentColor"
+                            stroke-width="1.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </button>
+
+                </form>
+
+                <!-- Success message — hidden by default -->
+                <div id="nl-success" class="hidden flex-col items-center gap-3 py-4" data-nl-success>
+                    <div class="w-10 h-10 border border-[#c9a84c]/40 flex items-center justify-center mx-auto">
+                        <svg width="16" height="16" fill="none" stroke="#c9a84c" stroke-width="1.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                    </div>
+                    <p class="text-[#c9a84c] text-[0.65rem] tracking-[0.25em] uppercase font-body font-semibold">
+                        You're on the list
+                    </p>
+                    <p class="text-[#888880] text-xs font-body">
+                        Watch your inbox for the next drop.
+                    </p>
+                </div>
+
+                <!-- Privacy note -->
+                <p class="text-[#888880]/40 text-[0.55rem] tracking-[0.15em] uppercase font-body" data-nl-privacy>
+                    No spam. Unsubscribe anytime. Read our
+                    <a href="#" class="text-[#888880]/60 hover:text-[#c9a84c] transition-colors underline">
+                        Privacy Policy
+                    </a>
+                </p>
+
+                <!-- Perks row -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mt-12 pt-10
+                border-t border-white/5" data-nl-perks>
+
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 border border-[#c9a84c]/20 flex items-center justify-center flex-shrink-0">
+                            <svg width="14" height="14" fill="none" stroke="#c9a84c" stroke-width="1.5"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <span class="text-[#888880] text-[0.6rem] tracking-[0.15em] uppercase font-body">
+                            Early Drop Access
+                        </span>
+                    </div>
+
+                    <div class="w-px h-4 bg-white/10 hidden sm:block"></div>
+
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 border border-[#c9a84c]/20 flex items-center justify-center flex-shrink-0">
+                            <svg width="14" height="14" fill="none" stroke="#c9a84c" stroke-width="1.5"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round"
+                                    d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 0 1 0 2.828l-7 7a2 2 0 0 1-2.828 0l-7-7A1.994 1.994 0 0 1 3 12V7a4 4 0 0 1 4-4z" />
+                            </svg>
+                        </div>
+                        <span class="text-[#888880] text-[0.6rem] tracking-[0.15em] uppercase font-body">
+                            Member Discounts
+                        </span>
+                    </div>
+
+                    <div class="w-px h-4 bg-white/10 hidden sm:block"></div>
+
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 border border-[#c9a84c]/20 flex items-center justify-center flex-shrink-0">
+                            <svg width="14" height="14" fill="none" stroke="#c9a84c" stroke-width="1.5"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round"
+                                    d="M12 15v2m-6 4h12a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2zm10-10V7a4 4 0 0 0-8 0v4h8z" />
+                            </svg>
+                        </div>
+                        <span class="text-[#888880] text-[0.6rem] tracking-[0.15em] uppercase font-body">
+                            Exclusive Collabs
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <!-- Gold bottom border line -->
+            <div class="w-full h-px bg-gradient-to-r from-transparent via-[#c9a84c]/40 to-transparent"></div>
+        </section>
+
+        <!-- FOOTER -->
+
+        <footer id="footer" class="bg-[#080808] border-t border-white/5">
+
+            <!-- Top section -->
+            <div class="max-w-7xl mx-auto px-6 md:px-16 pt-20 pb-12">
+
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
+
+                    <!-- ── Col 1 — Brand (spans 4) ── -->
+                    <div class="md:col-span-4" data-footer-col>
+
+                        <!-- Logo -->
+                        <a href="index.html" class="font-heading text-4xl tracking-[0.15em] text-[#f5f5f0]
+                  hover:text-[#c9a84c] transition-colors duration-300 block mb-4">
+                            AUREL
+                        </a>
+
+                        <!-- Gold underline -->
+                        <div class="w-10 h-px bg-[#c9a84c] mb-6"></div>
+
+                        <!-- Tagline -->
+                        <p class="text-[#888880] text-sm font-body leading-relaxed max-w-xs mb-8">
+                            Luxury streetwear for those who move without permission.
+                            Limited drops. Unlimited culture.
+                        </p>
+
+                        <!-- Social links -->
+                        <div class="flex items-center gap-3">
+
+                            <a href="http://instagram.com/" aria-label="Instagram" class="w-9 h-9 border border-white/10 flex items-center justify-center
+                    text-[#888880] hover:border-[#c9a84c] hover:text-[#c9a84c]
+                    transition-all duration-300">
+                                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    viewBox="0 0 24 24">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" />
+                                    <circle cx="12" cy="12" r="4" />
+                                    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                                </svg>
+                            </a>
+
+                            <a href="http://tiktok.com/" aria-label="TikTok" class="w-9 h-9 border border-white/10 flex items-center justify-center
+                    text-[#888880] hover:border-[#c9a84c] hover:text-[#c9a84c]
+                    transition-all duration-300">
+                                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z" />
+                                </svg>
+                            </a>
+
+                            <a href="https://www.pinterest.com/" aria-label="Pinterest" class="w-9 h-9 border border-white/10 flex items-center justify-center
+                    text-[#888880] hover:border-[#c9a84c] hover:text-[#c9a84c]
+                    transition-all duration-300">
+                                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z" />
+                                </svg>
+                            </a>
+
+                            <a href="https://x.com/" aria-label="X / Twitter" class="w-9 h-9 border border-white/10 flex items-center justify-center
+                    text-[#888880] hover:border-[#c9a84c] hover:text-[#c9a84c]
+                    transition-all duration-300">
+                                <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                </svg>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <!-- ── Col 2 — Shop (spans 2) ── -->
+                    <div class="md:col-span-2" data-footer-col>
+                        <h4 class="font-heading text-lg tracking-[0.12em] text-[#f5f5f0] mb-5">
+                            Shop
+                        </h4>
+                        <div class="w-5 h-px bg-[#c9a84c]/50 mb-5"></div>
+                        <ul class="space-y-3">
+                            <li><a href="men.html" class="footer-link">Men's</a></li>
+                            <li><a href="women.html" class="footer-link">Women's</a></li>
+                            <li><a href="kids.html" class="footer-link">Kids'</a></li>
+                            <li><a href="featured.html" class="footer-link">New Arrivals</a></li>
+                            <li><a href="sale.html" class="footer-link text-[#c9a84c]">Sale</a></li>
+                            <li><a href="brands.html" class="footer-link">All Brands</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- ── Col 3 — Help (spans 2) ── -->
+                    <div class="md:col-span-2" data-footer-col>
+                        <h4 class="font-heading text-lg tracking-[0.12em] text-[#f5f5f0] mb-5">
+                            Help
+                        </h4>
+                        <div class="w-5 h-px bg-[#c9a84c]/50 mb-5"></div>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="footer-link">Track Order</a></li>
+                            <li><a href="#" class="footer-link">Returns</a></li>
+                            <li><a href="#" class="footer-link">Shipping Info</a></li>
+                            <li><a href="#" class="footer-link">Size Guide</a></li>
+                            <li><a href="#" class="footer-link">FAQs</a></li>
+                            <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- ── Col 4 — Company (spans 2) ── -->
+                    <div class="md:col-span-2" data-footer-col>
+                        <h4 class="font-heading text-lg tracking-[0.12em] text-[#f5f5f0] mb-5">
+                            Company
+                        </h4>
+                        <div class="w-5 h-px bg-[#c9a84c]/50 mb-5"></div>
+                        <ul class="space-y-3">
+                            <li><a href="about.html" class="footer-link">Our Story</a></li>
+                            <li><a href="brands.html" class="footer-link">Brands</a></li>
+                            <li><a href="#" class="footer-link">Careers</a></li>
+                            <li><a href="#" class="footer-link">Press</a></li>
+                            <li><a href="#" class="footer-link">Sustainability</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- ── Col 5 — Contact (spans 2) ── -->
+                    <div class="md:col-span-2" data-footer-col>
+                        <h4 class="font-heading text-lg tracking-[0.12em] text-[#f5f5f0] mb-5">
+                            Contact
+                        </h4>
+                        <div class="w-5 h-px bg-[#c9a84c]/50 mb-5"></div>
+                        <ul class="space-y-4">
+
+                            <li class="flex items-start gap-3">
+                                <svg class="w-3.5 h-3.5 text-[#c9a84c] mt-0.5 flex-shrink-0" fill="none"
+                                    stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round"
+                                        d="M17.657 16.657L13.414 20.9a2 2 0 0 1-2.827 0l-4.244-4.243a8 8 0 1 1 11.314 0z" />
+                                    <circle cx="12" cy="11" r="3" />
+                                </svg>
+                                <span class="text-[#888880] text-xs font-body leading-relaxed">
+                                    Gulberg III,<br>Lahore, Pakistan
+                                </span>
+                            </li>
+
+                            <li class="flex items-center gap-3">
+                                <svg class="w-3.5 h-3.5 text-[#c9a84c] flex-shrink-0" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round"
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.22 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6.08 6.08l1.27-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                                </svg>
+                                <a href="tel:+923000000000"
+                                    class="text-[#888880] text-xs font-body hover:text-[#c9a84c] transition-colors">
+                                    +92-300-0000000
+                                </a>
+                            </li>
+
+                            <li class="flex items-center gap-3">
+                                <svg class="w-3.5 h-3.5 text-[#c9a84c] flex-shrink-0" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" viewBox="0 0 24 24">
+                                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                                </svg>
+                                <a href="mailto:info@aurel.com"
+                                    class="text-[#888880] text-xs font-body hover:text-[#c9a84c] transition-colors">
+                                    info@aurel.com
+                                </a>
+                            </li>
+
+                            <!-- Store hours -->
+                            <li class="pt-2 border-t border-white/5">
+                                <p class="text-[#c9a84c] text-[0.55rem] tracking-[0.2em] uppercase font-body mb-1">
+                                    Store Hours
+                                </p>
+                                <p class="text-[#888880] text-xs font-body">Mon–Sat: 11am – 9pm</p>
+                                <p class="text-[#888880] text-xs font-body">Sun: 12pm – 7pm</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="max-w-7xl mx-auto px-6 md:px-16">
+                <div class="w-full h-px bg-white/5"></div>
+            </div>
+
+            <!-- Bottom bar -->
+            <div class="max-w-7xl mx-auto px-6 md:px-16 py-6
+              flex flex-col md:flex-row items-center justify-between gap-4" data-footer-bottom>
+
+                <!-- Copyright -->
+                <p class="text-[#888880]/40 text-[0.58rem] tracking-[0.15em] uppercase font-body">
+                    © 2025 AUREL. All rights reserved.
+                </p>
+
+                <!-- Legal links -->
+                <div class="flex items-center gap-6">
+                    <a href="#" class="text-[#888880]/40 text-[0.55rem] tracking-[0.15em] uppercase
+                         font-body hover:text-[#888880] transition-colors duration-300">
+                        Privacy Policy
+                    </a>
+                    <span class="text-white/10 text-xs">|</span>
+                    <a href="#" class="text-[#888880]/40 text-[0.55rem] tracking-[0.15em] uppercase
+                         font-body hover:text-[#888880] transition-colors duration-300">
+                        Terms of Service
+                    </a>
+                    <span class="text-white/10 text-xs">|</span>
+                    <a href="#" class="text-[#888880]/40 text-[0.55rem] tracking-[0.15em] uppercase
+                         font-body hover:text-[#888880] transition-colors duration-300">
+                        Cookie Policy
+                    </a>
+                </div>
+
+                <!-- Made with -->
+                <p class="text-[#888880]/25 text-[0.52rem] tracking-[0.12em] uppercase font-body">
+                    Crafted with care
+                </p>
+            </div>
+
+            <!-- Big background AUREL text -->
+            <div class="overflow-hidden pointer-events-none pb-4">
+                <div class="font-heading text-center leading-none select-none" style="font-size: clamp(4rem, 18vw, 16rem);
+                color: rgba(245,245,240,0.018);
+                letter-spacing: 0.1em;">
+                    AUREL
+                </div>
+            </div>
+        </footer>
     </main>
-
     <script src="shop.js"></script>
-
 </body>
-
 </html>

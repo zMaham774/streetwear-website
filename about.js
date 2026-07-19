@@ -594,3 +594,33 @@ gsap.to("#cta-bg-img", {
   y: "15%",
   ease: "none"
 });
+
+/* FOOTER ANIMATIONS */
+
+/* Footer columns stagger in */
+gsap.from("[data-footer-col]", {
+  scrollTrigger: {
+    trigger: "#footer",
+    start: "top 90%",
+    toggleActions: "play none none none",
+    once: true
+  },
+  y: 30,
+  opacity: 0,
+  duration: 0.7,
+  stagger: 0.1,
+  ease: "power3.out"
+});
+
+/* Bottom bar fades in */
+gsap.from("[data-footer-bottom]", {
+  scrollTrigger: {
+    trigger: "[data-footer-bottom]",
+    start: "top 98%",
+    toggleActions: "play none none none",
+    once: true
+  },
+  opacity: 0,
+  duration: 0.6,
+  ease: "power2.out"
+});
