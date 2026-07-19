@@ -16,7 +16,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  cursor: none;
+  cursor: none !important;
   /* hide default cursor — custom cursor used */
 }
 
@@ -1144,10 +1144,86 @@ body::after {
   height: 2px;
   background: rgba(245, 245, 240, 0.25);
   border: none;
-  cursor: pointer;
   transition: background 0.3s ease;
 }
 
 .promo-dot.active {
   background: #c9a84c;
+}
+
+/* SHOP - FILTER BAR & PRODUCT GRID */
+
+/* Filter pills */
+.filter-pill {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #888880;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.6rem 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.filter-pill:hover {
+  border-color: rgba(201, 168, 76, 0.4);
+  color: #f5f5f0;
+}
+
+.filter-pill.active {
+  background: #c9a84c;
+  border-color: #c9a84c;
+  color: #0a0a0a;
+}
+
+/* Grid/List view toggle buttons */
+.view-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888880;
+  background: transparent;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.view-btn:hover {
+  color: #f5f5f0;
+}
+
+.view-btn.active {
+  background: rgba(201, 168, 76, 0.15);
+  color: #c9a84c;
+}
+
+/* List view layout override */
+#product-grid.list-view {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#product-grid.list-view .shop-card {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  #product-grid.list-view .shop-card {
+    grid-template-columns: 100px 1fr;
+    gap: 1rem;
+  }
+}
+
+#product-grid.list-view .shop-card-img {
+  aspect-ratio: 3/4;
+}
+
+.shop-card.hidden-card {
+  display: none;
 }
