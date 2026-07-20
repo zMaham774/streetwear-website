@@ -148,15 +148,13 @@
 
             <!-- Base dim image (always visible, dark/desaturated) -->
             <div class="absolute inset-0">
-                <img src="images/men-hero.JPG"
-                    alt="Men's Collection" class="w-full h-full object-cover object-center"
+                <img src="images/men-hero.JPG" alt="Men's Collection" class="w-full h-full object-cover object-center"
                     style="filter: brightness(0.25) grayscale(0.5);" />
             </div>
 
             <!-- Bright spotlight layer (revealed via CSS mask following cursor) -->
             <div id="spotlight-layer" class="absolute inset-0 pointer-events-none">
-                <img src="images/men-hero.JPG" alt=""
-                    class="w-full h-full object-cover object-center" />
+                <img src="images/men-hero.JPG" alt="" class="w-full h-full object-cover object-center" />
             </div>
 
             <!-- Bottom fade -->
@@ -208,6 +206,47 @@
                 </span>
             </div>
         </section>
+
+        <!-- CATEGORY NAVIGATION STRIP - sticky -->
+
+        <div id="category-nav" class="sticky top-0 z-40 bg-[#0a0a0a]/95 backdrop-blur-md
+                               border-b border-white/8">
+
+            <div class="max-w-7xl mx-auto px-6 md:px-16">
+                <!-- Scrollable on mobile, centered on desktop -->
+                <div class="flex items-center gap-1 overflow-x-auto scrollbar-hide
+                py-4 md:justify-center">
+                    <button class="cat-nav-btn active" data-target="chapter-outerwear">
+                        <span class="cat-nav-num">01</span>
+                        Outerwear
+                    </button>
+
+                    <span class="cat-nav-sep">/</span>
+                    <button class="cat-nav-btn" data-target="chapter-tops">
+                        <span class="cat-nav-num">02</span>
+                        Tops
+                    </button>
+
+                    <span class="cat-nav-sep">/</span>
+                    <button class="cat-nav-btn" data-target="chapter-bottoms">
+                        <span class="cat-nav-num">03</span>
+                        Bottoms
+                    </button>
+
+                    <span class="cat-nav-sep">/</span>
+                    <button class="cat-nav-btn" data-target="chapter-footwear">
+                        <span class="cat-nav-num">04</span>
+                        Footwear
+                    </button>
+
+                    <span class="cat-nav-sep">/</span>
+                    <button class="cat-nav-btn" data-target="chapter-lookbook">
+                        <span class="cat-nav-num">05</span>
+                        Lookbook
+                    </button>
+                </div>
+            </div>
+        </div>
 
     </main>
 

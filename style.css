@@ -1296,3 +1296,60 @@ body::after {
     cursor: auto !important;
   }
 }
+
+/* MEN'S - CATEGORY NAVIGATION STRIP */
+
+.cat-nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: none;
+  color: #888880;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.cat-nav-btn:hover {
+  color: #f5f5f0;
+}
+
+.cat-nav-btn.active {
+  color: #c9a84c;
+}
+
+.cat-nav-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.68rem;
+  color: #c9a84c;
+  opacity: 0.6;
+}
+
+.cat-nav-btn.active .cat-nav-num {
+  opacity: 1;
+}
+
+.cat-nav-sep {
+  color: rgba(255, 255, 255, 0.1);
+  font-size: 0.7rem;
+  flex-shrink: 0;
+}
+
+/* Hide scrollbar for mobile horizontal scroll */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Sticky nav sits below the fixed navbar+announcement bar
+   Only needed on desktop since navbar hides on scroll on mobile too,
+   but this keeps it from ever overlapping the main nav */
+#category-nav {
+  top: 0;
+}
