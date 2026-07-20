@@ -440,3 +440,52 @@ gsap.to("[data-tops-cta]", {
     duration: 0.6,
     ease: "power3.out"
 });
+
+/* CHAPTER 03 - BOTTOMS ANIMATIONS*/
+
+/* Header */
+gsap.set("[data-bot-header]", { opacity: 0, y: 30 });
+gsap.to("[data-bot-header]", {
+  scrollTrigger: {
+    trigger: "#chapter-bottoms",
+    start: "top 78%",
+    toggleActions: "play none none none",
+    once: true
+  },
+  opacity: 1,
+  y: 0,
+  duration: 0.8,
+  ease: "power3.out"
+});
+
+/* Each stacked card scales + fades in as it enters */
+gsap.utils.toArray("[data-bot-card]").forEach((card) => {
+  gsap.set(card, { opacity: 0, scale: 0.96 });
+  gsap.to(card, {
+    scrollTrigger: {
+      trigger: card,
+      start: "top 85%",
+      toggleActions: "play none none none",
+      once: true
+    },
+    opacity: 1,
+    scale: 1,
+    duration: 0.9,
+    ease: "power3.out"
+  });
+});
+
+/* CTA */
+gsap.set("[data-bot-cta]", { opacity: 0, y: 20 });
+gsap.to("[data-bot-cta]", {
+  scrollTrigger: {
+    trigger: "[data-bot-cta]",
+    start: "top 90%",
+    toggleActions: "play none none none",
+    once: true
+  },
+  opacity: 1,
+  y: 0,
+  duration: 0.6,
+  ease: "power3.out"
+});
