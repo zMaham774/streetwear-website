@@ -295,7 +295,6 @@ if (window.innerWidth >= 768) {
 
     const owTrack = document.getElementById("outerwear-track");
     const owPinWrap = document.getElementById("outerwear-pin-wrap");
-    const owProgress = document.getElementById("ow-progress-bar");
 
     if (owTrack && owPinWrap) {
 
@@ -312,12 +311,7 @@ if (window.innerWidth >= 768) {
                 start: "top top",
                 end: () => `+=${getScrollDistance() + window.innerHeight}`,
                 scrub: 1,
-                pin: false, // wrapper handles "pin" via sticky CSS instead of GSAP pin
-                onUpdate: (self) => {
-                    if (owProgress) {
-                        owProgress.style.width = (self.progress * 100) + "%";
-                    }
-                }
+                pin: false,
             }
         });
 
@@ -373,9 +367,76 @@ if (window.innerWidth >= 768) {
         stagger: 0.1,
         ease: "power3.out"
     });
-
-    // Hide progress bar on mobile since there's no pinned scroll
-    const owProgWrap = document.querySelector("#chapter-outerwear .flex-1.h-px");
-    if (owProgWrap) owProgWrap.parentElement.style.display = "none";
-
 }
+
+/* CHAPTER 02 - TOPS ANIMATIONS */
+
+/* Header */
+gsap.set("[data-tops-header]", { opacity: 0, y: 30 });
+gsap.to("[data-tops-header]", {
+    scrollTrigger: {
+        trigger: "#chapter-tops",
+        start: "top 78%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    opacity: 1,
+    y: 0,
+    duration: 0.8,
+    ease: "power3.out"
+});
+
+/* Each row, image and text slide in from opposite directions. */
+
+const topsRows = document.querySelectorAll("[data-tops-row]");
+
+topsRows.forEach((row, i) => {
+    const img = row.querySelector("[data-tops-img]");
+    const text = row.querySelector("[data-tops-text]");
+    const isEven = i % 2 === 0; // row 1,3 = image left; row 2 = image right
+
+    gsap.set(img, { opacity: 0, x: isEven ? -60 : 60 });
+    gsap.set(text, { opacity: 0, x: isEven ? 60 : -60 });
+
+    gsap.to(img, {
+        scrollTrigger: {
+            trigger: row,
+            start: "top 80%",
+            toggleActions: "play none none none",
+            once: true
+        },
+        opacity: 1,
+        x: 0,
+        duration: 0.9,
+        ease: "power3.out"
+    });
+
+    gsap.to(text, {
+        scrollTrigger: {
+            trigger: row,
+            start: "top 80%",
+            toggleActions: "play none none none",
+            once: true
+        },
+        opacity: 1,
+        x: 0,
+        duration: 0.9,
+        delay: 0.15,
+        ease: "power3.out"
+    });
+});
+
+/* CTA */
+gsap.set("[data-tops-cta]", { opacity: 0, y: 20 });
+gsap.to("[data-tops-cta]", {
+    scrollTrigger: {
+        trigger: "[data-tops-cta]",
+        start: "top 90%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    opacity: 1,
+    y: 0,
+    duration: 0.6,
+    ease: "power3.out"
+});
