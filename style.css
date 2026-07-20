@@ -1285,7 +1285,9 @@ body::after {
 
 /* CUSTOM CURSOR - GLOBAL MOBILE FALLBACK */
 
-@media (hover: none), (pointer: coarse) {
+@media (hover: none),
+(pointer: coarse) {
+
   #cur-dot,
   #cur-ring {
     display: none !important;
@@ -1344,12 +1346,67 @@ body::after {
 }
 
 /* Hide scrollbar for mobile horizontal scroll */
-.scrollbar-hide::-webkit-scrollbar { display: none; }
-.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 
 /* Sticky nav sits below the fixed navbar+announcement bar
    Only needed on desktop since navbar hides on scroll on mobile too,
    but this keeps it from ever overlapping the main nav */
 #category-nav {
   top: 0;
+}
+
+/* CHAPTER 01 - OUTERWEAR HORIZONTAL SCROLL */
+
+/* MOBILE FALLBACK
+   On mobile we disable the pin entirely and let the track become
+   a normal native horizontal swipe-scroll strip instead. */
+
+@media (max-width: 767px) {
+
+  #outerwear-pin-wrap {
+    height: auto !important;
+  }
+
+  #outerwear-pin-wrap>.sticky {
+    position: relative !important;
+    top: auto !important;
+    height: auto !important;
+    padding: 3rem 0;
+  }
+
+  #outerwear-track {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    transform: none !important;
+    /* JS transform disabled on mobile via JS check */
+  }
+
+  #outerwear-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  #outerwear-track {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .ow-card {
+    scroll-snap-align: start;
+  }
+
+}
+
+/* Desktop - track uses GSAP transform, so no native overflow scroll */
+@media (min-width: 768px) {
+  #outerwear-track {
+    overflow: visible;
+  }
 }

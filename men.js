@@ -285,3 +285,97 @@ gsap.from("#category-nav", {
     duration: 0.6,
     ease: "power2.out"
 });
+
+/* CHAPTER 01 — OUTERWEAR HORIZONTAL SCROLL LOGIC */
+
+/* Only run the pinned horizontal-scroll effect on desktop.
+   On mobile the CSS fallback (native horizontal swipe) takes over */
+
+if (window.innerWidth >= 768) {
+
+    const owTrack = document.getElementById("outerwear-track");
+    const owPinWrap = document.getElementById("outerwear-pin-wrap");
+    const owProgress = document.getElementById("ow-progress-bar");
+
+    if (owTrack && owPinWrap) {
+
+        // Calculate how far the track needs to move to show all cards
+        function getScrollDistance() {
+            return owTrack.scrollWidth - window.innerWidth + 128; // +padding buffer
+        }
+
+        let scrollTween = gsap.to(owTrack, {
+            x: () => -getScrollDistance(),
+            ease: "none",
+            scrollTrigger: {
+                trigger: owPinWrap,
+                start: "top top",
+                end: () => `+=${getScrollDistance() + window.innerHeight}`,
+                scrub: 1,
+                pin: false, // wrapper handles "pin" via sticky CSS instead of GSAP pin
+                onUpdate: (self) => {
+                    if (owProgress) {
+                        owProgress.style.width = (self.progress * 100) + "%";
+                    }
+                }
+            }
+        });
+
+        // Recalculate on window resize
+        window.addEventListener("resize", () => {
+            ScrollTrigger.refresh();
+        });
+    }
+
+    /* Header fade in */
+    gsap.set("[data-ow-header]", { opacity: 0, y: 30 });
+    gsap.to("[data-ow-header]", {
+        scrollTrigger: {
+            trigger: "#chapter-outerwear",
+            start: "top 70%",
+            toggleActions: "play none none none",
+            once: true
+        },
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power3.out"
+    });
+
+} else {
+
+    /* Mobile - simple fade-in stagger for cards, no horizontal pin logic */
+    gsap.set("[data-ow-header]", { opacity: 0, y: 20 });
+    gsap.to("[data-ow-header]", {
+        scrollTrigger: {
+            trigger: "#chapter-outerwear",
+            start: "top 85%",
+            toggleActions: "play none none none",
+            once: true
+        },
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: "power3.out"
+    });
+
+    gsap.set(".ow-card", { opacity: 0, x: 30 });
+    gsap.to(".ow-card", {
+        scrollTrigger: {
+            trigger: "#outerwear-track",
+            start: "top 90%",
+            toggleActions: "play none none none",
+            once: true
+        },
+        opacity: 1,
+        x: 0,
+        duration: 0.6,
+        stagger: 0.1,
+        ease: "power3.out"
+    });
+
+    // Hide progress bar on mobile since there's no pinned scroll
+    const owProgWrap = document.querySelector("#chapter-outerwear .flex-1.h-px");
+    if (owProgWrap) owProgWrap.parentElement.style.display = "none";
+
+}
