@@ -21,29 +21,37 @@ document.fonts.ready.then(() => {
     }
 });
 
-/* Custom Cursor */
+/* Custom Cursor - desktop only */
+const isTouchDevice = window.matchMedia("(hover: none), (pointer: coarse)").matches;
+
 const dot = document.getElementById("cur-dot");
 const ring = document.getElementById("cur-ring");
-let mx = 0, my = 0, rx = 0, ry = 0;
 
-window.addEventListener("mousemove", e => {
-    mx = e.clientX; my = e.clientY;
-    dot.style.left = mx + "px";
-    dot.style.top = my + "px";
-});
+if (!isTouchDevice) {
+    let mx = 0, my = 0, rx = 0, ry = 0;
 
-(function loop() {
-    rx += (mx - rx) * 0.11;
-    ry += (my - ry) * 0.11;
-    ring.style.left = rx + "px";
-    ring.style.top = ry + "px";
-    requestAnimationFrame(loop);
-})();
+    window.addEventListener("mousemove", e => {
+        mx = e.clientX; my = e.clientY;
+        dot.style.left = mx + "px";
+        dot.style.top = my + "px";
+    });
 
-document.querySelectorAll("a, button").forEach(el => {
-    el.addEventListener("mouseenter", () => ring.classList.add("hov"));
-    el.addEventListener("mouseleave", () => ring.classList.remove("hov"));
-});
+    (function loop() {
+        rx += (mx - rx) * 0.11;
+        ry += (my - ry) * 0.11;
+        ring.style.left = rx + "px";
+        ring.style.top = ry + "px";
+        requestAnimationFrame(loop);
+    })();
+
+    document.querySelectorAll("a, button").forEach(el => {
+        el.addEventListener("mouseenter", () => ring.classList.add("hov"));
+        el.addEventListener("mouseleave", () => ring.classList.remove("hov"));
+    });
+} else {
+    dot.style.display = "none";
+    ring.style.display = "none";
+}
 
 /*  Account icon desktop only  */
 if (window.innerWidth >= 768) {
@@ -82,16 +90,16 @@ window.addEventListener("scroll", () => {
 
 /*  Full screen menu */
 const menuImages = {
-    home: "https://images.unsplash.com/photo-1552902865-b72c031ac5ea?w=900&q=80",
-    men: "https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?w=900&q=80",
-    women: "https://images.unsplash.com/photo-1581044777550-4cfa60707c03?w=900&q=80",
-    kids: "https://images.unsplash.com/photo-1622290291468-a28f7a7dc6a8?w=900&q=80",
-    brands: "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=900&q=80",
-    featured: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=900&q=80",
-    sale: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=900&q=80",
-    shop: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80",
-    about: "https://images.unsplash.com/photo-1523398002811-999ca8dec234?w=900&q=80",
-    contact: "https://images.unsplash.com/photo-1445205170230-053b83016050?w=900&q=80",
+    home: "images/home.jpg",
+    men: "images/men.jpg",
+    women: "images/women.jpg",
+    kids: "images/kids.jfif",
+    brands: "images/brands.jfif",
+    featured: "images/featured.jfif",
+    sale: "images/sale.jfif",
+    shop: "images/shop.jpg",
+    about: "images/about.jfif",
+    contact: "images/contact.jfif",
 };
 
 const menuLabels = {

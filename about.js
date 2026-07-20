@@ -9,29 +9,37 @@ gsap.ticker.add(t => lenis.raf(t * 1000));
 gsap.ticker.lagSmoothing(0);
 lenis.on("scroll", ScrollTrigger.update);
 
-/* Custom Cursor */
+/* Custom Cursor - desktop only */
+const isTouchDevice = window.matchMedia("(hover: none), (pointer: coarse)").matches;
+
 const dot = document.getElementById("cur-dot");
 const ring = document.getElementById("cur-ring");
-let mx = 0, my = 0, rx = 0, ry = 0;
 
-window.addEventListener("mousemove", e => {
-  mx = e.clientX; my = e.clientY;
-  dot.style.left = mx + "px";
-  dot.style.top = my + "px";
-});
+if (!isTouchDevice) {
+    let mx = 0, my = 0, rx = 0, ry = 0;
 
-(function loop() {
-  rx += (mx - rx) * 0.11;
-  ry += (my - ry) * 0.11;
-  ring.style.left = rx + "px";
-  ring.style.top = ry + "px";
-  requestAnimationFrame(loop);
-})();
+    window.addEventListener("mousemove", e => {
+        mx = e.clientX; my = e.clientY;
+        dot.style.left = mx + "px";
+        dot.style.top = my + "px";
+    });
 
-document.querySelectorAll("a, button").forEach(el => {
-  el.addEventListener("mouseenter", () => ring.classList.add("hov"));
-  el.addEventListener("mouseleave", () => ring.classList.remove("hov"));
-});
+    (function loop() {
+        rx += (mx - rx) * 0.11;
+        ry += (my - ry) * 0.11;
+        ring.style.left = rx + "px";
+        ring.style.top = ry + "px";
+        requestAnimationFrame(loop);
+    })();
+
+    document.querySelectorAll("a, button").forEach(el => {
+        el.addEventListener("mouseenter", () => ring.classList.add("hov"));
+        el.addEventListener("mouseleave", () => ring.classList.remove("hov"));
+    });
+} else {
+    dot.style.display = "none";
+    ring.style.display = "none";
+}
 
 /*  Account icon desktop only */
 if (window.innerWidth >= 768) {

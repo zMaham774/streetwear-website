@@ -13,46 +13,37 @@ gsap.ticker.add(t => lenis.raf(t * 1000));
 gsap.ticker.lagSmoothing(0);
 
 
-/* CUSTOM CURSOR */
+/* Custom Cursor - desktop only */
+const isTouchDevice = window.matchMedia("(hover: none), (pointer: coarse)").matches;
 
 const dot = document.getElementById("cur-dot");
 const ring = document.getElementById("cur-ring");
 
-let mx = 0, my = 0;   // mouse position
-let rx = 0, ry = 0;   // ring position 
+if (!isTouchDevice) {
+    let mx = 0, my = 0, rx = 0, ry = 0;
 
-// Dot follows mouse exactly
-window.addEventListener("mousemove", e => {
-  mx = e.clientX;
-  my = e.clientY;
-  dot.style.left = mx + "px";
-  dot.style.top = my + "px";
-});
+    window.addEventListener("mousemove", e => {
+        mx = e.clientX; my = e.clientY;
+        dot.style.left = mx + "px";
+        dot.style.top = my + "px";
+    });
 
-// Ring follows with lerp-creates smooth lag effect
-(function ringLoop() {
-  rx += (mx - rx) * 0.11;
-  ry += (my - ry) * 0.11;
-  ring.style.left = rx + "px";
-  ring.style.top = ry + "px";
-  requestAnimationFrame(ringLoop);
-})();
+    (function loop() {
+        rx += (mx - rx) * 0.11;
+        ry += (my - ry) * 0.11;
+        ring.style.left = rx + "px";
+        ring.style.top = ry + "px";
+        requestAnimationFrame(loop);
+    })();
 
-// Ring grows when hovering interactive elements
-document.querySelectorAll("a, button").forEach(el => {
-  el.addEventListener("mouseenter", () => ring.classList.add("hov"));
-  el.addEventListener("mouseleave", () => ring.classList.remove("hov"));
-});
-
-// Hide cursor when leaving window
-document.addEventListener("mouseleave", () => {
-  dot.style.opacity = "0";
-  ring.style.opacity = "0";
-});
-document.addEventListener("mouseenter", () => {
-  dot.style.opacity = "1";
-  ring.style.opacity = "1";
-});
+    document.querySelectorAll("a, button").forEach(el => {
+        el.addEventListener("mouseenter", () => ring.classList.add("hov"));
+        el.addEventListener("mouseleave", () => ring.classList.remove("hov"));
+    });
+} else {
+    dot.style.display = "none";
+    ring.style.display = "none";
+}
 
 /* ACCOUNT ICON-Show on desktop only */
 

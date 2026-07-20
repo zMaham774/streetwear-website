@@ -1227,3 +1227,72 @@ body::after {
 .shop-card.hidden-card {
   display: none;
 }
+
+/* MEN'S HERO - CURSOR SPOTLIGHT EFFECT*/
+
+/* Spotlight layer - masked to a circle that follows cursor */
+#spotlight-layer {
+  -webkit-mask-image: radial-gradient(circle 180px at var(--spot-x, 50%) var(--spot-y, 50%),
+      black 0%, black 60%, transparent 100%);
+  mask-image: radial-gradient(circle 180px at var(--spot-x, 50%) var(--spot-y, 50%),
+      black 0%, black 60%, transparent 100%);
+  transition: -webkit-mask-position 0.05s linear;
+}
+
+/* Give the spotlight image a subtle glow ring via a pseudo layer */
+#men-hero {
+  cursor: none;
+}
+
+/* MOBILE FALLBACK
+   Cursor spotlight requires a mouse. On touch devices we show
+   the full bright image at reduced opacity instead - no mask,
+   no cursor tracking, so it never breaks or looks empty. */
+@media (hover: none),
+(pointer: coarse) {
+
+  #spotlight-layer {
+    -webkit-mask-image: none;
+    mask-image: none;
+    opacity: 0.55;
+  }
+
+  #men-hero {
+    cursor: auto;
+  }
+
+  /* Hide desktop hint, show mobile hint */
+  [data-mh-sub] {
+    display: none;
+  }
+
+  [data-mh-sub-mobile] {
+    display: block !important;
+  }
+
+}
+
+/* Hide mobile hint on desktop by default */
+[data-mh-sub-mobile] {
+  display: none;
+}
+
+/* mix-blend-difference makes text invert against whatever is behind it -
+   ensures MEN'S stays readable whether spotlight is dark or bright there */
+#mh-title {
+  mix-blend-mode: difference;
+}
+
+/* CUSTOM CURSOR - GLOBAL MOBILE FALLBACK */
+
+@media (hover: none), (pointer: coarse) {
+  #cur-dot,
+  #cur-ring {
+    display: none !important;
+  }
+
+  /* Restore normal cursor everywhere since custom cursor is gone */
+  * {
+    cursor: auto !important;
+  }
+}

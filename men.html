@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AUREL - Men's Collection</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Open+Sans:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Custom Cursor -->
+    <div id="cur-dot"></div>
+    <div id="cur-ring"></div>
+
+    <!-- ANNOUNCEMENT BAR -->
+    <div id="anno-bar">
+        <div class="ticker-wrap">
+            <span>Free Shipping on Orders Over Rs. 5,000</span>
+            <span class="ticker-sep">◆</span>
+            <span>New Drop Every Friday — Be First</span>
+            <span class="ticker-sep">◆</span>
+            <span>Authentic Luxury Streetwear</span>
+            <span class="ticker-sep">◆</span>
+            <span>Easy Returns Within 7 Days</span>
+            <span class="ticker-sep">◆</span>
+            <span>Members Get Early Access to Drops</span>
+            <span class="ticker-sep">◆</span>
+            <span>Free Shipping on Orders Over Rs. 5,000</span>
+            <span class="ticker-sep">◆</span>
+            <span>New Drop Every Friday — Be First</span>
+            <span class="ticker-sep">◆</span>
+            <span>Authentic Luxury Streetwear</span>
+            <span class="ticker-sep">◆</span>
+            <span>Easy Returns Within 7 Days</span>
+            <span class="ticker-sep">◆</span>
+            <span>Members Get Early Access to Drops</span>
+            <span class="ticker-sep">◆</span>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav id="nav">
+        <button id="ham" aria-label="Open menu">
+            <b></b><b></b><b></b>
+        </button>
+        <ul class="nav-center">
+            <li><a href="men.html" class="text-[#c9a84c]">Men</a></li>
+            <li><a href="women.html">Women</a></li>
+            <li><a href="kids.html">Kids</a></li>
+            <li class="nav-logo-item">
+                <a href="index.html" class="logo">AUREL</a>
+            </li>
+            <li><a href="brands.html">Brands</a></li>
+            <li><a href="featured.html">Featured</a></li>
+            <li><a href="sale.html" class="sale">Sale</a></li>
+        </ul>
+        <div class="nav-right">
+            <button class="icon-btn" aria-label="Search">
+                <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="7.5" />
+                    <path stroke-linecap="round" d="m21 21-4.5-4.5" />
+                </svg>
+            </button>
+            <button class="icon-btn" id="acc-btn" aria-label="Account">
+                <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
+                </svg>
+            </button>
+            <button class="icon-btn" aria-label="Cart">
+                <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <path d="M16 10a4 4 0 0 1-8 0" />
+                </svg>
+                <span class="badge">2</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- FULL SCREEN MENU -->
+    <div id="fs-menu">
+        <div id="fsl">
+            <button id="fs-close">
+                <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+                Close
+            </button>
+            <div class="fs-label">
+                <div class="fs-label-line"></div>
+                <span>Collections & Pages</span>
+            </div>
+            <ul id="fs-links">
+                <li><a href="index.html" data-p="home"> <span class="n">01</span>Home</a></li>
+                <li><a href="men.html" data-p="men"> <span class="n">02</span>Men</a></li>
+                <li><a href="women.html" data-p="women"> <span class="n">03</span>Women</a></li>
+                <li><a href="kids.html" data-p="kids"> <span class="n">04</span>Kids</a></li>
+                <li><a href="brands.html" data-p="brands"> <span class="n">05</span>Brands</a></li>
+                <li><a href="featured.html" data-p="featured"><span class="n">06</span>Featured</a></li>
+                <li><a href="sale.html" data-p="sale"><span class="n">07</span>Sale</a></li>
+                <li><a href="shop.html" data-p="shop"> <span class="n">08</span>Shop All</a></li>
+                <li><a href="about.html" data-p="about"> <span class="n">09</span>About</a></li>
+                <li><a href="contact.html" data-p="contact"> <span class="n">10</span>Contact</a></li>
+            </ul>
+            <div id="fs-bot">
+                <div class="fs-contact">
+                    <a href="mailto:info@aurel.com">info@aurel.com</a>
+                    <a href="tel:+923000000000">+92-300-0000000</a>
+                    <a href="shop.html" class="fs-shop-link">Shop New Arrivals →</a>
+                </div>
+                <div class="fs-social">
+                    <a href="#">IG</a>
+                    <a href="#">TT</a>
+                    <a href="#">PIN</a>
+                </div>
+            </div>
+        </div>
+        <div id="fsr">
+            <img id="fsr-img" src="images/preview.jfif" alt="Collection preview" />
+            <div id="fsr-label">
+                <p id="fsr-txt">"Built for the Streets"</p>
+                <span id="fsr-sub">Men's Collection</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <!-- CURSOR SPOTLIGHT HERO -->
+        <section id="men-hero" class="relative w-full h-screen overflow-hidden bg-[#0a0a0a]">
+
+            <!-- Base dim image (always visible, dark/desaturated) -->
+            <div class="absolute inset-0">
+                <img src="images/men-hero.JPG"
+                    alt="Men's Collection" class="w-full h-full object-cover object-center"
+                    style="filter: brightness(0.25) grayscale(0.5);" />
+            </div>
+
+            <!-- Bright spotlight layer (revealed via CSS mask following cursor) -->
+            <div id="spotlight-layer" class="absolute inset-0 pointer-events-none">
+                <img src="images/men-hero.JPG" alt=""
+                    class="w-full h-full object-cover object-center" />
+            </div>
+
+            <!-- Bottom fade -->
+            <div class="absolute inset-0 z-10 pointer-events-none"
+                style="background:linear-gradient(to top,#0a0a0a 0%,transparent 35%)">
+            </div>
+
+            <!-- Content -->
+            <div class="absolute inset-0 z-20 flex flex-col items-center
+                  justify-center text-center px-6 pointer-events-none">
+
+                <!-- Label -->
+                <div class="flex items-center gap-4 mb-6" data-mh-label>
+                    <span class="block w-10 h-px bg-[#c9a84c]/60"></span>
+                    <span class="text-[#c9a84c] text-[0.6rem] font-semibold
+                       tracking-[0.35em] uppercase font-body">
+                        SS25 Collection
+                    </span>
+                    <span class="block w-10 h-px bg-[#c9a84c]/60"></span>
+                </div>
+
+                <!-- MEN'S -->
+                <div class="overflow-hidden">
+                    <h1 id="mh-title"
+                        class="font-heading leading-none tracking-wide text-[#f5f5f0] mix-blend-difference"
+                        style="font-size:clamp(6rem,18vw,16rem)" data-mh-title>
+                        MEN'S
+                    </h1>
+                </div>
+
+                <!-- Subtext -->
+                <p class="font-serif italic text-[#f5f5f0]/60 text-lg md:text-xl
+                  max-w-md leading-relaxed mt-6" data-mh-sub>
+                    Move your cursor to reveal the collection.
+                </p>
+                <p class="font-serif italic text-[#f5f5f0]/40 text-sm
+                  max-w-md leading-relaxed mt-1 md:hidden" data-mh-sub-mobile>
+                    Tap anywhere to explore.
+                </p>
+            </div>
+
+            <!-- Scroll indicator -->
+            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20
+                  flex flex-col items-center gap-2 pointer-events-none" data-mh-scroll>
+                <div id="mh-scroll-line" class="w-px h-12 bg-gradient-to-b from-[#c9a84c] to-transparent">
+                </div>
+                <span class="text-[#f5f5f0]/30 text-[0.52rem] tracking-[0.3em] uppercase font-body">
+                    Scroll
+                </span>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="men.js"></script>
+
+</body>
+
+</html>
