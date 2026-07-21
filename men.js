@@ -664,3 +664,37 @@ gsap.to("#lookbook-scroller", {
     duration: 0.9,
     ease: "power2.out"
 });
+
+/* MEN'S CTA ANIMATIONS */
+
+gsap.set("[data-mc-label]", { opacity: 0, y: 20 });
+gsap.set("[data-mc-heading]", { opacity: 0, y: 40 });
+gsap.set("[data-mc-sub]", { opacity: 0, y: 20 });
+gsap.set("[data-mc-btns]", { opacity: 0, y: 20 });
+
+const menCtaTL = gsap.timeline({
+    scrollTrigger: {
+        trigger: "#men-cta",
+        start: "top 75%",
+        toggleActions: "play none none none",
+        once: true
+    }
+});
+
+menCtaTL
+    .to("[data-mc-label]", { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" })
+    .to("[data-mc-heading]", { opacity: 1, y: 0, duration: 0.9, ease: "power3.out" }, "-=0.3")
+    .to("[data-mc-sub]", { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, "-=0.5")
+    .to("[data-mc-btns]", { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, "-=0.4");
+
+/* Subtle parallax on bg image */
+gsap.to("#men-cta-bg", {
+    scrollTrigger: {
+        trigger: "#men-cta",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true
+    },
+    y: "15%",
+    ease: "none"
+});
