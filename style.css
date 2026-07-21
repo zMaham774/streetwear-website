@@ -1475,3 +1475,26 @@ body::after {
   }
 
 }
+
+/* CHAPTER 05 - LOOKBOOK SCROLL-SNAP GALLERY */
+
+#lookbook-scroller {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  /* momentum scroll on iOS */
+}
+
+/* Navigation dots */
+.lb-dot {
+  width: 28px;
+  height: 2px;
+  background: rgba(245, 245, 240, 0.2);
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease, width 0.3s ease;
+}
+
+.lb-dot.active {
+  background: #c9a84c;
+  width: 40px;
+}
