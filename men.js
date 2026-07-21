@@ -446,46 +446,130 @@ gsap.to("[data-tops-cta]", {
 /* Header */
 gsap.set("[data-bot-header]", { opacity: 0, y: 30 });
 gsap.to("[data-bot-header]", {
-  scrollTrigger: {
-    trigger: "#chapter-bottoms",
-    start: "top 78%",
-    toggleActions: "play none none none",
-    once: true
-  },
-  opacity: 1,
-  y: 0,
-  duration: 0.8,
-  ease: "power3.out"
+    scrollTrigger: {
+        trigger: "#chapter-bottoms",
+        start: "top 78%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    opacity: 1,
+    y: 0,
+    duration: 0.8,
+    ease: "power3.out"
 });
 
 /* Each stacked card scales + fades in as it enters */
 gsap.utils.toArray("[data-bot-card]").forEach((card) => {
-  gsap.set(card, { opacity: 0, scale: 0.96 });
-  gsap.to(card, {
-    scrollTrigger: {
-      trigger: card,
-      start: "top 85%",
-      toggleActions: "play none none none",
-      once: true
-    },
-    opacity: 1,
-    scale: 1,
-    duration: 0.9,
-    ease: "power3.out"
-  });
+    gsap.set(card, { opacity: 0, scale: 0.96 });
+    gsap.to(card, {
+        scrollTrigger: {
+            trigger: card,
+            start: "top 85%",
+            toggleActions: "play none none none",
+            once: true
+        },
+        opacity: 1,
+        scale: 1,
+        duration: 0.9,
+        ease: "power3.out"
+    });
 });
 
 /* CTA */
 gsap.set("[data-bot-cta]", { opacity: 0, y: 20 });
 gsap.to("[data-bot-cta]", {
-  scrollTrigger: {
-    trigger: "[data-bot-cta]",
-    start: "top 90%",
-    toggleActions: "play none none none",
-    once: true
-  },
-  opacity: 1,
-  y: 0,
-  duration: 0.6,
-  ease: "power3.out"
+    scrollTrigger: {
+        trigger: "[data-bot-cta]",
+        start: "top 90%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    opacity: 1,
+    y: 0,
+    duration: 0.6,
+    ease: "power3.out"
+});
+
+/* CHAPTER 04 - FOOTWEAR 3D TILT LOGIC */
+
+/* Only attach tilt mouse-tracking on non-touch devices */
+
+if (!isTouchDevice) {
+
+    document.querySelectorAll(".tilt-card-wrap").forEach(wrap => {
+        const card = wrap.querySelector(".tilt-card");
+        const glare = wrap.querySelector(".tilt-glare");
+
+        wrap.addEventListener("mousemove", (e) => {
+            const rect = wrap.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            // Normalize to -1 → 1 range
+            const px = (x / rect.width) - 0.5;
+            const py = (y / rect.height) - 0.5;
+
+            // Max tilt in degrees
+            const maxTilt = 10;
+            const rotateY = px * maxTilt;
+            const rotateX = -py * maxTilt;
+
+            card.style.transform =
+                `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02,1.02,1.02)`;
+
+            // Glare follows cursor position as a percentage
+            glare.style.setProperty("--glare-x", (x / rect.width) * 100 + "%");
+            glare.style.setProperty("--glare-y", (y / rect.height) * 100 + "%");
+        });
+
+        wrap.addEventListener("mouseleave", () => {
+            card.style.transform = "rotateX(0deg) rotateY(0deg) scale3d(1,1,1)";
+        });
+    });
+
+}
+
+/* Scroll animations */
+
+gsap.set("[data-fw-header]", { opacity: 0, y: 30 });
+gsap.to("[data-fw-header]", {
+    scrollTrigger: {
+        trigger: "#chapter-footwear",
+        start: "top 78%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    opacity: 1,
+    y: 0,
+    duration: 0.8,
+    ease: "power3.out"
+});
+
+gsap.set("[data-fw-card]", { opacity: 0, y: 50 });
+gsap.to("[data-fw-card]", {
+    scrollTrigger: {
+        trigger: "[data-fw-card]",
+        start: "top 82%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    opacity: 1,
+    y: 0,
+    duration: 0.7,
+    stagger: 0.12,
+    ease: "power3.out"
+});
+
+gsap.set("[data-fw-cta]", { opacity: 0, y: 20 });
+gsap.to("[data-fw-cta]", {
+    scrollTrigger: {
+        trigger: "[data-fw-cta]",
+        start: "top 90%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    opacity: 1,
+    y: 0,
+    duration: 0.6,
+    ease: "power3.out"
 });

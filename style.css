@@ -1410,3 +1410,68 @@ body::after {
     overflow: visible;
   }
 }
+
+/* CHAPTER 04 - FOOTWEAR 3D TILT CARDS */
+
+.tilt-card {
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease-out, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.tilt-card:hover {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+}
+
+/* Glare - a soft light sweep that follows the tilt via JS-set CSS vars */
+.tilt-glare {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  background: radial-gradient(circle at var(--glare-x, 50%) var(--glare-y, 50%),
+      rgba(201, 168, 76, 0.12) 0%,
+      transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tilt-card:hover .tilt-glare {
+  opacity: 1;
+}
+
+/* Elements inside the card lift slightly for depth (desktop only) */
+@media (hover: hover) and (pointer: fine) {
+  .tilt-card img {
+    transition: transform 0.4s ease;
+  }
+
+  .tilt-card:hover img {
+    transform: scale(1.04) translateZ(20px);
+  }
+}
+
+/* MOBILE / TOUCH FALLBACK
+   3D tilt requires precise mouse position tracking, which doesn't
+   exist on touch devices. Rather than leaving a "dead" 3D card that
+   never tilts, we disable the transform-style entirely and give
+   touch users a simple, elegant static card with a normal tap
+   highlight */
+@media (hover: none),
+(pointer: coarse) {
+
+  .tilt-card {
+    transform: none !important;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .tilt-glare {
+    display: none;
+  }
+
+  .tilt-card:active {
+    box-shadow: 0 10px 25px -8px rgba(0, 0, 0, 0.5);
+  }
+
+}

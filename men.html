@@ -710,6 +710,159 @@
             </div>
         </section>
 
+        <!-- CHAPTER 04 - FOOTWEAR
+     3D perspective tilt cards on mouse hover (desktop)
+     Static elegant cards on touch devices (mobile fallback) -->
+
+        <section id="chapter-footwear" class="relative bg-[#0d0d0d] border-t border-white/5
+                                       py-24 md:py-32 px-6 md:px-16 overflow-hidden">
+
+            <!-- Chapter header -->
+            <div class="max-w-7xl mx-auto mb-16 md:mb-20" data-fw-header>
+                <div class="flex items-center gap-3 mb-3">
+                    <span class="font-heading text-3xl text-[#c9a84c]/30 leading-none">04</span>
+                    <span class="block w-8 h-px bg-[#c9a84c]"></span>
+                    <span class="text-[#c9a84c] text-[0.6rem] font-semibold
+                   tracking-[0.3em] uppercase font-body">
+                        Chapter Four
+                    </span>
+                </div>
+                <h2 class="font-heading text-5xl md:text-7xl text-[#f5f5f0]
+               leading-none tracking-wide">
+                    Footwear
+                </h2>
+            </div>
+
+            <!-- Tilt cards grid -->
+            <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
+              gap-8 md:gap-10" style="perspective: 1200px;">
+
+                <!-- Card 1 -->
+                <div class="tilt-card-wrap" data-fw-card>
+                    <div class="tilt-card group relative bg-[#111111] overflow-hidden">
+
+                        <!-- Glare layer for tilt effect -->
+                        <div class="tilt-glare"></div>
+
+                        <div class="relative aspect-[4/5] overflow-hidden">
+                            <img src="images/brands.jfif" alt="Street Runner"
+                                class="w-full h-full object-cover object-center" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                            <span class="absolute top-4 left-4 bg-[#c9a84c] text-[#0a0a0a]
+                       text-[0.5rem] font-bold tracking-[0.15em] uppercase px-2.5 py-1">
+                                Bestseller
+                            </span>
+                        </div>
+
+                        <div class="p-5">
+                            <p class="text-[#c9a84c] text-[0.55rem] tracking-[0.2em] uppercase font-body mb-1">
+                                Sneakers
+                            </p>
+                            <h3 class="font-heading text-2xl text-[#f5f5f0] tracking-wide mb-2">
+                                Street Runner
+                            </h3>
+                            <p class="text-[#888880] text-xs font-body mb-3">White / Gold</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-[#f5f5f0] text-sm font-body">Rs. 18,500</span>
+                                <button class="w-8 h-8 border border-white/15 flex items-center justify-center
+                           text-[#888880] hover:border-[#c9a84c] hover:text-[#c9a84c]
+                           transition-all duration-300">
+                                    <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" d="M12 4v16m8-8H4" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="tilt-card-wrap" data-fw-card>
+                    <div class="tilt-card group relative bg-[#111111] overflow-hidden">
+                        <div class="tilt-glare"></div>
+                        <div class="relative aspect-[4/5] overflow-hidden">
+                            <img src="images/Men8.jfif" alt="High Top Boot"
+                                class="w-full h-full object-cover object-center" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                            <span class="absolute top-4 left-4 bg-[#0a0a0a] text-[#c9a84c] border border-[#c9a84c]
+                       text-[0.5rem] font-bold tracking-[0.15em] uppercase px-2.5 py-1">
+                                Limited
+                            </span>
+                        </div>
+                        <div class="p-5">
+                            <p class="text-[#c9a84c] text-[0.55rem] tracking-[0.2em] uppercase font-body mb-1">
+                                Boots
+                            </p>
+                            <h3 class="font-heading text-2xl text-[#f5f5f0] tracking-wide mb-2">
+                                High Top Combat
+                            </h3>
+                            <p class="text-[#888880] text-xs font-body mb-3">Full Black</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-[#f5f5f0] text-sm font-body">Rs. 22,000</span>
+                                <button class="w-8 h-8 border border-white/15 flex items-center justify-center
+                           text-[#888880] hover:border-[#c9a84c] hover:text-[#c9a84c]
+                           transition-all duration-300">
+                                    <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" d="M12 4v16m8-8H4" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="tilt-card-wrap" data-fw-card>
+                    <div class="tilt-card group relative bg-[#111111] overflow-hidden">
+                        <div class="tilt-glare"></div>
+                        <div class="relative aspect-[4/5] overflow-hidden">
+                            <img src="images/Men9.jfif" alt="Low Top Sneaker"
+                                class="w-full h-full object-cover object-center" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        </div>
+                        <div class="p-5">
+                            <p class="text-[#c9a84c] text-[0.55rem] tracking-[0.2em] uppercase font-body mb-1">
+                                Sneakers
+                            </p>
+                            <h3 class="font-heading text-2xl text-[#f5f5f0] tracking-wide mb-2">
+                                Low Top Classic
+                            </h3>
+                            <p class="text-[#888880] text-xs font-body mb-3">Cream / Brown</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-[#f5f5f0] text-sm font-body">Rs. 15,000</span>
+                                <button class="w-8 h-8 border border-white/15 flex items-center justify-center
+                           text-[#888880] hover:border-[#c9a84c] hover:text-[#c9a84c]
+                           transition-all duration-300">
+                                    <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" d="M12 4v16m8-8H4" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- View all -->
+            <div class="max-w-7xl mx-auto flex justify-center mt-16 md:mt-20" data-fw-cta>
+                <a href="shop.html" class="group flex items-center gap-3 border border-white/10
+              text-[#f5f5f0] text-[0.62rem] font-semibold tracking-[0.2em]
+              uppercase font-body px-10 py-4
+              hover:border-[#c9a84c]/50 hover:text-[#c9a84c]
+              transition-all duration-300">
+                    View All Footwear
+                    <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
+                        class="group-hover:translate-x-1 transition-transform duration-300">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </a>
+            </div>
+        </section>
+
     </main>
 
     <script src="men.js"></script>
