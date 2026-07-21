@@ -207,800 +207,816 @@
             </div>
         </section>
 
-        <!-- CATEGORY NAVIGATION STRIP - sticky -->
+        <div id="chapters-wrapper" class="relative">
 
-        <div id="category-nav" class="sticky top-0 z-40 bg-[#0a0a0a]/95 backdrop-blur-md
+            <!-- CATEGORY NAVIGATION STRIP - sticky -->
+
+            <div id="category-nav" class="sticky top-0 z-40 bg-[#0a0a0a]/95 backdrop-blur-md
                                border-b border-white/8">
 
-            <div class="max-w-7xl mx-auto px-6 md:px-16">
-                <!-- Scrollable on mobile, centered on desktop -->
-                <div class="flex items-center gap-1 overflow-x-auto scrollbar-hide
+                <div class="max-w-7xl mx-auto px-6 md:px-16">
+                    <!-- Scrollable on mobile, centered on desktop -->
+                    <div class="flex items-center gap-1 overflow-x-auto scrollbar-hide
                 py-4 md:justify-center">
-                    <button class="cat-nav-btn active" data-target="chapter-outerwear">
-                        <span class="cat-nav-num">01</span>
-                        Outerwear
-                    </button>
+                        <button class="cat-nav-btn active" data-target="chapter-outerwear">
+                            <span class="cat-nav-num">01</span>
+                            Outerwear
+                        </button>
 
-                    <span class="cat-nav-sep">/</span>
-                    <button class="cat-nav-btn" data-target="chapter-tops">
-                        <span class="cat-nav-num">02</span>
-                        Tops
-                    </button>
+                        <span class="cat-nav-sep">/</span>
+                        <button class="cat-nav-btn" data-target="chapter-tops">
+                            <span class="cat-nav-num">02</span>
+                            Tops
+                        </button>
 
-                    <span class="cat-nav-sep">/</span>
-                    <button class="cat-nav-btn" data-target="chapter-bottoms">
-                        <span class="cat-nav-num">03</span>
-                        Bottoms
-                    </button>
+                        <span class="cat-nav-sep">/</span>
+                        <button class="cat-nav-btn" data-target="chapter-bottoms">
+                            <span class="cat-nav-num">03</span>
+                            Bottoms
+                        </button>
 
-                    <span class="cat-nav-sep">/</span>
-                    <button class="cat-nav-btn" data-target="chapter-footwear">
-                        <span class="cat-nav-num">04</span>
-                        Footwear
-                    </button>
+                        <span class="cat-nav-sep">/</span>
+                        <button class="cat-nav-btn" data-target="chapter-footwear">
+                            <span class="cat-nav-num">04</span>
+                            Footwear
+                        </button>
 
-                    <span class="cat-nav-sep">/</span>
-                    <button class="cat-nav-btn" data-target="chapter-lookbook">
-                        <span class="cat-nav-num">05</span>
-                        Lookbook
-                    </button>
+                        <span class="cat-nav-sep">/</span>
+                        <button class="cat-nav-btn" data-target="chapter-lookbook">
+                            <span class="cat-nav-num">05</span>
+                            Lookbook
+                        </button>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- CHAPTER 01 - OUTERWEAR
+            <!-- CHAPTER 01 - OUTERWEAR
      Horizontal scroll gallery (vertical scroll drives horizontal movement) -->
 
-        <section id="chapter-outerwear" class="relative bg-[#0a0a0a]">
+            <section id="chapter-outerwear" class="relative bg-[#0a0a0a]">
 
-            <!-- Pinned wrapper — height controls how long the horizontal scroll lasts -->
-            <div id="outerwear-pin-wrap" class="relative h-[300vh] md:h-[320vh]">
+                <!-- Pinned wrapper — height controls how long the horizontal scroll lasts -->
+                <div id="outerwear-pin-wrap" class="relative h-[300vh] md:h-[320vh]">
 
-                <!-- Sticky viewport -->
-                <div class="sticky top-0 h-screen overflow-hidden flex flex-col justify-center pt-32">
+                    <!-- Sticky viewport -->
+                    <div class="sticky top-0 h-screen overflow-hidden flex flex-col justify-center pt-32">
 
-                    <!-- Chapter header -->
-                    <div class="px-6 md:px-16 mb-8 md:mb-12" data-ow-header>
-                        <div class="flex items-center gap-3 mb-3">
-                            <span class="font-heading text-3xl text-[#c9a84c]/30 leading-none">01</span>
-                            <span class="block w-8 h-px bg-[#c9a84c]"></span>
-                            <span class="text-[#c9a84c] text-[0.6rem] font-semibold
+                        <!-- Chapter header -->
+                        <div class="px-6 md:px-16 mb-8 md:mb-12" data-ow-header>
+                            <div class="flex items-center gap-3 mb-3">
+                                <span class="font-heading text-3xl text-[#c9a84c]/30 leading-none">01</span>
+                                <span class="block w-8 h-px bg-[#c9a84c]"></span>
+                                <span class="text-[#c9a84c] text-[0.6rem] font-semibold
                        tracking-[0.3em] uppercase font-body">
-                                Chapter One
-                            </span>
-                        </div>
-                        <h2 class="font-heading text-5xl md:text-7xl text-[#f5f5f0]
+                                    Chapter One
+                                </span>
+                            </div>
+                            <h2 class="font-heading text-5xl md:text-7xl text-[#f5f5f0]
                    leading-none tracking-wide">
-                            Outerwear
-                        </h2>
-                    </div>
-
-                    <!-- Horizontal track -->
-                    <div id="outerwear-track" class="flex gap-4 md:gap-6 px-6 md:px-16 will-change-transform">
-
-                        <!-- Card 1 -->
-                        <div class="ow-card group relative flex-shrink-0
-                    w-[75vw] sm:w-[380px] md:w-[420px] aspect-[3/4]
-                    overflow-hidden bg-[#111111]">
-                            <img src="images/F2.jfif" alt="Cargo Jacket" class="w-full h-full object-cover object-top
-                      group-hover:scale-105 transition-transform duration-700" />
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent">
-                            </div>
-                            <span class="absolute top-4 left-4 bg-[#c9a84c] text-[#0a0a0a]
-                       text-[0.5rem] font-bold tracking-[0.15em] uppercase px-2.5 py-1">
-                                New
-                            </span>
-                            <div class="absolute bottom-0 left-0 right-0 p-5">
-                                <p class="text-[#c9a84c] text-[0.5rem] tracking-[0.2em] uppercase font-body mb-1">
-                                    Outerwear
-                                </p>
-                                <h3 class="font-heading text-2xl text-[#f5f5f0]">Cargo Jacket — Olive</h3>
-                                <p class="text-[#f5f5f0]/70 text-xs font-body mt-1">Rs. 14,000</p>
-                            </div>
+                                Outerwear
+                            </h2>
                         </div>
 
-                        <!-- Card 2 -->
-                        <div class="ow-card group relative flex-shrink-0
-                    w-[75vw] sm:w-[380px] md:w-[420px] aspect-[3/4]
-                    overflow-hidden bg-[#111111]">
-                            <img src="images/P12.jfif" alt="Utility Vest" class="w-full h-full object-cover object-top
-                      group-hover:scale-105 transition-transform duration-700" />
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent">
-                            </div>
-                            <span class="absolute top-4 left-4 bg-[#0a0a0a] text-[#c9a84c] border border-[#c9a84c]
-                       text-[0.5rem] font-bold tracking-[0.15em] uppercase px-2.5 py-1">
-                                Limited
-                            </span>
-                            <div class="absolute bottom-0 left-0 right-0 p-5">
-                                <p class="text-[#c9a84c] text-[0.5rem] tracking-[0.2em] uppercase font-body mb-1">
-                                    Outerwear
-                                </p>
-                                <h3 class="font-heading text-2xl text-[#f5f5f0]">Utility Vest — Charcoal</h3>
-                                <p class="text-[#f5f5f0]/70 text-xs font-body mt-1">Rs. 9,000</p>
-                            </div>
-                        </div>
+                        <!-- Horizontal track -->
+                        <div id="outerwear-track" class="flex gap-4 md:gap-6 px-6 md:px-16 will-change-transform">
 
-                        <!-- Card 3 -->
-                        <div class="ow-card group relative flex-shrink-0
+                            <!-- Card 1 -->
+                            <div class="ow-card group relative flex-shrink-0
                     w-[75vw] sm:w-[380px] md:w-[420px] aspect-[3/4]
                     overflow-hidden bg-[#111111]">
-                            <img src="images/P17.jfif" alt="Denim Jacket" class="w-full h-full object-cover object-top
+                                <img src="images/F2.jfif" alt="Cargo Jacket" class="w-full h-full object-cover object-top
                       group-hover:scale-105 transition-transform duration-700" />
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent">
-                            </div>
-                            <div class="absolute bottom-0 left-0 right-0 p-5">
-                                <p class="text-[#c9a84c] text-[0.5rem] tracking-[0.2em] uppercase font-body mb-1">
-                                    Outerwear
-                                </p>
-                                <h3 class="font-heading text-2xl text-[#f5f5f0]">Denim Jacket — Washed Blue</h3>
-                                <p class="text-[#f5f5f0]/70 text-xs font-body mt-1">Rs. 11,000</p>
-                            </div>
-                        </div>
-
-                        <!-- Card 4 -->
-                        <div class="ow-card group relative flex-shrink-0
-                    w-[75vw] sm:w-[380px] md:w-[420px] aspect-[3/4]
-                    overflow-hidden bg-[#111111]">
-                            <img src="images/P21.jfif" alt="Windbreaker" class="w-full h-full object-cover object-center
-                      group-hover:scale-105 transition-transform duration-700" />
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent">
-                            </div>
-                            <span class="absolute top-4 left-4 bg-red-900/80 text-[#f5f5f0]
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent">
+                                </div>
+                                <span class="absolute top-4 left-4 bg-[#c9a84c] text-[#0a0a0a]
                        text-[0.5rem] font-bold tracking-[0.15em] uppercase px-2.5 py-1">
-                                Sale
-                            </span>
-                            <div class="absolute bottom-0 left-0 right-0 p-5">
-                                <p class="text-[#c9a84c] text-[0.5rem] tracking-[0.2em] uppercase font-body mb-1">
-                                    Outerwear
-                                </p>
-                                <h3 class="font-heading text-2xl text-[#f5f5f0]">Windbreaker — Navy</h3>
-                                <div class="flex items-center gap-2 mt-1">
-                                    <span class="text-[#f5f5f0] text-xs font-body">Rs. 10,500</span>
-                                    <span class="text-[#888880] text-[0.65rem] line-through font-body">Rs. 13,000</span>
+                                    New
+                                </span>
+                                <div class="absolute bottom-0 left-0 right-0 p-5">
+                                    <p class="text-[#c9a84c] text-[0.5rem] tracking-[0.2em] uppercase font-body mb-1">
+                                        Outerwear
+                                    </p>
+                                    <h3 class="font-heading text-2xl text-[#f5f5f0]">Cargo Jacket — Olive</h3>
+                                    <p class="text-[#f5f5f0]/70 text-xs font-body mt-1">Rs. 14,000</p>
+                                </div>
+                            </div>
+
+                            <!-- Card 2 -->
+                            <div class="ow-card group relative flex-shrink-0
+                    w-[75vw] sm:w-[380px] md:w-[420px] aspect-[3/4]
+                    overflow-hidden bg-[#111111]">
+                                <img src="images/P12.jfif" alt="Utility Vest" class="w-full h-full object-cover object-top
+                      group-hover:scale-105 transition-transform duration-700" />
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent">
+                                </div>
+                                <span class="absolute top-4 left-4 bg-[#0a0a0a] text-[#c9a84c] border border-[#c9a84c]
+                       text-[0.5rem] font-bold tracking-[0.15em] uppercase px-2.5 py-1">
+                                    Limited
+                                </span>
+                                <div class="absolute bottom-0 left-0 right-0 p-5">
+                                    <p class="text-[#c9a84c] text-[0.5rem] tracking-[0.2em] uppercase font-body mb-1">
+                                        Outerwear
+                                    </p>
+                                    <h3 class="font-heading text-2xl text-[#f5f5f0]">Utility Vest — Charcoal</h3>
+                                    <p class="text-[#f5f5f0]/70 text-xs font-body mt-1">Rs. 9,000</p>
+                                </div>
+                            </div>
+
+                            <!-- Card 3 -->
+                            <div class="ow-card group relative flex-shrink-0
+                    w-[75vw] sm:w-[380px] md:w-[420px] aspect-[3/4]
+                    overflow-hidden bg-[#111111]">
+                                <img src="images/P17.jfif" alt="Denim Jacket" class="w-full h-full object-cover object-top
+                      group-hover:scale-105 transition-transform duration-700" />
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent">
+                                </div>
+                                <div class="absolute bottom-0 left-0 right-0 p-5">
+                                    <p class="text-[#c9a84c] text-[0.5rem] tracking-[0.2em] uppercase font-body mb-1">
+                                        Outerwear
+                                    </p>
+                                    <h3 class="font-heading text-2xl text-[#f5f5f0]">Denim Jacket — Washed Blue</h3>
+                                    <p class="text-[#f5f5f0]/70 text-xs font-body mt-1">Rs. 11,000</p>
+                                </div>
+                            </div>
+
+                            <!-- Card 4 -->
+                            <div class="ow-card group relative flex-shrink-0
+                    w-[75vw] sm:w-[380px] md:w-[420px] aspect-[3/4]
+                    overflow-hidden bg-[#111111]">
+                                <img src="images/P21.jfif" alt="Windbreaker" class="w-full h-full object-cover object-center
+                      group-hover:scale-105 transition-transform duration-700" />
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent">
+                                </div>
+                                <span class="absolute top-4 left-4 bg-red-900/80 text-[#f5f5f0]
+                       text-[0.5rem] font-bold tracking-[0.15em] uppercase px-2.5 py-1">
+                                    Sale
+                                </span>
+                                <div class="absolute bottom-0 left-0 right-0 p-5">
+                                    <p class="text-[#c9a84c] text-[0.5rem] tracking-[0.2em] uppercase font-body mb-1">
+                                        Outerwear
+                                    </p>
+                                    <h3 class="font-heading text-2xl text-[#f5f5f0]">Windbreaker — Navy</h3>
+                                    <div class="flex items-center gap-2 mt-1">
+                                        <span class="text-[#f5f5f0] text-xs font-body">Rs. 10,500</span>
+                                        <span class="text-[#888880] text-[0.65rem] line-through font-body">Rs.
+                                            13,000</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card 5 -->
+                            <div class="ow-card group relative flex-shrink-0
+                    w-[75vw] sm:w-[380px] md:w-[420px] aspect-[3/4]
+                    overflow-hidden bg-[#111111]">
+                                <img src="images/Men1.jfif" alt="Premium Hoodie Set" class="w-full h-full object-cover object-top
+                      group-hover:scale-105 transition-transform duration-700" />
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent">
+                                </div>
+                                <span class="absolute top-4 left-4 bg-[#c9a84c] text-[#0a0a0a]
+                       text-[0.5rem] font-bold tracking-[0.15em] uppercase px-2.5 py-1">
+                                    New
+                                </span>
+                                <div class="absolute bottom-0 left-0 right-0 p-5">
+                                    <p class="text-[#c9a84c] text-[0.5rem] tracking-[0.2em] uppercase font-body mb-1">
+                                        Outerwear
+                                    </p>
+                                    <h3 class="font-heading text-2xl text-[#f5f5f0]">Premium Hoodie Set — Grey</h3>
+                                    <p class="text-[#f5f5f0]/70 text-xs font-body mt-1">Rs. 16,500</p>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Card 5 -->
-                        <div class="ow-card group relative flex-shrink-0
-                    w-[75vw] sm:w-[380px] md:w-[420px] aspect-[3/4]
-                    overflow-hidden bg-[#111111]">
-                            <img src="images/Men1.jfif" alt="Premium Hoodie Set" class="w-full h-full object-cover object-top
-                      group-hover:scale-105 transition-transform duration-700" />
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/10 to-transparent">
-                            </div>
-                            <span class="absolute top-4 left-4 bg-[#c9a84c] text-[#0a0a0a]
-                       text-[0.5rem] font-bold tracking-[0.15em] uppercase px-2.5 py-1">
-                                New
-                            </span>
-                            <div class="absolute bottom-0 left-0 right-0 p-5">
-                                <p class="text-[#c9a84c] text-[0.5rem] tracking-[0.2em] uppercase font-body mb-1">
-                                    Outerwear
-                                </p>
-                                <h3 class="font-heading text-2xl text-[#f5f5f0]">Premium Hoodie Set — Grey</h3>
-                                <p class="text-[#f5f5f0]/70 text-xs font-body mt-1">Rs. 16,500</p>
-                            </div>
-                        </div>
                     </div>
-                </div>
-        </section>
+            </section>
 
-        <!-- CHAPTER 02 - TOPS -Zigzag split layout -->
+            <!-- CHAPTER 02 - TOPS -Zigzag split layout -->
 
-        <section id="chapter-tops" class="relative bg-[#0d0d0d] border-t border-white/5
+            <section id="chapter-tops" class="relative bg-[#0d0d0d] border-t border-white/5
                                    py-24 md:py-32 px-6 md:px-16 overflow-hidden">
 
-            <!-- Chapter header -->
-            <div class="max-w-7xl mx-auto mb-16 md:mb-20" data-tops-header>
-                <div class="flex items-center gap-3 mb-3">
-                    <span class="font-heading text-3xl text-[#c9a84c]/30 leading-none">02</span>
-                    <span class="block w-8 h-px bg-[#c9a84c]"></span>
-                    <span class="text-[#c9a84c] text-[0.6rem] font-semibold
+                <!-- Chapter header -->
+                <div class="max-w-7xl mx-auto mb-16 md:mb-20" data-tops-header>
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="font-heading text-3xl text-[#c9a84c]/30 leading-none">02</span>
+                        <span class="block w-8 h-px bg-[#c9a84c]"></span>
+                        <span class="text-[#c9a84c] text-[0.6rem] font-semibold
                    tracking-[0.3em] uppercase font-body">
-                        Chapter Two
-                    </span>
-                </div>
-                <h2 class="font-heading text-5xl md:text-7xl text-[#f5f5f0]
+                            Chapter Two
+                        </span>
+                    </div>
+                    <h2 class="font-heading text-5xl md:text-7xl text-[#f5f5f0]
                leading-none tracking-wide">
-                    Tops
-                </h2>
-            </div>
+                        Tops
+                    </h2>
+                </div>
 
-            <div class="max-w-7xl mx-auto space-y-20 md:space-y-8">
+                <div class="max-w-7xl mx-auto space-y-20 md:space-y-8">
 
-                <!-- ROW 1 - Image Left, Text Right -->
-                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-4 items-center" data-tops-row>
+                    <!-- ROW 1 - Image Left, Text Right -->
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-4 items-center" data-tops-row>
 
-                    <!-- Image -->
-                    <div class="md:col-span-7 relative" data-tops-img>
-                        <div class="relative overflow-hidden aspect-[16/10] group">
-                            <img src="images/Men4.png" alt="Oversized Hoodie" class="w-full h-full object-cover object-top
+                        <!-- Image -->
+                        <div class="md:col-span-7 relative" data-tops-img>
+                            <div class="relative overflow-hidden aspect-[16/10] group">
+                                <img src="images/Men4.png" alt="Oversized Hoodie" class="w-full h-full object-cover object-top
                    group-hover:scale-105 transition-transform duration-700" />
-                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0
+                                <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0
                       transition-colors duration-500"></div>
-                            <span class="absolute top-4 left-4 bg-[#c9a84c] text-[#0a0a0a]
+                                <span class="absolute top-4 left-4 bg-[#c9a84c] text-[#0a0a0a]
                        text-[0.5rem] font-bold tracking-[0.15em] uppercase px-2.5 py-1">
-                                New
-                            </span>
+                                    New
+                                </span>
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Text -->
-                    <div class="md:col-span-5 md:pl-8" data-tops-text>
-                        <p class="text-[#c9a84c] text-[0.55rem] tracking-[0.25em] uppercase font-body mb-3">
-                            Everyday Essential
-                        </p>
-                        <h3 class="font-heading text-3xl md:text-4xl text-[#f5f5f0]
+                        <!-- Text -->
+                        <div class="md:col-span-5 md:pl-8" data-tops-text>
+                            <p class="text-[#c9a84c] text-[0.55rem] tracking-[0.25em] uppercase font-body mb-3">
+                                Everyday Essential
+                            </p>
+                            <h3 class="font-heading text-3xl md:text-4xl text-[#f5f5f0]
                    leading-tight tracking-wide mb-4">
-                            Oversized Hoodie
-                        </h3>
-                        <p class="text-[#888880] text-sm font-body leading-relaxed mb-6">
-                            Heavyweight 400gsm cotton fleece. Boxy silhouette,
-                            dropped shoulders. Built to be lived in - season after season.
-                        </p>
-                        <div class="flex items-center gap-4 mb-6">
-                            <span class="text-[#f5f5f0] text-lg font-heading">Rs. 8,500</span>
-                        </div>
-                        <a href="shop.html" class="group inline-flex items-center gap-3">
-                            <span class="w-8 h-px bg-[#c9a84c] group-hover:w-12 transition-all duration-300"></span>
-                            <span class="text-[#f5f5f0] text-[0.6rem] font-semibold tracking-[0.2em]
+                                Oversized Hoodie
+                            </h3>
+                            <p class="text-[#888880] text-sm font-body leading-relaxed mb-6">
+                                Heavyweight 400gsm cotton fleece. Boxy silhouette,
+                                dropped shoulders. Built to be lived in - season after season.
+                            </p>
+                            <div class="flex items-center gap-4 mb-6">
+                                <span class="text-[#f5f5f0] text-lg font-heading">Rs. 8,500</span>
+                            </div>
+                            <a href="shop.html" class="group inline-flex items-center gap-3">
+                                <span class="w-8 h-px bg-[#c9a84c] group-hover:w-12 transition-all duration-300"></span>
+                                <span class="text-[#f5f5f0] text-[0.6rem] font-semibold tracking-[0.2em]
                        uppercase font-body group-hover:text-[#c9a84c] transition-colors duration-300">
-                                Shop This
-                            </span>
-                        </a>
+                                    Shop This
+                                </span>
+                            </a>
+                        </div>
                     </div>
-                </div>
 
-                <!-- ROW 2 - Text Left, Image Right -->
-                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-4 items-center" data-tops-row>
+                    <!-- ROW 2 - Text Left, Image Right -->
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-4 items-center" data-tops-row>
 
-                    <!-- Text -->
-                    <div class="md:col-span-5 md:order-1 md:pr-8 md:text-right" data-tops-text>
-                        <p class="text-[#c9a84c] text-[0.55rem] tracking-[0.25em] uppercase font-body mb-3">
-                            Weekend Uniform
-                        </p>
-                        <h3 class="font-heading text-3xl md:text-4xl text-[#f5f5f0]
+                        <!-- Text -->
+                        <div class="md:col-span-5 md:order-1 md:pr-8 md:text-right" data-tops-text>
+                            <p class="text-[#c9a84c] text-[0.55rem] tracking-[0.25em] uppercase font-body mb-3">
+                                Weekend Uniform
+                            </p>
+                            <h3 class="font-heading text-3xl md:text-4xl text-[#f5f5f0]
                    leading-tight tracking-wide mb-4">
-                            Graphic Tee - Vintage Wash
-                        </h3>
-                        <p class="text-[#888880] text-sm font-body leading-relaxed mb-6">
-                            Garment-dyed for that broken-in feel from day one.
-                            Screen printed AUREL emblem on the chest, relaxed fit throughout.
-                        </p>
-                        <div class="flex items-center gap-4 mb-6 md:justify-end">
-                            <span class="text-[#f5f5f0] text-lg font-heading">Rs. 3,800</span>
-                        </div>
-                        <a href="shop.html" class="group inline-flex items-center gap-3 md:flex-row-reverse">
-                            <span class="w-8 h-px bg-[#c9a84c] group-hover:w-12 transition-all duration-300"></span>
-                            <span class="text-[#f5f5f0] text-[0.6rem] font-semibold tracking-[0.2em]
+                                Graphic Tee - Vintage Wash
+                            </h3>
+                            <p class="text-[#888880] text-sm font-body leading-relaxed mb-6">
+                                Garment-dyed for that broken-in feel from day one.
+                                Screen printed AUREL emblem on the chest, relaxed fit throughout.
+                            </p>
+                            <div class="flex items-center gap-4 mb-6 md:justify-end">
+                                <span class="text-[#f5f5f0] text-lg font-heading">Rs. 3,800</span>
+                            </div>
+                            <a href="shop.html" class="group inline-flex items-center gap-3 md:flex-row-reverse">
+                                <span class="w-8 h-px bg-[#c9a84c] group-hover:w-12 transition-all duration-300"></span>
+                                <span class="text-[#f5f5f0] text-[0.6rem] font-semibold tracking-[0.2em]
                        uppercase font-body group-hover:text-[#c9a84c] transition-colors duration-300">
-                                Shop This
-                            </span>
-                        </a>
-                    </div>
+                                    Shop This
+                                </span>
+                            </a>
+                        </div>
 
-                    <!-- Image -->
-                    <div class="md:col-span-7 md:order-2 relative" data-tops-img>
-                        <div class="relative overflow-hidden aspect-[16/10] group">
-                            <img src="images/Men2.png" alt="Graphic Tee" class="w-full h-full object-cover object-center
+                        <!-- Image -->
+                        <div class="md:col-span-7 md:order-2 relative" data-tops-img>
+                            <div class="relative overflow-hidden aspect-[16/10] group">
+                                <img src="images/Men2.png" alt="Graphic Tee" class="w-full h-full object-cover object-center
                    group-hover:scale-105 transition-transform duration-700" />
-                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0
+                                <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0
                       transition-colors duration-500"></div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- ROW 3 - Image Left, Text Right -->
-                <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-4 items-center" data-tops-row>
+                    <!-- ROW 3 - Image Left, Text Right -->
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-4 items-center" data-tops-row>
 
-                    <!-- Image -->
-                    <div class="md:col-span-7 relative" data-tops-img>
-                        <div class="relative overflow-hidden aspect-[16/10] group">
-                            <img src="images/Men3.png" alt="Knit Sweater" class="w-full h-full object-cover object-top
+                        <!-- Image -->
+                        <div class="md:col-span-7 relative" data-tops-img>
+                            <div class="relative overflow-hidden aspect-[16/10] group">
+                                <img src="images/Men3.png" alt="Knit Sweater" class="w-full h-full object-cover object-top
                    group-hover:scale-105 transition-transform duration-700" />
-                            <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0
+                                <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0
                       transition-colors duration-500"></div>
-                            <span class="absolute top-4 left-4 bg-[#0a0a0a] text-[#c9a84c] border border-[#c9a84c]
+                                <span class="absolute top-4 left-4 bg-[#0a0a0a] text-[#c9a84c] border border-[#c9a84c]
                        text-[0.5rem] font-bold tracking-[0.15em] uppercase px-2.5 py-1">
-                                Limited
-                            </span>
+                                    Limited
+                                </span>
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Text -->
-                    <div class="md:col-span-5 md:pl-8" data-tops-text>
-                        <p class="text-[#c9a84c] text-[0.55rem] tracking-[0.25em] uppercase font-body mb-3">
-                            Layer Season
-                        </p>
-                        <h3 class="font-heading text-3xl md:text-4xl text-[#f5f5f0]
+                        <!-- Text -->
+                        <div class="md:col-span-5 md:pl-8" data-tops-text>
+                            <p class="text-[#c9a84c] text-[0.55rem] tracking-[0.25em] uppercase font-body mb-3">
+                                Layer Season
+                            </p>
+                            <h3 class="font-heading text-3xl md:text-4xl text-[#f5f5f0]
                    leading-tight tracking-wide mb-4">
-                            Knit Sweater - Charcoal
-                        </h3>
-                        <p class="text-[#888880] text-sm font-body leading-relaxed mb-6">
-                            Merino wool blend knit with ribbed cuffs and hem.
-                            A quiet luxury piece that layers under or over anything.
-                        </p>
-                        <div class="flex items-center gap-4 mb-6">
-                            <span class="text-[#f5f5f0] text-lg font-heading">Rs. 9,800</span>
-                        </div>
-                        <a href="shop.html" class="group inline-flex items-center gap-3">
-                            <span class="w-8 h-px bg-[#c9a84c] group-hover:w-12 transition-all duration-300"></span>
-                            <span class="text-[#f5f5f0] text-[0.6rem] font-semibold tracking-[0.2em]
+                                Knit Sweater - Charcoal
+                            </h3>
+                            <p class="text-[#888880] text-sm font-body leading-relaxed mb-6">
+                                Merino wool blend knit with ribbed cuffs and hem.
+                                A quiet luxury piece that layers under or over anything.
+                            </p>
+                            <div class="flex items-center gap-4 mb-6">
+                                <span class="text-[#f5f5f0] text-lg font-heading">Rs. 9,800</span>
+                            </div>
+                            <a href="shop.html" class="group inline-flex items-center gap-3">
+                                <span class="w-8 h-px bg-[#c9a84c] group-hover:w-12 transition-all duration-300"></span>
+                                <span class="text-[#f5f5f0] text-[0.6rem] font-semibold tracking-[0.2em]
                        uppercase font-body group-hover:text-[#c9a84c] transition-colors duration-300">
-                                Shop This
-                            </span>
-                        </a>
+                                    Shop This
+                                </span>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- View all link -->
-            <div class="max-w-7xl mx-auto flex justify-center mt-16 md:mt-20" data-tops-cta>
-                <a href="shop.html" class="group flex items-center gap-3 border border-white/10
+                <!-- View all link -->
+                <div class="max-w-7xl mx-auto flex justify-center mt-16 md:mt-20" data-tops-cta>
+                    <a href="shop.html" class="group flex items-center gap-3 border border-white/10
               text-[#f5f5f0] text-[0.62rem] font-semibold tracking-[0.2em]
               uppercase font-body px-10 py-4
               hover:border-[#c9a84c]/50 hover:text-[#c9a84c]
               transition-all duration-300">
-                    View All Tops
-                    <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
-                        class="group-hover:translate-x-1 transition-transform duration-300">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                </a>
-            </div>
-        </section>
+                        View All Tops
+                        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5"
+                            viewBox="0 0 24 24" class="group-hover:translate-x-1 transition-transform duration-300">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
+                </div>
+            </section>
 
-        <!-- CHAPTER 03 - BOTTOMS Full-width stacked cards, large typography overlays -->
+            <!-- CHAPTER 03 - BOTTOMS Full-width stacked cards, large typography overlays -->
 
-        <section id="chapter-bottoms" class="relative bg-[#0a0a0a] border-t border-white/5
+            <section id="chapter-bottoms" class="relative bg-[#0a0a0a] border-t border-white/5
                                       py-24 md:py-32 overflow-hidden">
 
-            <!-- Chapter header -->
-            <div class="max-w-7xl mx-auto px-6 md:px-16 mb-16 md:mb-20" data-bot-header>
-                <div class="flex items-center gap-3 mb-3">
-                    <span class="font-heading text-3xl text-[#c9a84c]/30 leading-none">03</span>
-                    <span class="block w-8 h-px bg-[#c9a84c]"></span>
-                    <span class="text-[#c9a84c] text-[0.6rem] font-semibold
+                <!-- Chapter header -->
+                <div class="max-w-7xl mx-auto px-6 md:px-16 mb-16 md:mb-20" data-bot-header>
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="font-heading text-3xl text-[#c9a84c]/30 leading-none">03</span>
+                        <span class="block w-8 h-px bg-[#c9a84c]"></span>
+                        <span class="text-[#c9a84c] text-[0.6rem] font-semibold
                    tracking-[0.3em] uppercase font-body">
-                        Chapter Three
-                    </span>
-                </div>
-                <h2 class="font-heading text-5xl md:text-7xl text-[#f5f5f0]
+                            Chapter Three
+                        </span>
+                    </div>
+                    <h2 class="font-heading text-5xl md:text-7xl text-[#f5f5f0]
                leading-none tracking-wide">
-                    Bottoms
-                </h2>
-            </div>
-
-            <!-- Stacked full-width cards -->
-            <div class="space-y-3 md:space-y-4">
-
-                <!-- CARD 1 - Cargo Pants -->
-                <div class="bot-card group relative w-full h-[60vh] md:h-[75vh]
-                overflow-hidden" data-bot-card>
-
-                    <img src="images/Men5.png" alt="Cargo Pants" class="w-full h-full object-cover object-top
-               group-hover:scale-105 transition-transform duration-[1200ms] ease-out" />
-
-                    <!-- Overlay gradient -->
-                    <div class="absolute inset-0 bg-gradient-to-r
-                  from-[#0a0a0a]/85 via-[#0a0a0a]/20 to-transparent"></div>
-
-                    <!-- Giant typography -->
-                    <div class="absolute inset-0 flex items-center">
-                        <h3 class="font-heading leading-none tracking-wide text-[#f5f5f0]
-                   pl-6 md:pl-16" style="font-size:clamp(3.5rem,10vw,9rem)">
-                            CARGO
-                        </h3>
-                    </div>
-
-                    <!-- Product info bottom left -->
-                    <div class="absolute bottom-6 md:bottom-10 left-6 md:left-16 z-10
-                  translate-y-2 group-hover:translate-y-0 transition-transform duration-400">
-                        <span class="inline-block bg-[#c9a84c] text-[#0a0a0a] text-[0.5rem]
-                     font-bold tracking-[0.15em] uppercase px-2.5 py-1 mb-3">
-                            Bestseller
-                        </span>
-                        <p class="text-[#c9a84c] text-[0.55rem] tracking-[0.2em] uppercase font-body mb-1">
-                            Bottoms
-                        </p>
-                        <p class="font-serif italic text-[#f5f5f0]/80 text-lg md:text-xl mb-2">
-                            Cargo Pants - Sand
-                        </p>
-                        <p class="text-[#f5f5f0] text-sm font-body">Rs. 7,200</p>
-                    </div>
-
-                    <!-- Number top right -->
-                    <span class="absolute top-6 right-6 md:top-10 md:right-16 z-10
-                   font-heading text-4xl md:text-5xl text-white/10 leading-none">
-                        01
-                    </span>
+                        Bottoms
+                    </h2>
                 </div>
 
-                <!-- CARD 2 - Track Pants -->
-                <div class="bot-card group relative w-full h-[60vh] md:h-[75vh]
+                <!-- Stacked full-width cards -->
+                <div class="space-y-3 md:space-y-4">
+
+                    <!-- CARD 1 - Cargo Pants -->
+                    <div class="bot-card group relative w-full h-[60vh] md:h-[75vh]
                 overflow-hidden" data-bot-card>
 
-                    <img src="images/Men6.png" alt="Track Pants" class="w-full h-full object-cover object-top
+                        <img src="images/Men5.png" alt="Cargo Pants" class="w-full h-full object-cover object-top
                group-hover:scale-105 transition-transform duration-[1200ms] ease-out" />
 
-                    <div class="absolute inset-0 bg-gradient-to-l
+                        <!-- Overlay gradient -->
+                        <div class="absolute inset-0 bg-gradient-to-r
                   from-[#0a0a0a]/85 via-[#0a0a0a]/20 to-transparent"></div>
 
-                    <!-- Giant typography - right aligned this time -->
-                    <div class="absolute inset-0 flex items-center justify-end">
-                        <h3 class="font-heading leading-none tracking-wide text-[#f5f5f0]
-                   pr-6 md:pr-16 text-right" style="font-size:clamp(3.5rem,10vw,9rem)">
-                            TRACK
-                        </h3>
-                    </div>
-
-                    <!-- Product info bottom right -->
-                    <div class="absolute bottom-6 md:bottom-10 right-6 md:right-16 z-10 text-right
-                  translate-y-2 group-hover:translate-y-0 transition-transform duration-400">
-                        <span class="inline-block bg-red-900/80 text-[#f5f5f0] text-[0.5rem]
-                     font-bold tracking-[0.15em] uppercase px-2.5 py-1 mb-3">
-                            Sale
-                        </span>
-                        <p class="text-[#c9a84c] text-[0.55rem] tracking-[0.2em] uppercase font-body mb-1">
-                            Bottoms
-                        </p>
-                        <p class="font-serif italic text-[#f5f5f0]/80 text-lg md:text-xl mb-2">
-                            Tapered Track Pants - Grey
-                        </p>
-                        <div class="flex items-center justify-end gap-2">
-                            <span class="text-[#f5f5f0] text-sm font-body">Rs. 5,500</span>
-                            <span class="text-[#888880] text-xs line-through font-body">Rs. 7,500</span>
+                        <!-- Giant typography -->
+                        <div class="absolute inset-0 flex items-center">
+                            <h3 class="font-heading leading-none tracking-wide text-[#f5f5f0]
+                   pl-6 md:pl-16" style="font-size:clamp(3.5rem,10vw,9rem)">
+                                CARGO
+                            </h3>
                         </div>
+
+                        <!-- Product info bottom left -->
+                        <div class="absolute bottom-6 md:bottom-10 left-6 md:left-16 z-10
+                  translate-y-2 group-hover:translate-y-0 transition-transform duration-400">
+                            <span class="inline-block bg-[#c9a84c] text-[#0a0a0a] text-[0.5rem]
+                     font-bold tracking-[0.15em] uppercase px-2.5 py-1 mb-3">
+                                Bestseller
+                            </span>
+                            <p class="text-[#c9a84c] text-[0.55rem] tracking-[0.2em] uppercase font-body mb-1">
+                                Bottoms
+                            </p>
+                            <p class="font-serif italic text-[#f5f5f0]/80 text-lg md:text-xl mb-2">
+                                Cargo Pants - Sand
+                            </p>
+                            <p class="text-[#f5f5f0] text-sm font-body">Rs. 7,200</p>
+                        </div>
+
+                        <!-- Number top right -->
+                        <span class="absolute top-6 right-6 md:top-10 md:right-16 z-10
+                   font-heading text-4xl md:text-5xl text-white/10 leading-none">
+                            01
+                        </span>
                     </div>
 
-                    <span class="absolute top-6 left-6 md:top-10 md:left-16 z-10
-                   font-heading text-4xl md:text-5xl text-white/10 leading-none">
-                        02
-                    </span>
-                </div>
-
-                <!--CARD 3 - Denim -->
-                <div class="bot-card group relative w-full h-[60vh] md:h-[75vh]
+                    <!-- CARD 2 - Track Pants -->
+                    <div class="bot-card group relative w-full h-[60vh] md:h-[75vh]
                 overflow-hidden" data-bot-card>
 
-                    <img src="images/Men7.png" alt="Denim Jeans" class="w-full h-full object-cover object-center
+                        <img src="images/Men6.png" alt="Track Pants" class="w-full h-full object-cover object-top
                group-hover:scale-105 transition-transform duration-[1200ms] ease-out" />
 
-                    <div class="absolute inset-0 bg-gradient-to-r
+                        <div class="absolute inset-0 bg-gradient-to-l
                   from-[#0a0a0a]/85 via-[#0a0a0a]/20 to-transparent"></div>
 
-                    <div class="absolute inset-0 flex items-center">
-                        <h3 class="font-heading leading-none tracking-wide text-[#f5f5f0]
-                   pl-6 md:pl-16" style="font-size:clamp(3.5rem,10vw,9rem)">
-                            DENIM
-                        </h3>
-                    </div>
+                        <!-- Giant typography - right aligned this time -->
+                        <div class="absolute inset-0 flex items-center justify-end">
+                            <h3 class="font-heading leading-none tracking-wide text-[#f5f5f0]
+                   pr-6 md:pr-16 text-right" style="font-size:clamp(3.5rem,10vw,9rem)">
+                                TRACK
+                            </h3>
+                        </div>
 
-                    <div class="absolute bottom-6 md:bottom-10 left-6 md:left-16 z-10
+                        <!-- Product info bottom right -->
+                        <div class="absolute bottom-6 md:bottom-10 right-6 md:right-16 z-10 text-right
                   translate-y-2 group-hover:translate-y-0 transition-transform duration-400">
-                        <p class="text-[#c9a84c] text-[0.55rem] tracking-[0.2em] uppercase font-body mb-1">
-                            Bottoms
-                        </p>
-                        <p class="font-serif italic text-[#f5f5f0]/80 text-lg md:text-xl mb-2">
-                            Straight Fit Denim - Washed Black
-                        </p>
-                        <p class="text-[#f5f5f0] text-sm font-body">Rs. 8,900</p>
+                            <span class="inline-block bg-red-900/80 text-[#f5f5f0] text-[0.5rem]
+                     font-bold tracking-[0.15em] uppercase px-2.5 py-1 mb-3">
+                                Sale
+                            </span>
+                            <p class="text-[#c9a84c] text-[0.55rem] tracking-[0.2em] uppercase font-body mb-1">
+                                Bottoms
+                            </p>
+                            <p class="font-serif italic text-[#f5f5f0]/80 text-lg md:text-xl mb-2">
+                                Tapered Track Pants - Grey
+                            </p>
+                            <div class="flex items-center justify-end gap-2">
+                                <span class="text-[#f5f5f0] text-sm font-body">Rs. 5,500</span>
+                                <span class="text-[#888880] text-xs line-through font-body">Rs. 7,500</span>
+                            </div>
+                        </div>
+
+                        <span class="absolute top-6 left-6 md:top-10 md:left-16 z-10
+                   font-heading text-4xl md:text-5xl text-white/10 leading-none">
+                            02
+                        </span>
                     </div>
 
-                    <span class="absolute top-6 right-6 md:top-10 md:right-16 z-10
-                   font-heading text-4xl md:text-5xl text-white/10 leading-none">
-                        03
-                    </span>
-                </div>
-            </div>
+                    <!--CARD 3 - Denim -->
+                    <div class="bot-card group relative w-full h-[60vh] md:h-[75vh]
+                overflow-hidden" data-bot-card>
 
-            <!-- View all -->
-            <div class="flex justify-center mt-16 md:mt-20" data-bot-cta>
-                <a href="shop.html" class="group flex items-center gap-3 border border-white/10
+                        <img src="images/Men7.png" alt="Denim Jeans" class="w-full h-full object-cover object-center
+               group-hover:scale-105 transition-transform duration-[1200ms] ease-out" />
+
+                        <div class="absolute inset-0 bg-gradient-to-r
+                  from-[#0a0a0a]/85 via-[#0a0a0a]/20 to-transparent"></div>
+
+                        <div class="absolute inset-0 flex items-center">
+                            <h3 class="font-heading leading-none tracking-wide text-[#f5f5f0]
+                   pl-6 md:pl-16" style="font-size:clamp(3.5rem,10vw,9rem)">
+                                DENIM
+                            </h3>
+                        </div>
+
+                        <div class="absolute bottom-6 md:bottom-10 left-6 md:left-16 z-10
+                  translate-y-2 group-hover:translate-y-0 transition-transform duration-400">
+                            <p class="text-[#c9a84c] text-[0.55rem] tracking-[0.2em] uppercase font-body mb-1">
+                                Bottoms
+                            </p>
+                            <p class="font-serif italic text-[#f5f5f0]/80 text-lg md:text-xl mb-2">
+                                Straight Fit Denim - Washed Black
+                            </p>
+                            <p class="text-[#f5f5f0] text-sm font-body">Rs. 8,900</p>
+                        </div>
+
+                        <span class="absolute top-6 right-6 md:top-10 md:right-16 z-10
+                   font-heading text-4xl md:text-5xl text-white/10 leading-none">
+                            03
+                        </span>
+                    </div>
+                </div>
+
+                <!-- View all -->
+                <div class="flex justify-center mt-16 md:mt-20" data-bot-cta>
+                    <a href="shop.html" class="group flex items-center gap-3 border border-white/10
               text-[#f5f5f0] text-[0.62rem] font-semibold tracking-[0.2em]
               uppercase font-body px-10 py-4
               hover:border-[#c9a84c]/50 hover:text-[#c9a84c]
               transition-all duration-300">
-                    View All Bottoms
-                    <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
-                        class="group-hover:translate-x-1 transition-transform duration-300">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                </a>
-            </div>
-        </section>
+                        View All Bottoms
+                        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5"
+                            viewBox="0 0 24 24" class="group-hover:translate-x-1 transition-transform duration-300">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
+                </div>
+            </section>
 
-        <!-- CHAPTER 04 - FOOTWEAR
+            <!-- CHAPTER 04 - FOOTWEAR
      3D perspective tilt cards on mouse hover (desktop)
      Static elegant cards on touch devices (mobile fallback) -->
 
-        <section id="chapter-footwear" class="relative bg-[#0d0d0d] border-t border-white/5
+            <section id="chapter-footwear" class="relative bg-[#0d0d0d] border-t border-white/5
                                        py-24 md:py-32 px-6 md:px-16 overflow-hidden">
 
-            <!-- Chapter header -->
-            <div class="max-w-7xl mx-auto mb-16 md:mb-20" data-fw-header>
-                <div class="flex items-center gap-3 mb-3">
-                    <span class="font-heading text-3xl text-[#c9a84c]/30 leading-none">04</span>
-                    <span class="block w-8 h-px bg-[#c9a84c]"></span>
-                    <span class="text-[#c9a84c] text-[0.6rem] font-semibold
+                <!-- Chapter header -->
+                <div class="max-w-7xl mx-auto mb-16 md:mb-20" data-fw-header>
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="font-heading text-3xl text-[#c9a84c]/30 leading-none">04</span>
+                        <span class="block w-8 h-px bg-[#c9a84c]"></span>
+                        <span class="text-[#c9a84c] text-[0.6rem] font-semibold
                    tracking-[0.3em] uppercase font-body">
-                        Chapter Four
-                    </span>
-                </div>
-                <h2 class="font-heading text-5xl md:text-7xl text-[#f5f5f0]
+                            Chapter Four
+                        </span>
+                    </div>
+                    <h2 class="font-heading text-5xl md:text-7xl text-[#f5f5f0]
                leading-none tracking-wide">
-                    Footwear
-                </h2>
-            </div>
+                        Footwear
+                    </h2>
+                </div>
 
-            <!-- Tilt cards grid -->
-            <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
+                <!-- Tilt cards grid -->
+                <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
               gap-8 md:gap-10" style="perspective: 1200px;">
 
-                <!-- Card 1 -->
-                <div class="tilt-card-wrap" data-fw-card>
-                    <div class="tilt-card group relative bg-[#111111] overflow-hidden">
+                    <!-- Card 1 -->
+                    <div class="tilt-card-wrap" data-fw-card>
+                        <div class="tilt-card group relative bg-[#111111] overflow-hidden">
 
-                        <!-- Glare layer for tilt effect -->
-                        <div class="tilt-glare"></div>
+                            <!-- Glare layer for tilt effect -->
+                            <div class="tilt-glare"></div>
 
-                        <div class="relative aspect-[4/5] overflow-hidden">
-                            <img src="images/brands.jfif" alt="Street Runner"
-                                class="w-full h-full object-cover object-center" />
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                            <span class="absolute top-4 left-4 bg-[#c9a84c] text-[#0a0a0a]
+                            <div class="relative aspect-[4/5] overflow-hidden">
+                                <img src="images/brands.jfif" alt="Street Runner"
+                                    class="w-full h-full object-cover object-center" />
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                                <span class="absolute top-4 left-4 bg-[#c9a84c] text-[#0a0a0a]
                        text-[0.5rem] font-bold tracking-[0.15em] uppercase px-2.5 py-1">
-                                Bestseller
-                            </span>
-                        </div>
+                                    Bestseller
+                                </span>
+                            </div>
 
-                        <div class="p-5">
-                            <p class="text-[#c9a84c] text-[0.55rem] tracking-[0.2em] uppercase font-body mb-1">
-                                Sneakers
-                            </p>
-                            <h3 class="font-heading text-2xl text-[#f5f5f0] tracking-wide mb-2">
-                                Street Runner
-                            </h3>
-                            <p class="text-[#888880] text-xs font-body mb-3">White / Gold</p>
-                            <div class="flex items-center justify-between">
-                                <span class="text-[#f5f5f0] text-sm font-body">Rs. 18,500</span>
-                                <button class="w-8 h-8 border border-white/15 flex items-center justify-center
+                            <div class="p-5">
+                                <p class="text-[#c9a84c] text-[0.55rem] tracking-[0.2em] uppercase font-body mb-1">
+                                    Sneakers
+                                </p>
+                                <h3 class="font-heading text-2xl text-[#f5f5f0] tracking-wide mb-2">
+                                    Street Runner
+                                </h3>
+                                <p class="text-[#888880] text-xs font-body mb-3">White / Gold</p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-[#f5f5f0] text-sm font-body">Rs. 18,500</span>
+                                    <button class="w-8 h-8 border border-white/15 flex items-center justify-center
                            text-[#888880] hover:border-[#c9a84c] hover:text-[#c9a84c]
                            transition-all duration-300">
-                                    <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5"
-                                        viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" d="M12 4v16m8-8H4" />
-                                    </svg>
-                                </button>
+                                        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" d="M12 4v16m8-8H4" />
+                                        </svg>
+                                    </button>
+                                </div>
                             </div>
+
                         </div>
-
                     </div>
-                </div>
 
-                <!-- Card 2 -->
-                <div class="tilt-card-wrap" data-fw-card>
-                    <div class="tilt-card group relative bg-[#111111] overflow-hidden">
-                        <div class="tilt-glare"></div>
-                        <div class="relative aspect-[4/5] overflow-hidden">
-                            <img src="images/Men8.jfif" alt="High Top Boot"
-                                class="w-full h-full object-cover object-center" />
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                            <span class="absolute top-4 left-4 bg-[#0a0a0a] text-[#c9a84c] border border-[#c9a84c]
+                    <!-- Card 2 -->
+                    <div class="tilt-card-wrap" data-fw-card>
+                        <div class="tilt-card group relative bg-[#111111] overflow-hidden">
+                            <div class="tilt-glare"></div>
+                            <div class="relative aspect-[4/5] overflow-hidden">
+                                <img src="images/Men8.jfif" alt="High Top Boot"
+                                    class="w-full h-full object-cover object-center" />
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                                <span class="absolute top-4 left-4 bg-[#0a0a0a] text-[#c9a84c] border border-[#c9a84c]
                        text-[0.5rem] font-bold tracking-[0.15em] uppercase px-2.5 py-1">
-                                Limited
-                            </span>
-                        </div>
-                        <div class="p-5">
-                            <p class="text-[#c9a84c] text-[0.55rem] tracking-[0.2em] uppercase font-body mb-1">
-                                Boots
-                            </p>
-                            <h3 class="font-heading text-2xl text-[#f5f5f0] tracking-wide mb-2">
-                                High Top Combat
-                            </h3>
-                            <p class="text-[#888880] text-xs font-body mb-3">Full Black</p>
-                            <div class="flex items-center justify-between">
-                                <span class="text-[#f5f5f0] text-sm font-body">Rs. 22,000</span>
-                                <button class="w-8 h-8 border border-white/15 flex items-center justify-center
+                                    Limited
+                                </span>
+                            </div>
+                            <div class="p-5">
+                                <p class="text-[#c9a84c] text-[0.55rem] tracking-[0.2em] uppercase font-body mb-1">
+                                    Boots
+                                </p>
+                                <h3 class="font-heading text-2xl text-[#f5f5f0] tracking-wide mb-2">
+                                    High Top Combat
+                                </h3>
+                                <p class="text-[#888880] text-xs font-body mb-3">Full Black</p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-[#f5f5f0] text-sm font-body">Rs. 22,000</span>
+                                    <button class="w-8 h-8 border border-white/15 flex items-center justify-center
                            text-[#888880] hover:border-[#c9a84c] hover:text-[#c9a84c]
                            transition-all duration-300">
-                                    <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5"
-                                        viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" d="M12 4v16m8-8H4" />
-                                    </svg>
-                                </button>
+                                        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" d="M12 4v16m8-8H4" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="tilt-card-wrap" data-fw-card>
+                        <div class="tilt-card group relative bg-[#111111] overflow-hidden">
+                            <div class="tilt-glare"></div>
+                            <div class="relative aspect-[4/5] overflow-hidden">
+                                <img src="images/Men9.jfif" alt="Low Top Sneaker"
+                                    class="w-full h-full object-cover object-center" />
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                            </div>
+                            <div class="p-5">
+                                <p class="text-[#c9a84c] text-[0.55rem] tracking-[0.2em] uppercase font-body mb-1">
+                                    Sneakers
+                                </p>
+                                <h3 class="font-heading text-2xl text-[#f5f5f0] tracking-wide mb-2">
+                                    Low Top Classic
+                                </h3>
+                                <p class="text-[#888880] text-xs font-body mb-3">Cream / Brown</p>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-[#f5f5f0] text-sm font-body">Rs. 15,000</span>
+                                    <button class="w-8 h-8 border border-white/15 flex items-center justify-center
+                           text-[#888880] hover:border-[#c9a84c] hover:text-[#c9a84c]
+                           transition-all duration-300">
+                                        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" d="M12 4v16m8-8H4" />
+                                        </svg>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card 3 -->
-                <div class="tilt-card-wrap" data-fw-card>
-                    <div class="tilt-card group relative bg-[#111111] overflow-hidden">
-                        <div class="tilt-glare"></div>
-                        <div class="relative aspect-[4/5] overflow-hidden">
-                            <img src="images/Men9.jfif" alt="Low Top Sneaker"
-                                class="w-full h-full object-cover object-center" />
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                        </div>
-                        <div class="p-5">
-                            <p class="text-[#c9a84c] text-[0.55rem] tracking-[0.2em] uppercase font-body mb-1">
-                                Sneakers
-                            </p>
-                            <h3 class="font-heading text-2xl text-[#f5f5f0] tracking-wide mb-2">
-                                Low Top Classic
-                            </h3>
-                            <p class="text-[#888880] text-xs font-body mb-3">Cream / Brown</p>
-                            <div class="flex items-center justify-between">
-                                <span class="text-[#f5f5f0] text-sm font-body">Rs. 15,000</span>
-                                <button class="w-8 h-8 border border-white/15 flex items-center justify-center
-                           text-[#888880] hover:border-[#c9a84c] hover:text-[#c9a84c]
-                           transition-all duration-300">
-                                    <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5"
-                                        viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" d="M12 4v16m8-8H4" />
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- View all -->
-            <div class="max-w-7xl mx-auto flex justify-center mt-16 md:mt-20" data-fw-cta>
-                <a href="shop.html" class="group flex items-center gap-3 border border-white/10
+                <!-- View all -->
+                <div class="max-w-7xl mx-auto flex justify-center mt-16 md:mt-20" data-fw-cta>
+                    <a href="shop.html" class="group flex items-center gap-3 border border-white/10
               text-[#f5f5f0] text-[0.62rem] font-semibold tracking-[0.2em]
               uppercase font-body px-10 py-4
               hover:border-[#c9a84c]/50 hover:text-[#c9a84c]
               transition-all duration-300">
-                    View All Footwear
-                    <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
-                        class="group-hover:translate-x-1 transition-transform duration-300">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                    </svg>
-                </a>
-            </div>
-        </section>
-
-        <!-- CHAPTER 05 - LOOKBOOK Full screen editorial images with scroll-snap -->
-
-        <section id="chapter-lookbook" class="relative bg-[#0a0a0a] border-t border-white/5">
-
-            <!-- Chapter header -->
-            <div class="max-w-7xl mx-auto px-6 md:px-16 py-20 md:py-28" data-lb-header>
-                <div class="flex items-center gap-3 mb-3">
-                    <span class="font-heading text-3xl text-[#c9a84c]/30 leading-none">05</span>
-                    <span class="block w-8 h-px bg-[#c9a84c]"></span>
-                    <span class="text-[#c9a84c] text-[0.6rem] font-semibold
-                   tracking-[0.3em] uppercase font-body">
-                        Chapter Five
-                    </span>
+                        View All Footwear
+                        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5"
+                            viewBox="0 0 24 24" class="group-hover:translate-x-1 transition-transform duration-300">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
                 </div>
-                <h2 class="font-heading text-5xl md:text-7xl text-[#f5f5f0]
-               leading-none tracking-wide mb-4">
-                    The Lookbook
-                </h2>
-                <p class="text-[#888880] text-sm font-body max-w-md">
-                    SS25 editorial. Shot on the streets of Lahore.
-                </p>
-            </div>
+            </section>
 
-            <!-- Scroll-snap gallery container -->
-            <div id="lookbook-scroller" class="relative flex overflow-x-auto snap-x snap-mandatory
+            <!-- CHAPTER 05 - LOOKBOOK Full screen editorial images with scroll-snap -->
+
+            <section id="chapter-lookbook" class="relative bg-[#0a0a0a] border-t border-white/5">
+
+                <!-- Chapter header -->
+                <div class="max-w-7xl mx-auto px-6 md:px-16 py-20 md:py-28" data-lb-header>
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="font-heading text-3xl text-[#c9a84c]/30 leading-none">05</span>
+                        <span class="block w-8 h-px bg-[#c9a84c]"></span>
+                        <span class="text-[#c9a84c] text-[0.6rem] font-semibold
+                   tracking-[0.3em] uppercase font-body">
+                            Chapter Five
+                        </span>
+                    </div>
+                    <h2 class="font-heading text-5xl md:text-7xl text-[#f5f5f0]
+               leading-none tracking-wide mb-4">
+                        The Lookbook
+                    </h2>
+                    <p class="text-[#888880] text-sm font-body max-w-md">
+                        SS25 editorial. Shot on the streets of Lahore.
+                    </p>
+                </div>
+
+                <!-- Scroll-snap gallery container -->
+                <div id="lookbook-scroller" class="relative flex overflow-x-auto snap-x snap-mandatory
               scrollbar-hide">
 
-                <!-- Slide 1 -->
-                <div class="lb-slide relative flex-shrink-0 w-full h-[80vh] md:h-screen
+                    <!-- Slide 1 -->
+                    <div class="lb-slide relative flex-shrink-0 w-full h-[80vh] md:h-screen
                 snap-start snap-always">
-                    <img src="images/Men10.JPG" alt="Lookbook 01" class="w-full h-full object-cover object-center" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/80 via-transparent to-transparent">
-                    </div>
+                        <img src="images/Men10.JPG" alt="Lookbook 01"
+                            class="w-full h-full object-cover object-center" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/80 via-transparent to-transparent">
+                        </div>
 
-                    <!-- Slide info -->
-                    <div class="absolute bottom-8 left-6 md:left-16 z-10">
-                        <span class="font-heading text-6xl text-white/15 leading-none block mb-2">01</span>
-                        <p class="font-serif italic text-[#f5f5f0] text-lg md:text-xl">
-                            "Concrete meets couture"
-                        </p>
-                    </div>
+                        <!-- Slide info -->
+                        <div class="absolute bottom-8 left-6 md:left-16 z-10">
+                            <span class="font-heading text-6xl text-white/15 leading-none block mb-2">01</span>
+                            <p class="font-serif italic text-[#f5f5f0] text-lg md:text-xl">
+                                "Concrete meets couture"
+                            </p>
+                        </div>
 
-                    <!-- Slide counter -->
-                    <div class="absolute top-8 right-6 md:right-16 z-10
+                        <!-- Slide counter -->
+                        <div class="absolute top-8 right-6 md:right-16 z-10
                   text-[#f5f5f0]/50 text-[0.6rem] tracking-[0.2em] uppercase font-body">
-                        <span id="lb-current">01</span> / <span id="lb-total">04</span>
+                            <span id="lb-current">01</span> / <span id="lb-total">04</span>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Slide 2 -->
-                <div class="lb-slide relative flex-shrink-0 w-full h-[80vh] md:h-screen
+                    <!-- Slide 2 -->
+                    <div class="lb-slide relative flex-shrink-0 w-full h-[80vh] md:h-screen
                 snap-start snap-always">
-                    <img src="images/Men11.jpg" alt="Lookbook 02" class="w-full h-full object-cover object-center" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/80 via-transparent to-transparent">
+                        <img src="images/Men11.jpg" alt="Lookbook 02"
+                            class="w-full h-full object-cover object-center" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/80 via-transparent to-transparent">
+                        </div>
+                        <div class="absolute bottom-8 left-6 md:left-16 z-10">
+                            <span class="font-heading text-6xl text-white/15 leading-none block mb-2">02</span>
+                            <p class="font-serif italic text-[#f5f5f0] text-lg md:text-xl">
+                                "Layers of intention"
+                            </p>
+                        </div>
                     </div>
-                    <div class="absolute bottom-8 left-6 md:left-16 z-10">
-                        <span class="font-heading text-6xl text-white/15 leading-none block mb-2">02</span>
-                        <p class="font-serif italic text-[#f5f5f0] text-lg md:text-xl">
-                            "Layers of intention"
-                        </p>
-                    </div>
-                </div>
 
-                <!-- ── Slide 3 ── -->
-                <div class="lb-slide relative flex-shrink-0 w-full h-[80vh] md:h-screen
+                    <!-- ── Slide 3 ── -->
+                    <div class="lb-slide relative flex-shrink-0 w-full h-[80vh] md:h-screen
                 snap-start snap-always">
-                    <img src="images/Men12.jpg" alt="Lookbook 03" class="w-full h-full object-cover object-center" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/80 via-transparent to-transparent">
+                        <img src="images/Men12.jpg" alt="Lookbook 03"
+                            class="w-full h-full object-cover object-center" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/80 via-transparent to-transparent">
+                        </div>
+                        <div class="absolute bottom-8 left-6 md:left-16 z-10">
+                            <span class="font-heading text-6xl text-white/15 leading-none block mb-2">03</span>
+                            <p class="font-serif italic text-[#f5f5f0] text-lg md:text-xl">
+                                "Built different, worn deliberate"
+                            </p>
+                        </div>
                     </div>
-                    <div class="absolute bottom-8 left-6 md:left-16 z-10">
-                        <span class="font-heading text-6xl text-white/15 leading-none block mb-2">03</span>
-                        <p class="font-serif italic text-[#f5f5f0] text-lg md:text-xl">
-                            "Built different, worn deliberate"
-                        </p>
-                    </div>
-                </div>
 
-                <!-- Slide 4 - Final with CTA -->
-                <div class="lb-slide relative flex-shrink-0 w-full h-[80vh] md:h-screen
+                    <!-- Slide 4 - Final with CTA -->
+                    <div class="lb-slide relative flex-shrink-0 w-full h-[80vh] md:h-screen
                 snap-start snap-always">
-                    <img src="images/Men13.png" alt="Lookbook 04" class="w-full h-full object-cover object-center" />
-                    <div class="absolute inset-0 bg-[#0a0a0a]/50"></div>
-                    <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
-                        <span class="font-heading text-6xl text-white/15 leading-none block mb-4">04</span>
-                        <h3 class="font-heading text-4xl md:text-6xl text-[#f5f5f0] tracking-wide mb-6">
-                            Shop the Look
-                        </h3>
-                        <a href="shop.html" class="inline-flex items-center gap-3 bg-[#c9a84c] text-[#0a0a0a]
+                        <img src="images/Men13.png" alt="Lookbook 04"
+                            class="w-full h-full object-cover object-center" />
+                        <div class="absolute inset-0 bg-[#0a0a0a]/50"></div>
+                        <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+                            <span class="font-heading text-6xl text-white/15 leading-none block mb-4">04</span>
+                            <h3 class="font-heading text-4xl md:text-6xl text-[#f5f5f0] tracking-wide mb-6">
+                                Shop the Look
+                            </h3>
+                            <a href="shop.html" class="inline-flex items-center gap-3 bg-[#c9a84c] text-[#0a0a0a]
                   text-[0.65rem] font-bold tracking-[0.2em] uppercase font-body
                   px-9 py-4 hover:bg-transparent hover:text-[#c9a84c]
                   border border-[#c9a84c] transition-all duration-300">
-                            Shop Now
-                            <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                            </svg>
-                        </a>
+                                Shop Now
+                                <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Navigation dots -->
-            <div class="flex items-center justify-center gap-2 py-8" id="lb-dots">
-                <button class="lb-dot active" data-slide="0"></button>
-                <button class="lb-dot" data-slide="1"></button>
-                <button class="lb-dot" data-slide="2"></button>
-                <button class="lb-dot" data-slide="3"></button>
-            </div>
+                <!-- Navigation dots -->
+                <div class="flex items-center justify-center gap-2 py-8" id="lb-dots">
+                    <button class="lb-dot active" data-slide="0"></button>
+                    <button class="lb-dot" data-slide="1"></button>
+                    <button class="lb-dot" data-slide="2"></button>
+                    <button class="lb-dot" data-slide="3"></button>
+                </div>
 
-            <!-- Desktop arrows -->
-            <button id="lb-prev" class="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 z-20
+                <!-- Desktop arrows -->
+                <button id="lb-prev" class="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 z-20
            w-11 h-11 border border-white/15 items-center justify-center
            text-[#f5f5f0]/50 hover:border-[#c9a84c] hover:text-[#c9a84c]
            backdrop-blur-sm bg-black/20 transition-all duration-300">
-                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
-                </svg>
-            </button>
-            <button id="lb-next" class="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 z-20
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+                <button id="lb-next" class="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 z-20
            w-11 h-11 border border-white/15 items-center justify-center
            text-[#f5f5f0]/50 hover:border-[#c9a84c] hover:text-[#c9a84c]
            backdrop-blur-sm bg-black/20 transition-all duration-300">
-                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-                </svg>
-            </button>
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
 
-            <!-- Mobile swipe hint (fades out after first interaction) -->
-            <div id="lb-swipe-hint" class="md:hidden absolute bottom-24 left-1/2 -translate-x-1/2 z-20
+                <!-- Mobile swipe hint (fades out after first interaction) -->
+                <div id="lb-swipe-hint" class="md:hidden absolute bottom-24 left-1/2 -translate-x-1/2 z-20
               flex items-center gap-2 text-[#f5f5f0]/40 text-[0.55rem]
               tracking-[0.2em] uppercase font-body pointer-events-none
               transition-opacity duration-500">
-                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M8 9l-5 5 5 5M21 9l-5 5 5 5" />
-                </svg>
-                Swipe to browse
-            </div>
-        </section>
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8 9l-5 5 5 5M21 9l-5 5 5 5" />
+                    </svg>
+                    Swipe to browse
+                </div>
+            </section>
+        </div>
 
         <!-- FINAL CTA -->
 
@@ -1071,10 +1087,377 @@
             </div>
         </section>
 
+        <!-- NEWSLETTER SIGNUP -->
+
+        <section id="newsletter" class="relative overflow-hidden bg-[#0d0d0d] border-t border-white/5">
+
+            <!-- Background decorative text -->
+            <div class="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
+                <span class="font-heading text-[18vw] text-white/[0.02] whitespace-nowrap select-none leading-none">
+                    SUBSCRIBE
+                </span>
+            </div>
+
+            <!-- Gold top border line -->
+            <div class="w-full h-px bg-gradient-to-r from-transparent via-[#c9a84c]/40 to-transparent"></div>
+
+            <div class="relative z-10 max-w-4xl mx-auto px-6 md:px-16 py-24 text-center">
+
+                <!-- Label -->
+                <div class="flex items-center justify-center gap-4 mb-6" data-nl-header>
+                    <span class="block w-8 h-px bg-[#c9a84c]/50"></span>
+                    <span class="text-[#c9a84c] text-[0.6rem] font-semibold tracking-[0.3em] uppercase font-body">
+                        Stay in the Loop
+                    </span>
+                    <span class="block w-8 h-px bg-[#c9a84c]/50"></span>
+                </div>
+
+                <!-- Heading -->
+                <h2 class="font-heading text-5xl md:text-7xl text-[#f5f5f0] leading-none
+               tracking-wide mb-4" data-nl-heading>
+                    Get Early Access
+                </h2>
+
+                <!-- Subtext -->
+                <p class="text-[#888880] text-sm font-body leading-relaxed max-w-md mx-auto mb-10" data-nl-sub>
+                    Be first to know about new drops, exclusive collabs and member-only
+                    discounts. No spam — just the culture.
+                </p>
+
+                <!-- Form -->
+                <form id="nl-form" class="flex flex-col sm:flex-row items-stretch gap-0 max-w-lg mx-auto mb-8"
+                    data-nl-form>
+
+                    <!-- Email input -->
+                    <div class="relative flex-1">
+                        <input type="email" id="nl-email" placeholder="your@email.com" required class="w-full bg-[#111111] border border-white/10
+                 text-[#f5f5f0] placeholder-[#888880]/50
+                 text-[0.75rem] font-body tracking-wider
+                 px-5 py-4 outline-none
+                 focus:border-[#c9a84c]/50
+                 transition-colors duration-300" />
+                        <!-- Input focus glow line -->
+                        <div id="nl-input-line" class="absolute bottom-0 left-0 h-px w-0 bg-[#c9a84c]
+                    transition-all duration-400">
+                        </div>
+                    </div>
+
+                    <!-- Submit button -->
+                    <button type="submit" id="nl-btn" class="bg-[#c9a84c] text-[#0a0a0a] font-body font-bold
+               text-[0.65rem] tracking-[0.25em] uppercase
+               px-8 py-4 border border-[#c9a84c]
+               hover:bg-transparent hover:text-[#c9a84c]
+               transition-all duration-300
+               flex items-center justify-center gap-2
+               whitespace-nowrap">
+                        <span id="nl-btn-text">Join the Drop List</span>
+                        <svg id="nl-btn-icon" width="13" height="13" fill="none" stroke="currentColor"
+                            stroke-width="1.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </button>
+
+                </form>
+
+                <!-- Success message — hidden by default -->
+                <div id="nl-success" class="hidden flex-col items-center gap-3 py-4" data-nl-success>
+                    <div class="w-10 h-10 border border-[#c9a84c]/40 flex items-center justify-center mx-auto">
+                        <svg width="16" height="16" fill="none" stroke="#c9a84c" stroke-width="1.5" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                    </div>
+                    <p class="text-[#c9a84c] text-[0.65rem] tracking-[0.25em] uppercase font-body font-semibold">
+                        You're on the list
+                    </p>
+                    <p class="text-[#888880] text-xs font-body">
+                        Watch your inbox for the next drop.
+                    </p>
+                </div>
+
+                <!-- Privacy note -->
+                <p class="text-[#888880]/40 text-[0.55rem] tracking-[0.15em] uppercase font-body" data-nl-privacy>
+                    No spam. Unsubscribe anytime. Read our
+                    <a href="#" class="text-[#888880]/60 hover:text-[#c9a84c] transition-colors underline">
+                        Privacy Policy
+                    </a>
+                </p>
+
+                <!-- Perks row -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-6 mt-12 pt-10
+                border-t border-white/5" data-nl-perks>
+
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 border border-[#c9a84c]/20 flex items-center justify-center flex-shrink-0">
+                            <svg width="14" height="14" fill="none" stroke="#c9a84c" stroke-width="1.5"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <span class="text-[#888880] text-[0.6rem] tracking-[0.15em] uppercase font-body">
+                            Early Drop Access
+                        </span>
+                    </div>
+
+                    <div class="w-px h-4 bg-white/10 hidden sm:block"></div>
+
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 border border-[#c9a84c]/20 flex items-center justify-center flex-shrink-0">
+                            <svg width="14" height="14" fill="none" stroke="#c9a84c" stroke-width="1.5"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round"
+                                    d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 0 1 0 2.828l-7 7a2 2 0 0 1-2.828 0l-7-7A1.994 1.994 0 0 1 3 12V7a4 4 0 0 1 4-4z" />
+                            </svg>
+                        </div>
+                        <span class="text-[#888880] text-[0.6rem] tracking-[0.15em] uppercase font-body">
+                            Member Discounts
+                        </span>
+                    </div>
+
+                    <div class="w-px h-4 bg-white/10 hidden sm:block"></div>
+
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 border border-[#c9a84c]/20 flex items-center justify-center flex-shrink-0">
+                            <svg width="14" height="14" fill="none" stroke="#c9a84c" stroke-width="1.5"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round"
+                                    d="M12 15v2m-6 4h12a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2zm10-10V7a4 4 0 0 0-8 0v4h8z" />
+                            </svg>
+                        </div>
+                        <span class="text-[#888880] text-[0.6rem] tracking-[0.15em] uppercase font-body">
+                            Exclusive Collabs
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <!-- Gold bottom border line -->
+            <div class="w-full h-px bg-gradient-to-r from-transparent via-[#c9a84c]/40 to-transparent"></div>
+        </section>
+
+        <!-- FOOTER -->
+
+        <footer id="footer" class="bg-[#080808] border-t border-white/5">
+
+            <!-- Top section -->
+            <div class="max-w-7xl mx-auto px-6 md:px-16 pt-20 pb-12">
+
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8">
+
+                    <!-- Col 1 - Brand (spans 4) -->
+                    <div class="md:col-span-4" data-footer-col>
+
+                        <!-- Logo -->
+                        <a href="index.html" class="font-heading text-4xl tracking-[0.15em] text-[#f5f5f0]
+                  hover:text-[#c9a84c] transition-colors duration-300 block mb-4">
+                            AUREL
+                        </a>
+
+                        <!-- Gold underline -->
+                        <div class="w-10 h-px bg-[#c9a84c] mb-6"></div>
+
+                        <!-- Tagline -->
+                        <p class="text-[#888880] text-sm font-body leading-relaxed max-w-xs mb-8">
+                            Luxury streetwear for those who move without permission.
+                            Limited drops. Unlimited culture.
+                        </p>
+
+                        <!-- Social links -->
+                        <div class="flex items-center gap-3">
+
+                            <a href="http://instagram.com/" aria-label="Instagram" class="w-9 h-9 border border-white/10 flex items-center justify-center
+                    text-[#888880] hover:border-[#c9a84c] hover:text-[#c9a84c]
+                    transition-all duration-300">
+                                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    viewBox="0 0 24 24">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" />
+                                    <circle cx="12" cy="12" r="4" />
+                                    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                                </svg>
+                            </a>
+
+                            <a href="http://tiktok.com/" aria-label="TikTok" class="w-9 h-9 border border-white/10 flex items-center justify-center
+                    text-[#888880] hover:border-[#c9a84c] hover:text-[#c9a84c]
+                    transition-all duration-300">
+                                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.75a4.85 4.85 0 0 1-1.01-.06z" />
+                                </svg>
+                            </a>
+
+                            <a href="https://www.pinterest.com/" aria-label="Pinterest" class="w-9 h-9 border border-white/10 flex items-center justify-center
+                    text-[#888880] hover:border-[#c9a84c] hover:text-[#c9a84c]
+                    transition-all duration-300">
+                                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M12 0C5.373 0 0 5.373 0 12c0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.632-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0z" />
+                                </svg>
+                            </a>
+
+                            <a href="https://x.com/" aria-label="X / Twitter" class="w-9 h-9 border border-white/10 flex items-center justify-center
+                    text-[#888880] hover:border-[#c9a84c] hover:text-[#c9a84c]
+                    transition-all duration-300">
+                                <svg width="13" height="13" fill="currentColor" viewBox="0 0 24 24">
+                                    <path
+                                        d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                                </svg>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Col 2 - Shop (spans 2) -->
+                    <div class="md:col-span-2" data-footer-col>
+                        <h4 class="font-heading text-lg tracking-[0.12em] text-[#f5f5f0] mb-5">
+                            Shop
+                        </h4>
+                        <div class="w-5 h-px bg-[#c9a84c]/50 mb-5"></div>
+                        <ul class="space-y-3">
+                            <li><a href="men.html" class="footer-link">Men's</a></li>
+                            <li><a href="women.html" class="footer-link">Women's</a></li>
+                            <li><a href="kids.html" class="footer-link">Kids'</a></li>
+                            <li><a href="featured.html" class="footer-link">New Arrivals</a></li>
+                            <li><a href="sale.html" class="footer-link text-[#c9a84c]">Sale</a></li>
+                            <li><a href="brands.html" class="footer-link">All Brands</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- ── Col 3 — Help (spans 2) ── -->
+                    <div class="md:col-span-2" data-footer-col>
+                        <h4 class="font-heading text-lg tracking-[0.12em] text-[#f5f5f0] mb-5">
+                            Help
+                        </h4>
+                        <div class="w-5 h-px bg-[#c9a84c]/50 mb-5"></div>
+                        <ul class="space-y-3">
+                            <li><a href="#" class="footer-link">Track Order</a></li>
+                            <li><a href="#" class="footer-link">Returns</a></li>
+                            <li><a href="#" class="footer-link">Shipping Info</a></li>
+                            <li><a href="#" class="footer-link">Size Guide</a></li>
+                            <li><a href="#" class="footer-link">FAQs</a></li>
+                            <li><a href="contact.html" class="footer-link">Contact Us</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Col 4 - Company (spans 2) -->
+                    <div class="md:col-span-2" data-footer-col>
+                        <h4 class="font-heading text-lg tracking-[0.12em] text-[#f5f5f0] mb-5">
+                            Company
+                        </h4>
+                        <div class="w-5 h-px bg-[#c9a84c]/50 mb-5"></div>
+                        <ul class="space-y-3">
+                            <li><a href="about.html" class="footer-link">Our Story</a></li>
+                            <li><a href="brands.html" class="footer-link">Brands</a></li>
+                            <li><a href="#" class="footer-link">Careers</a></li>
+                            <li><a href="#" class="footer-link">Press</a></li>
+                            <li><a href="#" class="footer-link">Sustainability</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Col 5 - Contact (spans 2) -->
+                    <div class="md:col-span-2" data-footer-col>
+                        <h4 class="font-heading text-lg tracking-[0.12em] text-[#f5f5f0] mb-5">
+                            Contact
+                        </h4>
+                        <div class="w-5 h-px bg-[#c9a84c]/50 mb-5"></div>
+                        <ul class="space-y-4">
+
+                            <li class="flex items-start gap-3">
+                                <svg class="w-3.5 h-3.5 text-[#c9a84c] mt-0.5 flex-shrink-0" fill="none"
+                                    stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round"
+                                        d="M17.657 16.657L13.414 20.9a2 2 0 0 1-2.827 0l-4.244-4.243a8 8 0 1 1 11.314 0z" />
+                                    <circle cx="12" cy="11" r="3" />
+                                </svg>
+                                <span class="text-[#888880] text-xs font-body leading-relaxed">
+                                    Gulberg III,<br>Lahore, Pakistan
+                                </span>
+                            </li>
+
+                            <li class="flex items-center gap-3">
+                                <svg class="w-3.5 h-3.5 text-[#c9a84c] flex-shrink-0" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round"
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.22 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6.08 6.08l1.27-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                                </svg>
+                                <a href="tel:+923000000000"
+                                    class="text-[#888880] text-xs font-body hover:text-[#c9a84c] transition-colors">
+                                    +92-300-0000000
+                                </a>
+                            </li>
+
+                            <li class="flex items-center gap-3">
+                                <svg class="w-3.5 h-3.5 text-[#c9a84c] flex-shrink-0" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" viewBox="0 0 24 24">
+                                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                                </svg>
+                                <a href="mailto:info@aurel.com"
+                                    class="text-[#888880] text-xs font-body hover:text-[#c9a84c] transition-colors">
+                                    info@aurel.com
+                                </a>
+                            </li>
+
+                            <!-- Store hours -->
+                            <li class="pt-2 border-t border-white/5">
+                                <p class="text-[#c9a84c] text-[0.55rem] tracking-[0.2em] uppercase font-body mb-1">
+                                    Store Hours
+                                </p>
+                                <p class="text-[#888880] text-xs font-body">Mon–Sat: 11am – 9pm</p>
+                                <p class="text-[#888880] text-xs font-body">Sun: 12pm – 7pm</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="max-w-7xl mx-auto px-6 md:px-16">
+                <div class="w-full h-px bg-white/5"></div>
+            </div>
+
+            <!-- Bottom bar -->
+            <div class="max-w-7xl mx-auto px-6 md:px-16 py-6
+              flex flex-col md:flex-row items-center justify-between gap-4" data-footer-bottom>
+
+                <!-- Copyright -->
+                <p class="text-[#888880]/40 text-[0.58rem] tracking-[0.15em] uppercase font-body">
+                    © 2025 AUREL. All rights reserved.
+                </p>
+
+                <!-- Legal links -->
+                <div class="flex items-center gap-6">
+                    <a href="#" class="text-[#888880]/40 text-[0.55rem] tracking-[0.15em] uppercase
+                         font-body hover:text-[#888880] transition-colors duration-300">
+                        Privacy Policy
+                    </a>
+                    <span class="text-white/10 text-xs">|</span>
+                    <a href="#" class="text-[#888880]/40 text-[0.55rem] tracking-[0.15em] uppercase
+                         font-body hover:text-[#888880] transition-colors duration-300">
+                        Terms of Service
+                    </a>
+                    <span class="text-white/10 text-xs">|</span>
+                    <a href="#" class="text-[#888880]/40 text-[0.55rem] tracking-[0.15em] uppercase
+                         font-body hover:text-[#888880] transition-colors duration-300">
+                        Cookie Policy
+                    </a>
+                </div>
+
+                <!-- Made with -->
+                <p class="text-[#888880]/25 text-[0.52rem] tracking-[0.12em] uppercase font-body">
+                    Crafted with care
+                </p>
+            </div>
+
+            <!-- Big background AUREL text -->
+            <div class="overflow-hidden pointer-events-none pb-4">
+                <div class="font-heading text-center leading-none select-none" style="font-size: clamp(4rem, 18vw, 16rem);
+                color: rgba(245,245,240,0.018);
+                letter-spacing: 0.1em;">
+                    AUREL
+                </div>
+            </div>
+        </footer>
     </main>
-
     <script src="men.js"></script>
-
 </body>
 
 </html>
