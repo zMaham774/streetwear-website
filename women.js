@@ -607,3 +607,37 @@ gsap.to("#lookbook-scroller", {
     duration: 0.9,
     ease: "power2.out"
 });
+
+/* WOMEN'S CTA ANIMATIONS */
+
+gsap.set("[data-wc-label]", { opacity: 0, y: 20 });
+gsap.set("[data-wc-heading]", { opacity: 0, y: 40 });
+gsap.set("[data-wc-sub]", { opacity: 0, y: 20 });
+gsap.set("[data-wc-btns]", { opacity: 0, y: 20 });
+
+const womenCtaTL = gsap.timeline({
+    scrollTrigger: {
+        trigger: "#women-cta",
+        start: "top 75%",
+        toggleActions: "play none none none",
+        once: true
+    }
+});
+
+womenCtaTL
+    .to("[data-wc-label]", { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" })
+    .to("[data-wc-heading]", { opacity: 1, y: 0, duration: 0.9, ease: "power3.out" }, "-=0.3")
+    .to("[data-wc-sub]", { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, "-=0.5")
+    .to("[data-wc-btns]", { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, "-=0.4");
+
+/* Subtle parallax on bg image */
+gsap.to("#women-cta-bg", {
+    scrollTrigger: {
+        trigger: "#women-cta",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true
+    },
+    y: "15%",
+    ease: "none"
+});
