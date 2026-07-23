@@ -524,3 +524,86 @@ gsap.to("[data-wow-cta]", {
     duration: 0.6,
     ease: "power3.out"
 });
+
+/* CHAPTER 05 - LOOKBOOK NAVIGATION LOGIC */
+
+const lbScroller = document.getElementById("lookbook-scroller");
+const lbSlides = document.querySelectorAll(".lb-slide");
+const lbDots = document.querySelectorAll(".lb-dot");
+const lbCurrent = document.getElementById("lb-current");
+const lbSwipeHint = document.getElementById("lb-swipe-hint");
+
+let lbIndex = 0;
+
+function goToLookbookSlide(index) {
+    index = Math.max(0, Math.min(index, lbSlides.length - 1));
+    lbScroller.scrollTo({
+        left: lbSlides[index].offsetLeft,
+        behavior: "smooth"
+    });
+}
+
+function updateLookbookUI() {
+    const scrollLeft = lbScroller.scrollLeft;
+    const slideWidth = lbSlides[0].offsetWidth;
+    const newIndex = Math.round(scrollLeft / slideWidth);
+
+    if (newIndex !== lbIndex) {
+        lbIndex = newIndex;
+        lbDots.forEach((dot, i) => dot.classList.toggle("active", i === lbIndex));
+        if (lbCurrent) lbCurrent.textContent = String(lbIndex + 1).padStart(2, "0");
+    }
+}
+
+let lbScrollTimer;
+lbScroller.addEventListener("scroll", () => {
+    clearTimeout(lbScrollTimer);
+    lbScrollTimer = setTimeout(updateLookbookUI, 50);
+
+    if (lbSwipeHint) {
+        lbSwipeHint.style.opacity = "0";
+    }
+});
+
+lbDots.forEach((dot, i) => {
+    dot.addEventListener("click", () => goToLookbookSlide(i));
+});
+
+const lbPrevBtn = document.getElementById("lb-prev");
+const lbNextBtn = document.getElementById("lb-next");
+
+if (lbPrevBtn) lbPrevBtn.addEventListener("click", () => goToLookbookSlide(lbIndex - 1));
+if (lbNextBtn) lbNextBtn.addEventListener("click", () => goToLookbookSlide(lbIndex + 1));
+
+window.addEventListener("resize", () => {
+    goToLookbookSlide(lbIndex);
+});
+
+/* Header entrance */
+gsap.set("[data-wlb-header]", { opacity: 0, y: 30 });
+gsap.to("[data-wlb-header]", {
+    scrollTrigger: {
+        trigger: "#chapter-lookbook",
+        start: "top 80%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    opacity: 1,
+    y: 0,
+    duration: 0.8,
+    ease: "power3.out"
+});
+
+/* Gallery fade in */
+gsap.set("#lookbook-scroller", { opacity: 0 });
+gsap.to("#lookbook-scroller", {
+    scrollTrigger: {
+        trigger: "#lookbook-scroller",
+        start: "top 85%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    opacity: 1,
+    duration: 0.9,
+    ease: "power2.out"
+});

@@ -872,7 +872,148 @@
                 </div>
             </section>
 
+            <!-- CHAPTER 05 - LOOKBOOK -->
+
+            <section id="chapter-lookbook" class="relative bg-[#0a0a0a] border-t border-white/5">
+
+                <!-- Chapter header -->
+                <div class="max-w-7xl mx-auto px-6 md:px-16 py-20 md:py-28" data-wlb-header>
+                    <div class="flex items-center gap-3 mb-3">
+                        <span class="font-heading text-3xl text-[#c9a84c]/30 leading-none">05</span>
+                        <span class="block w-8 h-px bg-[#c9a84c]"></span>
+                        <span class="text-[#c9a84c] text-[0.6rem] font-semibold
+                   tracking-[0.3em] uppercase font-body">
+                            Chapter Five
+                        </span>
+                    </div>
+                    <h2 class="font-heading text-5xl md:text-7xl text-[#f5f5f0]
+               leading-none tracking-wide mb-4">
+                        The Lookbook
+                    </h2>
+                    <p class="text-[#888880] text-sm font-body max-w-md">
+                        SS25 editorial. Shot on the streets.
+                    </p>
+                </div>
+
+                <!-- Scroll-snap gallery container -->
+                <div id="lookbook-scroller" class="relative flex overflow-x-auto snap-x snap-mandatory
+              scrollbar-hide">
+
+                    <!-- Slide 1 -->
+                    <div class="lb-slide relative flex-shrink-0 w-full h-[80vh] md:h-screen
+                snap-start snap-always">
+                        <img src="images/Women14.png" alt="Lookbook 01" class="w-full h-full object-cover object-top" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/80 via-transparent to-transparent">
+                        </div>
+
+                        <div class="absolute bottom-8 left-6 md:left-16 z-10">
+                            <span class="font-heading text-6xl text-white/15 leading-none block mb-2">01</span>
+                            <p class="font-serif italic text-[#f5f5f0] text-lg md:text-xl">
+                                "Silk and steel resolve"
+                            </p>
+                        </div>
+
+                        <div class="absolute top-8 right-6 md:right-16 z-10
+                  text-[#f5f5f0]/50 text-[0.6rem] tracking-[0.2em] uppercase font-body">
+                            <span id="lb-current">01</span> / <span id="lb-total">04</span>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2 -->
+                    <div class="lb-slide relative flex-shrink-0 w-full h-[80vh] md:h-screen
+                snap-start snap-always">
+                        <img src="images/Women16.png" alt="Lookbook 02" class="w-full h-full object-cover object-top" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/80 via-transparent to-transparent">
+                        </div>
+                        <div class="absolute bottom-8 left-6 md:left-16 z-10">
+                            <span class="font-heading text-6xl text-white/15 leading-none block mb-2">02</span>
+                            <p class="font-serif italic text-[#f5f5f0] text-lg md:text-xl">
+                                "Fluid lines, fixed intent"
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3 -->
+                    <div class="lb-slide relative flex-shrink-0 w-full h-[80vh] md:h-screen
+                snap-start snap-always">
+                        <img src="images/Women13.png" alt="Lookbook 03"
+                            class="w-full h-full object-cover object-center" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/80 via-transparent to-transparent">
+                        </div>
+                        <div class="absolute bottom-8 left-6 md:left-16 z-10">
+                            <span class="font-heading text-6xl text-white/15 leading-none block mb-2">03</span>
+                            <p class="font-serif italic text-[#f5f5f0] text-lg md:text-xl">
+                                "Fierce, unapologetic, free"
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4 -->
+                    <div class="lb-slide relative flex-shrink-0 w-full h-[80vh] md:h-screen
+                snap-start snap-always">
+                        <img src="images/Women15.png" alt="Lookbook 04" class="w-full h-full object-cover object-top" />
+                        <div class="absolute inset-0 bg-[#0a0a0a]/50"></div>
+                        <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+                            <span class="font-heading text-6xl text-white/15 leading-none block mb-4">04</span>
+                            <h3 class="font-heading text-4xl md:text-6xl text-[#f5f5f0] tracking-wide mb-6">
+                                Shop the Look
+                            </h3>
+                            <a href="shop.html" class="inline-flex items-center gap-3 bg-[#c9a84c] text-[#0a0a0a]
+                  text-[0.65rem] font-bold tracking-[0.2em] uppercase font-body
+                  px-9 py-4 hover:bg-transparent hover:text-[#c9a84c]
+                  border border-[#c9a84c] transition-all duration-300">
+                                Shop Now
+                                <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation dots -->
+                <div class="flex items-center justify-center gap-2 py-8" id="lb-dots">
+                    <button class="lb-dot active" data-slide="0"></button>
+                    <button class="lb-dot" data-slide="1"></button>
+                    <button class="lb-dot" data-slide="2"></button>
+                    <button class="lb-dot" data-slide="3"></button>
+                </div>
+
+                <!-- Desktop arrows -->
+                <button id="lb-prev" class="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 z-20
+           w-11 h-11 border border-white/15 items-center justify-center
+           text-[#f5f5f0]/50 hover:border-[#c9a84c] hover:text-[#c9a84c]
+           backdrop-blur-sm bg-black/20 transition-all duration-300">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+                <button id="lb-next" class="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 z-20
+           w-11 h-11 border border-white/15 items-center justify-center
+           text-[#f5f5f0]/50 hover:border-[#c9a84c] hover:text-[#c9a84c]
+           backdrop-blur-sm bg-black/20 transition-all duration-300">
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+
+                <!-- Mobile swipe hint -->
+                <div id="lb-swipe-hint" class="md:hidden absolute bottom-24 left-1/2 -translate-x-1/2 z-20
+              flex items-center gap-2 text-[#f5f5f0]/40 text-[0.55rem]
+              tracking-[0.2em] uppercase font-body pointer-events-none
+              transition-opacity duration-500">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8 9l-5 5 5 5M21 9l-5 5 5 5" />
+                    </svg>
+                    Swipe to browse
+                </div>
+            </section>
         </div>
+
 
 
     </main>
