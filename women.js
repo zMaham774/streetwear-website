@@ -453,3 +453,74 @@ gsap.to("[data-wbot-cta]", {
     duration: 0.6,
     ease: "power3.out"
 });
+
+/* CHAPTER 04 - OUTERWEAR ANIMATIONS */
+
+/* Header */
+gsap.set("[data-wow-header]", { opacity: 0, y: 30 });
+gsap.to("[data-wow-header]", {
+    scrollTrigger: {
+        trigger: "#chapter-outerwear",
+        start: "top 78%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    opacity: 1,
+    y: 0,
+    duration: 0.8,
+    ease: "power3.out"
+});
+
+/* Each row - image and text slide in from opposite directions */
+const womenOuterwearRows = document.querySelectorAll("[data-wow-row]");
+
+womenOuterwearRows.forEach((row, i) => {
+    const img = row.querySelector("[data-wow-img]");
+    const text = row.querySelector("[data-wow-text]");
+    const isEven = i % 2 === 0;
+
+    gsap.set(img, { opacity: 0, x: isEven ? -60 : 60 });
+    gsap.set(text, { opacity: 0, x: isEven ? 60 : -60 });
+
+    gsap.to(img, {
+        scrollTrigger: {
+            trigger: row,
+            start: "top 80%",
+            toggleActions: "play none none none",
+            once: true
+        },
+        opacity: 1,
+        x: 0,
+        duration: 0.9,
+        ease: "power3.out"
+    });
+
+    gsap.to(text, {
+        scrollTrigger: {
+            trigger: row,
+            start: "top 80%",
+            toggleActions: "play none none none",
+            once: true
+        },
+        opacity: 1,
+        x: 0,
+        duration: 0.9,
+        delay: 0.15,
+        ease: "power3.out"
+    });
+});
+
+/* CTA */
+gsap.set("[data-wow-cta]", { opacity: 0, y: 20 });
+gsap.to("[data-wow-cta]", {
+    scrollTrigger: {
+        trigger: "[data-wow-cta]",
+        start: "top 90%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    opacity: 1,
+    y: 0,
+    duration: 0.6,
+    ease: "power3.out"
+});
