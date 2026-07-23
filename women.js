@@ -333,3 +333,74 @@ gsap.to("[data-dr-cta]", {
     duration: 0.6,
     ease: "power3.out"
 });
+
+/* CHAPTER 02 - TOPS ANIMATIONS */
+
+/* Header */
+gsap.set("[data-wtop-header]", { opacity: 0, y: 30 });
+gsap.to("[data-wtop-header]", {
+    scrollTrigger: {
+        trigger: "#chapter-tops",
+        start: "top 78%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    opacity: 1,
+    y: 0,
+    duration: 0.8,
+    ease: "power3.out"
+});
+
+/* Each row - image and text slide in from opposite directions, direction alternates automatically based on row index */
+const womenTopsRows = document.querySelectorAll("[data-wtop-row]");
+
+womenTopsRows.forEach((row, i) => {
+    const img = row.querySelector("[data-wtop-img]");
+    const text = row.querySelector("[data-wtop-text]");
+    const isEven = i % 2 === 0;
+
+    gsap.set(img, { opacity: 0, x: isEven ? -60 : 60 });
+    gsap.set(text, { opacity: 0, x: isEven ? 60 : -60 });
+
+    gsap.to(img, {
+        scrollTrigger: {
+            trigger: row,
+            start: "top 80%",
+            toggleActions: "play none none none",
+            once: true
+        },
+        opacity: 1,
+        x: 0,
+        duration: 0.9,
+        ease: "power3.out"
+    });
+
+    gsap.to(text, {
+        scrollTrigger: {
+            trigger: row,
+            start: "top 80%",
+            toggleActions: "play none none none",
+            once: true
+        },
+        opacity: 1,
+        x: 0,
+        duration: 0.9,
+        delay: 0.15,
+        ease: "power3.out"
+    });
+});
+
+/* CTA */
+gsap.set("[data-wtop-cta]", { opacity: 0, y: 20 });
+gsap.to("[data-wtop-cta]", {
+    scrollTrigger: {
+        trigger: "[data-wtop-cta]",
+        start: "top 90%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    opacity: 1,
+    y: 0,
+    duration: 0.6,
+    ease: "power3.out"
+});
