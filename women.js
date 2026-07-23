@@ -285,3 +285,51 @@ gsap.from("#category-nav", {
     duration: 0.6,
     ease: "power2.out"
 });
+
+/* CHAPTER 01 - DRESSES ANIMATIONS */
+
+/* Header */
+gsap.set("[data-dr-header]", { opacity: 0, y: 30 });
+gsap.to("[data-dr-header]", {
+    scrollTrigger: {
+        trigger: "#chapter-dresses",
+        start: "top 78%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    opacity: 1,
+    y: 0,
+    duration: 0.8,
+    ease: "power3.out"
+});
+
+/* Cards fade + rise in with stagger */
+gsap.set("[data-dr-card]", { opacity: 0, y: 40 });
+gsap.to("[data-dr-card]", {
+    scrollTrigger: {
+        trigger: "#chapter-dresses",
+        start: "top 65%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    opacity: 1,
+    y: 0,
+    duration: 0.7,
+    stagger: 0.08,
+    ease: "power3.out"
+});
+
+/* CTA */
+gsap.set("[data-dr-cta]", { opacity: 0, y: 20 });
+gsap.to("[data-dr-cta]", {
+    scrollTrigger: {
+        trigger: "[data-dr-cta]",
+        start: "top 90%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    opacity: 1,
+    y: 0,
+    duration: 0.6,
+    ease: "power3.out"
+});

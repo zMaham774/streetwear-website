@@ -1509,3 +1509,15 @@ body::after {
   will-change: opacity;
   pointer-events: none;
 }
+
+/* CHAPTER 01 - DRESSES MASONRY GRID */
+
+.dr-card {
+  display: inline-block;
+  width: 100%;
+}
+
+/* Prevent image flash/jump before aspect-ratio kicks in */
+.dr-card img {
+  display: block;
+}
