@@ -641,3 +641,161 @@ gsap.to("#women-cta-bg", {
     y: "15%",
     ease: "none"
 });
+
+/* NEWSLETTER ANIMATIONS & FORM HANDLER */
+
+/* Scroll animations */
+
+gsap.from("[data-nl-header]", {
+    scrollTrigger: {
+        trigger: "#newsletter",
+        start: "top 85%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    y: 20,
+    opacity: 0,
+    duration: 0.7,
+    ease: "power3.out"
+});
+
+gsap.from("[data-nl-heading]", {
+    scrollTrigger: {
+        trigger: "#newsletter",
+        start: "top 80%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    y: 40,
+    opacity: 0,
+    duration: 0.9,
+    ease: "power3.out"
+});
+
+gsap.from("[data-nl-sub]", {
+    scrollTrigger: {
+        trigger: "#newsletter",
+        start: "top 75%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    y: 20,
+    opacity: 0,
+    duration: 0.7,
+    delay: 0.1,
+    ease: "power3.out"
+});
+
+gsap.from("[data-nl-form]", {
+    scrollTrigger: {
+        trigger: "#newsletter",
+        start: "top 72%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    y: 25,
+    opacity: 0,
+    duration: 0.7,
+    delay: 0.15,
+    ease: "power3.out"
+});
+
+gsap.from("[data-nl-perks]", {
+    scrollTrigger: {
+        trigger: "[data-nl-perks]",
+        start: "top 90%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    y: 20,
+    opacity: 0,
+    duration: 0.6,
+    ease: "power3.out"
+});
+
+/* Input focus glow line via JS */
+const nlEmail = document.getElementById("nl-email");
+const nlLine = document.getElementById("nl-input-line");
+
+if (nlEmail && nlLine) {
+    nlEmail.addEventListener("focus", () => {
+        nlLine.style.width = "100%";
+    });
+    nlEmail.addEventListener("blur", () => {
+        nlLine.style.width = "0%";
+    });
+}
+
+/*  Form submission handler */
+const nlForm = document.getElementById("nl-form");
+const nlSuccess = document.getElementById("nl-success");
+const nlBtn = document.getElementById("nl-btn");
+const nlBtnText = document.getElementById("nl-btn-text");
+const nlBtnIcon = document.getElementById("nl-btn-icon");
+
+if (nlForm) {
+    nlForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        // Loading state
+        nlBtnText.textContent = "Joining...";
+        nlBtnIcon.style.display = "none";
+        nlBtn.disabled = true;
+
+        // Simulate API call
+        setTimeout(() => {
+
+            // Hide form
+            gsap.to(nlForm, {
+                opacity: 0,
+                y: -10,
+                duration: 0.4,
+                onComplete: () => {
+                    nlForm.style.display = "none";
+
+                    // Show success
+                    nlSuccess.classList.remove("hidden");
+                    nlSuccess.classList.add("flex");
+
+                    gsap.from(nlSuccess, {
+                        opacity: 0,
+                        y: 15,
+                        duration: 0.5,
+                        ease: "power3.out"
+                    });
+                }
+            });
+
+        }, 1200);
+    });
+}
+
+/* FOOTER ANIMATIONS */
+
+/* Footer columns stagger in */
+gsap.from("[data-footer-col]", {
+    scrollTrigger: {
+        trigger: "#footer",
+        start: "top 90%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    y: 30,
+    opacity: 0,
+    duration: 0.7,
+    stagger: 0.1,
+    ease: "power3.out"
+});
+
+/* Bottom bar fades in */
+gsap.from("[data-footer-bottom]", {
+    scrollTrigger: {
+        trigger: "[data-footer-bottom]",
+        start: "top 98%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    opacity: 0,
+    duration: 0.6,
+    ease: "power2.out"
+});
