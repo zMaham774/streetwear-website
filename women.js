@@ -404,3 +404,52 @@ gsap.to("[data-wtop-cta]", {
     duration: 0.6,
     ease: "power3.out"
 });
+
+/* CHAPTER 03 - BOTTOMS ANIMATIONS */
+
+/* Header */
+gsap.set("[data-wbot-header]", { opacity: 0, y: 30 });
+gsap.to("[data-wbot-header]", {
+    scrollTrigger: {
+        trigger: "#chapter-bottoms",
+        start: "top 78%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    opacity: 1,
+    y: 0,
+    duration: 0.8,
+    ease: "power3.out"
+});
+
+/* Circle cards pop in with a subtle scale + stagger */
+gsap.set("[data-wbot-card]", { opacity: 0, scale: 0.85, y: 20 });
+gsap.to("[data-wbot-card]", {
+    scrollTrigger: {
+        trigger: "#chapter-bottoms",
+        start: "top 70%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    duration: 0.7,
+    stagger: 0.1,
+    ease: "back.out(1.4)"
+});
+
+/* CTA */
+gsap.set("[data-wbot-cta]", { opacity: 0, y: 20 });
+gsap.to("[data-wbot-cta]", {
+    scrollTrigger: {
+        trigger: "[data-wbot-cta]",
+        start: "top 90%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    opacity: 1,
+    y: 0,
+    duration: 0.6,
+    ease: "power3.out"
+});
