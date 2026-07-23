@@ -1498,3 +1498,14 @@ body::after {
   background: #c9a84c;
   width: 40px;
 }
+
+/* WOMEN'S HERO - REVEAL ON SCROLL */
+
+#wh-img {
+  will-change: filter, transform;
+}
+
+#wh-overlay {
+  will-change: opacity;
+  pointer-events: none;
+}
