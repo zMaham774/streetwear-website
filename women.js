@@ -230,3 +230,58 @@ gsap.to("[data-wh-scroll]", {
 
 /* Navbar entrance */
 gsap.from("#nav", { y: -20, opacity: 0, duration: 0.8, delay: 0.3, ease: "power3.out" });
+
+/* CATEGORY NAVIGATION - smooth scroll + active state tracking */
+
+const catNavBtns = document.querySelectorAll(".cat-nav-btn");
+
+/* Click - smooth scroll to target chapter using Lenis */
+catNavBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+        const targetId = btn.getAttribute("data-target");
+        const targetEl = document.getElementById(targetId);
+        if (!targetEl) return;
+
+        lenis.scrollTo(targetEl, {
+            offset: -80,
+            duration: 1.2
+        });
+    });
+});
+
+/* Scroll spy - highlight active chapter as user scrolls */
+const chapters = ["chapter-dresses", "chapter-tops", "chapter-bottoms",
+    "chapter-outerwear", "chapter-lookbook"];
+
+chapters.forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+
+    ScrollTrigger.create({
+        trigger: el,
+        start: "top 40%",
+        end: "bottom 40%",
+        onEnter: () => setActiveCatNav(id),
+        onEnterBack: () => setActiveCatNav(id),
+    });
+});
+
+function setActiveCatNav(activeId) {
+    catNavBtns.forEach(btn => {
+        btn.classList.toggle("active", btn.getAttribute("data-target") === activeId);
+    });
+}
+
+/* Category nav entrance */
+gsap.from("#category-nav", {
+    scrollTrigger: {
+        trigger: "#category-nav",
+        start: "top 95%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    opacity: 0,
+    y: -10,
+    duration: 0.6,
+    ease: "power2.out"
+});
