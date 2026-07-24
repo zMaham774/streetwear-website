@@ -1521,3 +1521,16 @@ body::after {
 .dr-card img {
   display: block;
 }
+
+/* KIDS HERO - BOUNCE-IN */
+
+.kh-letter {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+#kh-shape-1,
+#kh-shape-2,
+#kh-shape-3 {
+  will-change: transform;
+}
