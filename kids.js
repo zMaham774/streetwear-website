@@ -276,3 +276,48 @@ gsap.from("#category-nav", {
     duration: 0.6,
     ease: "power2.out"
 });
+
+/* CHAPTER 01 - BOYS ANIMATIONS */
+
+gsap.set("[data-boys-header]", { opacity: 0, y: 30 });
+gsap.to("[data-boys-header]", {
+    scrollTrigger: {
+        trigger: "#chapter-boys",
+        start: "top 78%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    opacity: 1,
+    y: 0,
+    duration: 0.8,
+    ease: "power3.out"
+});
+
+gsap.set("[data-boys-card]", { opacity: 0, y: 40 });
+gsap.to("[data-boys-card]", {
+    scrollTrigger: {
+        trigger: "#chapter-boys",
+        start: "top 70%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    opacity: 1,
+    y: 0,
+    duration: 0.6,
+    stagger: 0.08,
+    ease: "power3.out"
+});
+
+gsap.set("[data-boys-cta]", { opacity: 0, y: 20 });
+gsap.to("[data-boys-cta]", {
+    scrollTrigger: {
+        trigger: "[data-boys-cta]",
+        start: "top 90%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    opacity: 1,
+    y: 0,
+    duration: 0.6,
+    ease: "power3.out"
+});
