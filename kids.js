@@ -321,3 +321,48 @@ gsap.to("[data-boys-cta]", {
     duration: 0.6,
     ease: "power3.out"
 });
+
+/* CHAPTER 02 - GIRLS ANIMATIONS */
+
+gsap.set("[data-girls-header]", { opacity: 0, y: 30 });
+gsap.to("[data-girls-header]", {
+    scrollTrigger: {
+        trigger: "#chapter-girls",
+        start: "top 78%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    opacity: 1,
+    y: 0,
+    duration: 0.8,
+    ease: "power3.out"
+});
+
+gsap.set("[data-girls-card]", { opacity: 0, y: 40 });
+gsap.to("[data-girls-card]", {
+    scrollTrigger: {
+        trigger: "#chapter-girls",
+        start: "top 70%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    opacity: 1,
+    y: 0,
+    duration: 0.6,
+    stagger: 0.08,
+    ease: "power3.out"
+});
+
+gsap.set("[data-girls-cta]", { opacity: 0, y: 20 });
+gsap.to("[data-girls-cta]", {
+    scrollTrigger: {
+        trigger: "[data-girls-cta]",
+        start: "top 90%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    opacity: 1,
+    y: 0,
+    duration: 0.6,
+    ease: "power3.out"
+});
