@@ -366,3 +366,49 @@ gsap.to("[data-girls-cta]", {
     duration: 0.6,
     ease: "power3.out"
 });
+
+/* CHAPTER 03 - NEWBORN ANIMATIONS */
+
+gsap.set("[data-nb-header]", { opacity: 0, y: 25 });
+gsap.to("[data-nb-header]", {
+    scrollTrigger: {
+        trigger: "#chapter-newborn",
+        start: "top 78%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    opacity: 1,
+    y: 0,
+    duration: 0.9,
+    ease: "sine.out"
+});
+
+gsap.set("[data-nb-card]", { opacity: 0, y: 30, scale: 0.96 });
+gsap.to("[data-nb-card]", {
+    scrollTrigger: {
+        trigger: "#chapter-newborn",
+        start: "top 70%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    duration: 0.8,
+    stagger: 0.1,
+    ease: "sine.out"
+});
+
+gsap.set("[data-nb-cta]", { opacity: 0, y: 15 });
+gsap.to("[data-nb-cta]", {
+    scrollTrigger: {
+        trigger: "[data-nb-cta]",
+        start: "top 90%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    opacity: 1,
+    y: 0,
+    duration: 0.6,
+    ease: "sine.out"
+});
