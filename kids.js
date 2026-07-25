@@ -541,3 +541,39 @@ gsap.to("#lookbook-scroller", {
     duration: 0.9,
     ease: "power2.out"
 });
+
+/* KIDS CTA ANIMATIONS */
+
+gsap.set("[data-kc-label]", { opacity: 0, y: 20 });
+gsap.set("[data-kc-heading]", { opacity: 0, y: 40 });
+gsap.set("[data-kc-sub]", { opacity: 0, y: 20 });
+gsap.set("[data-kc-trust]", { opacity: 0, y: 15 });
+gsap.set("[data-kc-btns]", { opacity: 0, y: 20 });
+
+const kidsCtaTL = gsap.timeline({
+    scrollTrigger: {
+        trigger: "#kids-cta",
+        start: "top 75%",
+        toggleActions: "play none none none",
+        once: true
+    }
+});
+
+kidsCtaTL
+    .to("[data-kc-label]", { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" })
+    .to("[data-kc-heading]", { opacity: 1, y: 0, duration: 0.9, ease: "power3.out" }, "-=0.3")
+    .to("[data-kc-sub]", { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, "-=0.5")
+    .to("[data-kc-trust]", { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, "-=0.4")
+    .to("[data-kc-btns]", { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, "-=0.3");
+
+/* Subtle parallax on bg image */
+gsap.to("#kids-cta-bg", {
+    scrollTrigger: {
+        trigger: "#kids-cta",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true
+    },
+    y: "15%",
+    ease: "none"
+});
