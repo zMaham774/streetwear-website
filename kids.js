@@ -412,3 +412,49 @@ gsap.to("[data-nb-cta]", {
     duration: 0.6,
     ease: "sine.out"
 });
+
+/* CHAPTER 04 - SHOES & ACCESSORIES ANIMATIONS */
+
+gsap.set("[data-acc-header]", { opacity: 0, y: 30 });
+gsap.to("[data-acc-header]", {
+    scrollTrigger: {
+        trigger: "#chapter-accessories",
+        start: "top 78%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    opacity: 1,
+    y: 0,
+    duration: 0.8,
+    ease: "power3.out"
+});
+
+gsap.set("[data-acc-card]", { opacity: 0, scale: 0.85, y: 20 });
+gsap.to("[data-acc-card]", {
+    scrollTrigger: {
+        trigger: "#chapter-accessories",
+        start: "top 70%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    duration: 0.7,
+    stagger: 0.1,
+    ease: "back.out(1.4)"
+});
+
+gsap.set("[data-acc-cta]", { opacity: 0, y: 20 });
+gsap.to("[data-acc-cta]", {
+    scrollTrigger: {
+        trigger: "[data-acc-cta]",
+        start: "top 90%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    opacity: 1,
+    y: 0,
+    duration: 0.6,
+    ease: "power3.out"
+});
