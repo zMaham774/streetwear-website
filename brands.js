@@ -339,3 +339,39 @@ gsap.from(".brand-cell", {
     stagger: 0.05,
     ease: "power3.out"
 });
+
+/* BRANDS CTA ANIMATIONS */
+
+gsap.set("[data-bc-label]", { opacity: 0, y: 20 });
+gsap.set("[data-bc-heading]", { opacity: 0, y: 40 });
+gsap.set("[data-bc-sub]", { opacity: 0, y: 20 });
+gsap.set("[data-bc-criteria]", { opacity: 0, y: 15 });
+gsap.set("[data-bc-btns]", { opacity: 0, y: 20 });
+
+const brandsCtaTL = gsap.timeline({
+    scrollTrigger: {
+        trigger: "#brands-cta",
+        start: "top 75%",
+        toggleActions: "play none none none",
+        once: true
+    }
+});
+
+brandsCtaTL
+    .to("[data-bc-label]", { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" })
+    .to("[data-bc-heading]", { opacity: 1, y: 0, duration: 0.9, ease: "power3.out" }, "-=0.3")
+    .to("[data-bc-sub]", { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, "-=0.5")
+    .to("[data-bc-criteria]", { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, "-=0.4")
+    .to("[data-bc-btns]", { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, "-=0.3");
+
+/* Subtle parallax on bg image */
+gsap.to("#brands-cta-bg", {
+    scrollTrigger: {
+        trigger: "#brands-cta",
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true
+    },
+    y: "15%",
+    ease: "none"
+});
