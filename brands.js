@@ -182,3 +182,160 @@ gsap.timeline({
     .to("[data-bs-title]", { opacity: 1, y: 0, duration: 0.9, ease: "power3.out" }, "-=0.3")
     .to("[data-bs-quote]", { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, "-=0.5")
     .to("[data-bs-btn]", { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, "-=0.4");
+
+/* ALL BRANDS - DATA, RENDER, FILTER, SEARCH */
+
+/* Brand Data */
+const brandData = [
+    { id: 1, name: "SUPREME", tag: "Streetwear", cat: "streetwear", since: "1994", img: "images/supreme.jfif" },
+    { id: 2, name: "OFF—WHITE", tag: "Luxury Street", cat: "luxury", since: "2012", img: "images/off-white.jfif" },
+    { id: 3, name: "ESSENTIALS", tag: "Fear of God", cat: "luxury", since: "2013", img: "images/essentials.jfif" },
+    { id: 4, name: "KITH", tag: "Lifestyle", cat: "streetwear", since: "2011", img: "images/kith.jfif" },
+    { id: 5, name: "PALACE", tag: "Skate & Street", cat: "skate", since: "2009", img: "images/palace.jfif" },
+    { id: 6, name: "STÜSSY", tag: "Classic Street", cat: "streetwear", since: "1980", img: "images/stussy.jfif" },
+    { id: 7, name: "A-COLD-WALL", tag: "Avant-Garde", cat: "avant-garde", since: "2015", img: "images/cold-wall.jfif" },
+    { id: 8, name: "REPRESENT", tag: "Premium UK", cat: "luxury", since: "2013", img: "images/represent.jfif" },
+    { id: 9, name: "THRASHER", tag: "Skate Culture", cat: "skate", since: "1981", img: "images/thrasher.jfif" },
+    { id: 10, name: "RICK OWENS", tag: "Avant-Garde", cat: "avant-garde", since: "1994", img: "images/rickowens.jfif" },
+    { id: 11, name: "CARSICKO", tag: "Modern UK", cat: "streetwear", since: "2020", img: "images/carisko.jfif" },
+    { id: 12, name: "AMIRI", tag: "Luxury", cat: "luxury", since: "2014", img: "images/amiri.jfif" },
+];
+
+let brandCurrentFilter = "all";
+let brandSearchTerm = "";
+
+const brandsGrid = document.getElementById("brands-grid");
+const brandResultsCount = document.getElementById("brand-results-count");
+const brandNoResults = document.getElementById("brand-no-results");
+
+/* Build a single brand cell */
+function buildBrandCell(brand) {
+    return `
+    <a href="shop.html?brand=${brand.name.toLowerCase().replace(/[^a-z]/g, '')}"
+       class="brand-cell group flex flex-col items-center justify-center
+              py-16 px-6 min-h-[260px] relative overflow-hidden hover:bg-[#111111]
+              transition-colors duration-400">
+      <img src="${brand.img}" alt="${brand.name}"
+           class="absolute inset-0 w-full h-full object-cover
+                  opacity-40 group-hover:opacity-55 group-hover:scale-105
+                  transition-all duration-500" />
+      <div class="absolute inset-0 bg-gradient-to-t
+                  from-black/70 via-black/40 to-black/55"></div>
+      <div class="brand-cell-glow"></div>
+      <span class="font-heading text-3xl tracking-[0.12em] text-[#888880]
+                   group-hover:text-[#f5f5f0] transition-colors duration-300 relative z-10">
+        ${brand.name}
+      </span>
+      <span class="text-[#c9a84c]/0 group-hover:text-[#c9a84c]/60 text-[0.5rem]
+                   tracking-[0.25em] uppercase font-body mt-2
+                   transition-colors duration-300 relative z-10">
+        ${brand.tag} · Est. ${brand.since}
+      </span>
+    </a>
+  `;
+}
+
+/* Filter + search combined */
+function getFilteredBrands() {
+    return brandData.filter(b => {
+        const matchesCat = brandCurrentFilter === "all" || b.cat === brandCurrentFilter;
+        const matchesSearch = b.name.toLowerCase().includes(brandSearchTerm.toLowerCase());
+        return matchesCat && matchesSearch;
+    });
+}
+
+/* Render grid */
+function renderBrandsGrid(animate = true) {
+    const list = getFilteredBrands();
+
+    if (list.length === 0) {
+        brandsGrid.innerHTML = "";
+        brandsGrid.classList.add("hidden");
+        brandNoResults.classList.remove("hidden");
+    } else {
+        brandsGrid.classList.remove("hidden");
+        brandNoResults.classList.add("hidden");
+        brandsGrid.innerHTML = list.map(buildBrandCell).join("");
+    }
+
+    brandResultsCount.textContent = `Showing ${list.length} of ${brandData.length} brands`;
+
+    if (animate) {
+        gsap.from(".brand-cell", {
+            opacity: 0,
+            y: 20,
+            duration: 0.5,
+            stagger: 0.04,
+            ease: "power3.out"
+        });
+    }
+}
+
+/* Filter pill clicks */
+document.querySelectorAll("#brand-category-pills .filter-pill").forEach(pill => {
+    pill.addEventListener("click", () => {
+        document.querySelectorAll("#brand-category-pills .filter-pill")
+            .forEach(p => p.classList.remove("active"));
+        pill.classList.add("active");
+        brandCurrentFilter = pill.getAttribute("data-cat");
+        renderBrandsGrid();
+    });
+});
+
+/* Search input */
+const brandSearchInput = document.getElementById("brand-search");
+let brandSearchDebounce;
+
+brandSearchInput.addEventListener("input", (e) => {
+    clearTimeout(brandSearchDebounce);
+    brandSearchDebounce = setTimeout(() => {
+        brandSearchTerm = e.target.value.trim();
+        renderBrandsGrid();
+    }, 200);
+});
+
+/* Initial render */
+renderBrandsGrid(false);
+
+/* Scroll entrance for header/filterbar */
+gsap.set("[data-ab-header]", { opacity: 0, y: 30 });
+gsap.to("[data-ab-header]", {
+    scrollTrigger: {
+        trigger: "#all-brands",
+        start: "top 80%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    opacity: 1,
+    y: 0,
+    duration: 0.8,
+    ease: "power3.out"
+});
+
+gsap.set("[data-ab-filterbar]", { opacity: 0, y: 20 });
+gsap.to("[data-ab-filterbar]", {
+    scrollTrigger: {
+        trigger: "#all-brands",
+        start: "top 72%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    opacity: 1,
+    y: 0,
+    duration: 0.7,
+    ease: "power3.out"
+});
+
+gsap.from(".brand-cell", {
+    scrollTrigger: {
+        trigger: "#brands-grid",
+        start: "top 78%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    opacity: 0,
+    y: 30,
+    duration: 0.6,
+    stagger: 0.05,
+    ease: "power3.out"
+});

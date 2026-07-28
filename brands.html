@@ -251,6 +251,80 @@
             </span>
         </section>
 
+        <!-- FILTER/SEARCH BAR + ALL BRANDS GRID-->
+
+        <section id="all-brands" class="bg-[#0a0a0a] px-6 md:px-16 py-24">
+
+            <div class="max-w-7xl mx-auto">
+
+                <!-- Section header -->
+                <div class="text-center mb-14" data-ab-header>
+                    <div class="flex items-center justify-center gap-4 mb-4">
+                        <span class="block w-8 h-px bg-[#c9a84c]/50"></span>
+                        <span class="text-[#c9a84c] text-[0.6rem] font-semibold tracking-[0.3em] uppercase font-body">
+                            The Directory
+                        </span>
+                        <span class="block w-8 h-px bg-[#c9a84c]/50"></span>
+                    </div>
+                    <h2 class="font-heading text-5xl md:text-6xl text-[#f5f5f0] tracking-wide leading-none">
+                        All Brands
+                    </h2>
+                    <p
+                        class="text-[#666660] text-[0.65rem] tracking-[0.05em] font-body mt-5 max-w-md mx-auto leading-relaxed">
+                        For portfolio demonstration purposes only. Brand names shown are used as
+                        design inspiration and do not represent any real affiliation, partnership, or endorsement.
+                    </p>
+                </div>
+
+                <!-- Filter & Search Bar -->
+                <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between
+                gap-5 pb-8 mb-10 border-b border-white/8" data-ab-filterbar>
+
+                    <!-- Category pills -->
+                    <div class="flex items-center gap-2 flex-wrap" id="brand-category-pills">
+                        <button class="filter-pill active" data-cat="all">All</button>
+                        <button class="filter-pill" data-cat="streetwear">Streetwear</button>
+                        <button class="filter-pill" data-cat="luxury">Luxury</button>
+                        <button class="filter-pill" data-cat="skate">Skate</button>
+                        <button class="filter-pill" data-cat="avant-garde">Avant-Garde</button>
+                    </div>
+
+                    <!-- Search input -->
+                    <div class="relative w-full lg:w-64">
+                        <input type="text" id="brand-search" placeholder="Search brands..." class="w-full bg-transparent border border-white/10
+                 text-[#f5f5f0] placeholder-[#888880]/50
+                 text-[0.7rem] font-body tracking-wide
+                 px-4 py-2.5 pr-9 outline-none
+                 focus:border-[#c9a84c]/50 transition-colors duration-300" />
+                        <svg class="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none
+                   w-3.5 h-3.5 text-[#888880]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <circle cx="11" cy="11" r="7.5" />
+                            <path stroke-linecap="round" d="m21 21-4.5-4.5" />
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Results count -->
+                <p id="brand-results-count" class="text-[#888880] text-[0.6rem]
+               tracking-[0.1em] uppercase font-body mb-6">
+                    Showing 12 of 12 brands
+                </p>
+
+                <!-- Brands Grid -->
+                <div id="brands-grid"
+                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-0 border border-white/5">
+                    <!-- Brand cells generated via JS from brandData array -->
+                </div>
+
+                <!-- No results message -->
+                <div id="brand-no-results" class="hidden text-center py-16">
+                    <p class="text-[#888880] text-sm font-body">
+                        No brands match your search. Try a different term.
+                    </p>
+                </div>
+            </div>
+        </section>
+
 
     </main>
 
