@@ -1566,3 +1566,18 @@ body::after {
 .brand-cell.hidden-cell {
   display: none;
 }
+
+/* SALE HERO - 3D CANVAS + MOBILE FALLBACK */
+
+#sale-canvas {
+  display: block;
+}
+
+.sale-badge-2d {
+  position: absolute;
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2.4rem;
+  color: rgba(201, 168, 76, 0.18);
+  letter-spacing: 0.05em;
+  will-change: transform;
+}
