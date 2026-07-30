@@ -761,3 +761,18 @@ gsap.from("#product-grid .shop-card", {
     stagger: 0.05,
     ease: "power3.out"
 });
+
+/* CTA entrance */
+
+gsap.from("[data-cta-content]", {
+    scrollTrigger: {
+        trigger: "#sale-cta",
+        start: "top 75%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    opacity: 0,
+    y: 30,
+    duration: 0.8,
+    ease: "power3.out"
+});

@@ -209,7 +209,7 @@
                 </p>
 
                 <!-- CTA button -->
-                <a href="shop.html" class="pointer-events-auto group inline-flex items-center gap-3
+                <a href="#sale-products" class="pointer-events-auto group inline-flex items-center gap-3
                   bg-[#c9a84c] text-[#0a0a0a] font-body font-bold
                   text-[0.65rem] tracking-[0.22em] uppercase
                   px-9 py-4 mt-10 border border-[#c9a84c]
@@ -375,6 +375,63 @@
                         </svg>
                     </button>
                 </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section id="sale-cta" class="relative overflow-hidden bg-[#0a0a0a] py-28 md:py-36 px-6 md:px-16">
+
+            <!-- Background image -->
+            <div class="absolute inset-0 z-0">
+                <img src="images/sale-cta.png" alt="AUREL Sale"
+                    class="w-full h-full object-cover object-center opacity-25" />
+            </div>
+
+            <!-- Gradient overlay -->
+            <div class="absolute inset-0 z-0 bg-gradient-to-b
+                  from-[#0a0a0a]/70 via-[#0a0a0a]/50 to-[#0a0a0a]">
+            </div>
+
+            <!-- Gold lines -->
+            <div class="absolute top-0 left-0 right-0 h-px z-10
+                  bg-gradient-to-r from-transparent via-[#c9a84c]/40 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 right-0 h-px z-10
+                  bg-gradient-to-r from-transparent via-[#c9a84c]/40 to-transparent"></div>
+
+            <!-- Content -->
+            <div class="relative z-20 max-w-3xl mx-auto text-center" data-cta-content>
+
+                <div class="flex items-center justify-center gap-4 mb-8">
+                    <span class="block w-10 h-px bg-[#c9a84c]/60"></span>
+                    <span class="text-[#c9a84c] text-[0.6rem] font-semibold
+                       tracking-[0.35em] uppercase font-body">
+                        Last Call
+                    </span>
+                    <span class="block w-10 h-px bg-[#c9a84c]/60"></span>
+                </div>
+
+                <h2 class="font-heading text-4xl md:text-6xl text-[#f5f5f0] tracking-wide leading-tight mb-6">
+                    Don't Miss Out
+                </h2>
+
+                <p class="font-serif italic text-[#f5f5f0]/60 text-base md:text-lg
+                  max-w-lg mx-auto leading-relaxed mb-10">
+                    Once the clock runs out, these prices are gone for good. Archive pieces
+                    are limited - when they're sold, they're not coming back.
+                </p>
+
+                <a href="#sale-products" class="group inline-flex items-center gap-3
+                  bg-[#c9a84c] text-[#0a0a0a] font-body font-bold
+                  text-[0.65rem] tracking-[0.22em] uppercase
+                  px-10 py-4 border border-[#c9a84c]
+                  hover:bg-transparent hover:text-[#c9a84c]
+                  transition-all duration-300">
+                    Shop The Sale Now
+                    <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
+                        class="group-hover:translate-x-1 transition-transform duration-300">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7-7 7M21 12H3" />
+                    </svg>
+                </a>
             </div>
         </section>
 
