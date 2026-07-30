@@ -490,3 +490,59 @@ if (!isTouchDevice) {
     });
 
 }
+
+/* 02 - COUNTDOWN TIMER BAR */
+
+const cdBar = document.querySelector("[data-cd-bar]");
+
+if (cdBar) {
+    const cdEls = {
+        label: document.getElementById("countdown-label"),
+        days: document.getElementById("cd-days"),
+        hours: document.getElementById("cd-hours"),
+        mins: document.getElementById("cd-mins"),
+        secs: document.getElementById("cd-secs"),
+    };
+
+    /* Fixed target */
+    const SALE_END = new Date("2026-08-05T23:59:59").getTime();
+
+    const pad = n => String(Math.max(n, 0)).padStart(2, "0");
+    let countdownInterval = null;
+
+    function tickCountdown() {
+        const diff = SALE_END - Date.now();
+
+        if (diff <= 0) {
+            cdEls.days.textContent = "00";
+            cdEls.hours.textContent = "00";
+            cdEls.mins.textContent = "00";
+            cdEls.secs.textContent = "00";
+            if (cdEls.label) cdEls.label.textContent = "Sale Has Ended";
+            if (countdownInterval) clearInterval(countdownInterval);
+            return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const mins = Math.floor((diff / (1000 * 60)) % 60);
+        const secs = Math.floor((diff / 1000) % 60);
+
+        cdEls.days.textContent = pad(days);
+        cdEls.hours.textContent = pad(hours);
+        cdEls.mins.textContent = pad(mins);
+        cdEls.secs.textContent = pad(secs);
+    }
+
+    tickCountdown();
+    countdownInterval = setInterval(tickCountdown, 1000);
+
+    /* Subtle entrance to match the rest of the page animated feel */
+    gsap.from(cdBar, {
+        y: -20,
+        opacity: 0,
+        duration: 0.6,
+        delay: 0.9,
+        ease: "power3.out"
+    });
+}

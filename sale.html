@@ -224,6 +224,49 @@
             </div>
         </section>
 
+        <!-- 02 - COUNTDOWN TIMER BAR -->
+        <div id="countdown-bar" class="sticky top-[68px] z-30 bg-[#c9a84c] border-b border-black/10" data-cd-bar>
+            <div class="max-w-7xl mx-auto px-6 md:px-16 py-3
+                  flex items-center justify-center gap-3 md:gap-5 flex-wrap">
+
+                <span id="countdown-label" class="text-[#0a0a0a] text-[0.62rem] md:text-[0.7rem] font-body
+                     font-bold tracking-[0.15em] uppercase">
+                    Sale Ends In
+                </span>
+
+                <div class="flex items-center gap-1.5 md:gap-2.5" aria-live="polite">
+
+                    <div class="flex items-baseline gap-1">
+                        <span id="cd-days"
+                            class="font-heading text-lg md:text-2xl text-[#0a0a0a] tabular-nums">00</span>
+                        <span class="text-[#0a0a0a]/60 text-[0.55rem] uppercase font-body tracking-wide">d</span>
+                    </div>
+                    <span class="text-[#0a0a0a]/40 font-heading text-lg md:text-2xl -mt-0.5">:</span>
+
+                    <div class="flex items-baseline gap-1">
+                        <span id="cd-hours"
+                            class="font-heading text-lg md:text-2xl text-[#0a0a0a] tabular-nums">00</span>
+                        <span class="text-[#0a0a0a]/60 text-[0.55rem] uppercase font-body tracking-wide">h</span>
+                    </div>
+                    <span class="text-[#0a0a0a]/40 font-heading text-lg md:text-2xl -mt-0.5">:</span>
+
+                    <div class="flex items-baseline gap-1">
+                        <span id="cd-mins"
+                            class="font-heading text-lg md:text-2xl text-[#0a0a0a] tabular-nums">00</span>
+                        <span class="text-[#0a0a0a]/60 text-[0.55rem] uppercase font-body tracking-wide">m</span>
+                    </div>
+                    <span class="text-[#0a0a0a]/40 font-heading text-lg md:text-2xl -mt-0.5">:</span>
+
+                    <div class="flex items-baseline gap-1">
+                        <span id="cd-secs"
+                            class="font-heading text-lg md:text-2xl text-[#0a0a0a] tabular-nums">00</span>
+                        <span class="text-[#0a0a0a]/60 text-[0.55rem] uppercase font-body tracking-wide">s</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </main>
 
     <script type="module" src="sale.js"></script>
