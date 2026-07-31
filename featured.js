@@ -609,3 +609,18 @@ gsap.from("#trending #product-grid .shop-card", {
     stagger: 0.05,
     ease: "power3.out"
 });
+
+/* AS SEEN IN entrance */
+
+gsap.from("[data-asi-label]", {
+    scrollTrigger: {
+        trigger: "#as-seen-in",
+        start: "top 85%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    opacity: 0,
+    y: 15,
+    duration: 0.6,
+    ease: "power3.out"
+});
