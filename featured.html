@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AUREL - Featured</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Open+Sans:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
+
+    <!-- Three.js — used for the 3D sneaker hero -->
+    <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+
+</head>
+
+<body>
+
+    <!-- Custom Cursor -->
+    <div id="cur-dot"></div>
+    <div id="cur-ring"></div>
+
+    <!-- ANNOUNCEMENT BAR -->
+    <div id="anno-bar">
+        <div class="ticker-wrap">
+            <span>Free Shipping on Orders Over Rs. 5,000</span>
+            <span class="ticker-sep">◆</span>
+            <span>New Drop Every Friday — Be First</span>
+            <span class="ticker-sep">◆</span>
+            <span>Authentic Luxury Streetwear</span>
+            <span class="ticker-sep">◆</span>
+            <span>Easy Returns Within 7 Days</span>
+            <span class="ticker-sep">◆</span>
+            <span>Members Get Early Access to Drops</span>
+            <span class="ticker-sep">◆</span>
+            <span>Free Shipping on Orders Over Rs. 5,000</span>
+            <span class="ticker-sep">◆</span>
+            <span>New Drop Every Friday — Be First</span>
+            <span class="ticker-sep">◆</span>
+            <span>Authentic Luxury Streetwear</span>
+            <span class="ticker-sep">◆</span>
+            <span>Easy Returns Within 7 Days</span>
+            <span class="ticker-sep">◆</span>
+            <span>Members Get Early Access to Drops</span>
+            <span class="ticker-sep">◆</span>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav id="nav">
+        <button id="ham" aria-label="Open menu">
+            <b></b><b></b><b></b>
+        </button>
+        <ul class="nav-center">
+            <li><a href="men.html">Men</a></li>
+            <li><a href="women.html">Women</a></li>
+            <li><a href="kids.html">Kids</a></li>
+            <li class="nav-logo-item">
+                <a href="index.html" class="logo">AUREL</a>
+            </li>
+            <li><a href="brands.html">Brands</a></li>
+            <li><a href="featured.html" class="text-[#c9a84c]">Featured</a></li>
+            <li><a href="sale.html">Sale</a></li>
+        </ul>
+        <div class="nav-right">
+            <button class="icon-btn" aria-label="Search">
+                <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="7.5" />
+                    <path stroke-linecap="round" d="m21 21-4.5-4.5" />
+                </svg>
+            </button>
+            <button class="icon-btn" id="acc-btn" aria-label="Account">
+                <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
+                </svg>
+            </button>
+            <button class="icon-btn" aria-label="Cart">
+                <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <path d="M16 10a4 4 0 0 1-8 0" />
+                </svg>
+                <span class="badge">2</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- FULL SCREEN MENU -->
+    <div id="fs-menu">
+        <div id="fsl">
+            <button id="fs-close">
+                <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+                Close
+            </button>
+            <div class="fs-label">
+                <div class="fs-label-line"></div>
+                <span>Collections & Pages</span>
+            </div>
+            <ul id="fs-links">
+                <li><a href="index.html" data-p="home"> <span class="n">01</span>Home</a></li>
+                <li><a href="men.html" data-p="men"> <span class="n">02</span>Men</a></li>
+                <li><a href="women.html" data-p="women"> <span class="n">03</span>Women</a></li>
+                <li><a href="kids.html" data-p="kids"> <span class="n">04</span>Kids</a></li>
+                <li><a href="brands.html" data-p="brands"> <span class="n">05</span>Brands</a></li>
+                <li><a href="featured.html" data-p="featured" class="go"><span class="n">06</span>Featured</a></li>
+                <li><a href="sale.html" data-p="sale"><span class="n">07</span>Sale</a></li>
+                <li><a href="shop.html" data-p="shop"> <span class="n">08</span>Shop All</a></li>
+                <li><a href="about.html" data-p="about"> <span class="n">09</span>About</a></li>
+                <li><a href="contact.html" data-p="contact"> <span class="n">10</span>Contact</a></li>
+            </ul>
+            <div id="fs-bot">
+                <div class="fs-contact">
+                    <a href="mailto:info@aurel.com">info@aurel.com</a>
+                    <a href="tel:+923000000000">+92-300-0000000</a>
+                    <a href="shop.html" class="fs-shop-link">Shop New Arrivals →</a>
+                </div>
+                <div class="fs-social">
+                    <a href="#">IG</a>
+                    <a href="#">TT</a>
+                    <a href="#">PIN</a>
+                </div>
+            </div>
+        </div>
+        <div id="fsr">
+            <img id="fsr-img" src="images/featured.jfif" alt="Collection preview" />
+            <div id="fsr-label">
+                <p id="fsr-txt">"This Week's Drop"</p>
+                <span id="fsr-sub">Featured Arrivals</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <!-- 3D SNEAKER HERO -->
+        <section id="featured-hero" class="relative w-full min-h-screen bg-[#0a0a0a] overflow-hidden">
+
+            <div class="relative z-20 max-w-7xl mx-auto min-h-screen
+                  grid grid-cols-1 md:grid-cols-2 items-center gap-10
+                  px-6 md:px-16 pt-40 pb-20 md:pt-32">
+
+                <!-- LEFT — text -->
+                <div class="text-center md:text-left order-2 md:order-1">
+
+                    <div class="flex items-center justify-center md:justify-start gap-4 mb-6" data-fh-label>
+                        <span class="block w-10 h-px bg-[#c9a84c]/60"></span>
+                        <span class="text-[#c9a84c] text-[0.6rem] font-semibold
+                         tracking-[0.35em] uppercase font-body">
+                            This Week's Drop
+                        </span>
+                    </div>
+
+                    <div class="overflow-hidden">
+                        <h1 class="font-heading leading-[0.95] tracking-wide text-[#f5f5f0]"
+                            style="font-size:clamp(2.75rem,7vw,5.5rem)" data-fh-title>
+                            Featured<br>Arrivals
+                        </h1>
+                    </div>
+
+                    <p class="font-serif italic text-[#f5f5f0]/60 text-lg md:text-xl
+                    max-w-md mx-auto md:mx-0 leading-relaxed mt-6" data-fh-sub>
+                        Editor's picks from the archive - the pairs and pieces
+                        defining the season right now.
+                    </p>
+
+                    <a href="shop.html" class="group inline-flex items-center gap-3
+                    bg-[#c9a84c] text-[#0a0a0a] font-body font-bold
+                    text-[0.65rem] tracking-[0.22em] uppercase
+                    px-9 py-4 mt-10 border border-[#c9a84c]
+                    hover:bg-transparent hover:text-[#c9a84c]
+                    transition-all duration-300" data-fh-btn>
+                        Shop Featured Picks
+                        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5"
+                            viewBox="0 0 24 24" class="group-hover:translate-x-1 transition-transform duration-300">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7-7 7M21 12H3" />
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- RIGHT - 3D sneaker / mobile fallback -->
+                <div id="sneaker-visual" class="relative h-[42vh] md:h-[70vh] order-1 md:order-2" data-fh-visual>
+
+                    <!-- Three.js canvas - desktop only -->
+                    <canvas id="sneaker-canvas" class="absolute inset-0 w-full h-full hidden md:block"></canvas>
+
+                    <!-- Mobile fallback - static PNG, subtle float animation -->
+                    <img src="images/sneaker-fallback.png" alt="Featured sneaker"
+                        class="sneaker-fallback-img absolute inset-0 w-full h-full object-contain md:hidden"
+                        data-fh-fallback-img />
+
+                    <!-- 3D model credit -->
+                    <p class="absolute bottom-1 right-1 z-20 text-[#666660] text-[0.55rem]
+                    font-body leading-relaxed text-right pointer-events-none">
+                        <span class="pointer-events-auto">
+                            "Warrior Sneaker" by
+                            <a href="https://skfb.ly/oL8BB" target="_blank" rel="noopener noreferrer"
+                                class="underline hover:text-[#c9a84c] transition-colors">kunyong_Chen</a>,
+                            licensed under
+                            <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank"
+                                rel="noopener noreferrer" class="underline hover:text-[#c9a84c] transition-colors">CC BY
+                                4.0</a>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script type="module" src="featured.js"></script>
+
+</body>
+
+</html>
