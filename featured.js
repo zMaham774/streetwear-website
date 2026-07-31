@@ -388,3 +388,32 @@ gsap.from("[data-wd-content]", {
     duration: 0.9,
     ease: "power3.out"
 });
+
+/* EDITOR'S PICKS entrance */
+
+gsap.from("[data-ep-header]", {
+    scrollTrigger: {
+        trigger: "#editors-picks",
+        start: "top 80%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    opacity: 0,
+    y: 25,
+    duration: 0.7,
+    ease: "power3.out"
+});
+
+gsap.from("[data-ep-card]", {
+    scrollTrigger: {
+        trigger: "#editors-picks",
+        start: "top 65%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    opacity: 0,
+    y: 40,
+    duration: 0.7,
+    stagger: 0.15,
+    ease: "power3.out"
+});
