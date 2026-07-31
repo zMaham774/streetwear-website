@@ -417,3 +417,195 @@ gsap.from("[data-ep-card]", {
     stagger: 0.15,
     ease: "power3.out"
 });
+
+/* TRENDING NOW */
+
+const trendingProductData = [
+    { id: 1, name: "Studio Bomber — Charcoal", category: "men", price: 12000, viewing: 34, img: "images/ed1.png" },
+    { id: 2, name: "Wide-Leg Trousers — Ivory", category: "women", price: 9800, viewing: 27, img: "images/P7.jfif" },
+    { id: 3, name: "Volt Cap — Reflective", category: "accessories", price: 3200, viewing: 41, img: "images/ed3.png" },
+    { id: 4, name: "Kids Track Set — Grey", category: "kids", price: 5500, viewing: 12, img: "images/ed4.png" },
+    { id: 5, name: "Cropped Bomber — Black", category: "women", price: 15500, viewing: 19, img: "images/P6.jfif" },
+    { id: 6, name: "Street Runner — White/Gold", category: "men", price: 18500, viewing: 52, img: "images/brands.jfif" },
+    { id: 7, name: "Silk Slip Dress — Ivory", category: "women", price: 12000, viewing: 23, img: "images/P5.jfif" },
+    { id: 8, name: "Tapered Track Pants — Grey", category: "men", price: 5500, viewing: 15, img: "images/P4.jfif" },
+    { id: 9, name: "Kids Graphic Tee — Navy", category: "kids", price: 3200, viewing: 9, img: "images/P8.jfif" },
+    { id: 10, name: "Chain Necklace Set — Silver", category: "accessories", price: 4500, viewing: 31, img: "images/P10.jfif" },
+    { id: 11, name: "Denim Jacket — Washed Blue", category: "men", price: 11000, viewing: 22, img: "images/P17.jfif" },
+    { id: 12, name: "Knit Sweater — Cream", category: "women", price: 8900, viewing: 17, img: "images/P18.jfif" },
+    { id: 13, name: "Kids Sneakers — White", category: "kids", price: 5500, viewing: 28, img: "images/P19.jfif" },
+    { id: 14, name: "Leather Belt — Brown", category: "accessories", price: 2500, viewing: 14, img: "images/P16.jfif" },
+    { id: 15, name: "Windbreaker — Navy", category: "men", price: 10500, viewing: 20, img: "images/P21.jfif" },
+    { id: 16, name: "Satin Skirt — Emerald", category: "women", price: 7800, viewing: 25, img: "images/P14.jfif" },
+    { id: 17, name: "Kids Hoodie Set — Grey", category: "kids", price: 4800, viewing: 11, img: "images/P23.jfif" },
+    { id: 18, name: "Beanie — Charcoal", category: "accessories", price: 1800, viewing: 38, img: "images/P24.jfif" },
+    { id: 19, name: "Utility Vest — Charcoal", category: "men", price: 9000, viewing: 16, img: "images/P12.jfif" },
+    { id: 20, name: "Pleated Trousers — Black", category: "women", price: 9200, viewing: 21, img: "images/P22.jfif" },
+];
+
+const trendingGridEl = document.getElementById("product-grid");
+let trendingFilter = "all";
+let trendingSort = "viewing-high";
+let trendingVisibleCount = 12;
+
+function buildTrendingCard(p) {
+    return `
+    <div class="shop-card group relative" data-category="${p.category}" data-id="${p.id}">
+      <div class="relative overflow-hidden bg-[#111111] aspect-[3/4] mb-3 shop-card-img">
+        <span class="absolute top-3 left-3 z-10 bg-[#0a0a0a]/70 backdrop-blur-sm
+                     text-[#f5f5f0] text-[0.5rem] font-bold tracking-[0.1em]
+                     uppercase px-2 py-1 flex items-center gap-1">
+          🔥 ${p.viewing} viewing
+        </span>
+        <img src="${p.img}" alt="${p.name}"
+             class="w-full h-full object-cover object-top
+                    transition-transform duration-700 ease-out
+                    group-hover:scale-105" />
+        <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100
+                    transition-opacity duration-400 flex items-end justify-center pb-4">
+          <button class="bg-[#f5f5f0] text-[#0a0a0a] text-[0.55rem] font-bold
+                         tracking-[0.15em] uppercase px-4 py-2
+                         translate-y-3 group-hover:translate-y-0
+                         transition-transform duration-350
+                         hover:bg-[#c9a84c]">
+            Quick Add
+          </button>
+        </div>
+        <button class="absolute top-3 right-3 z-10 w-7 h-7 flex items-center justify-center
+                       bg-[#0a0a0a]/60 backdrop-blur-sm opacity-0 group-hover:opacity-100
+                       transition-opacity duration-300 hover:bg-[#c9a84c] text-[#f5f5f0]
+                       hover:text-[#0a0a0a]">
+          <svg width="11" height="11" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </button>
+      </div>
+      <div class="px-0.5">
+        <p class="text-[#888880] text-[0.55rem] tracking-[0.15em] uppercase font-body mb-1 capitalize">
+          ${p.category}
+        </p>
+        <h3 class="text-[#f5f5f0] text-xs font-semibold font-body mb-1.5 leading-snug
+                   group-hover:text-[#c9a84c] transition-colors duration-300">
+          ${p.name}
+        </h3>
+        <span class="text-[#f5f5f0] text-xs font-semibold font-body">Rs. ${p.price.toLocaleString()}</span>
+      </div>
+    </div>
+  `;
+}
+
+function getFilteredTrending() {
+    let list = trendingFilter === "all"
+        ? [...trendingProductData]
+        : trendingProductData.filter(p => p.category === trendingFilter);
+
+    switch (trendingSort) {
+        case "price-low": list.sort((a, b) => a.price - b.price); break;
+        case "price-high": list.sort((a, b) => b.price - a.price); break;
+        case "newest": list.sort((a, b) => b.id - a.id); break;
+        default: list.sort((a, b) => b.viewing - a.viewing); // viewing-high
+    }
+
+    return list;
+}
+
+function renderTrendingGrid(animate = true) {
+    const list = getFilteredTrending();
+    const visible = list.slice(0, trendingVisibleCount);
+
+    trendingGridEl.innerHTML = visible.map(buildTrendingCard).join("");
+
+    document.getElementById("results-count").textContent =
+        `Showing 1–${visible.length} of ${list.length}`;
+
+    const loadMoreWrap = document.querySelector("#trending [data-load-more-wrap]");
+    loadMoreWrap.style.display = trendingVisibleCount >= list.length ? "none" : "flex";
+
+    if (animate) {
+        gsap.from("#trending #product-grid .shop-card", {
+            opacity: 0,
+            y: 30,
+            duration: 0.5,
+            stagger: 0.05,
+            ease: "power3.out"
+        });
+    }
+}
+
+document.querySelectorAll("#trending-category-pills .filter-pill").forEach(pill => {
+    pill.addEventListener("click", () => {
+        document.querySelectorAll("#trending-category-pills .filter-pill")
+            .forEach(p => p.classList.remove("active"));
+        pill.classList.add("active");
+        trendingFilter = pill.getAttribute("data-category");
+        trendingVisibleCount = 12;
+        renderTrendingGrid();
+    });
+});
+
+document.getElementById("sort-select").addEventListener("change", (e) => {
+    trendingSort = e.target.value;
+    trendingVisibleCount = 12;
+    renderTrendingGrid();
+});
+
+const trendingViewGridBtn = document.getElementById("view-grid");
+const trendingViewListBtn = document.getElementById("view-list");
+
+trendingViewGridBtn.addEventListener("click", () => {
+    trendingGridEl.classList.remove("list-view");
+    trendingViewGridBtn.classList.add("active");
+    trendingViewListBtn.classList.remove("active");
+});
+
+trendingViewListBtn.addEventListener("click", () => {
+    trendingGridEl.classList.add("list-view");
+    trendingViewListBtn.classList.add("active");
+    trendingViewGridBtn.classList.remove("active");
+});
+
+document.getElementById("load-more-btn").addEventListener("click", () => {
+    trendingVisibleCount += 8;
+    renderTrendingGrid(false);
+
+    const cards = document.querySelectorAll("#trending #product-grid .shop-card");
+    const newCards = Array.from(cards).slice(-8);
+    gsap.from(newCards, {
+        opacity: 0,
+        y: 30,
+        duration: 0.5,
+        stagger: 0.05,
+        ease: "power3.out"
+    });
+});
+
+/* Initial render */
+renderTrendingGrid(false);
+
+gsap.from("[data-tr-header], [data-tr-filter-bar]", {
+    scrollTrigger: {
+        trigger: "#trending",
+        start: "top 80%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    opacity: 0,
+    y: 25,
+    duration: 0.7,
+    stagger: 0.1,
+    ease: "power3.out"
+});
+
+gsap.from("#trending #product-grid .shop-card", {
+    scrollTrigger: {
+        trigger: "#trending",
+        start: "top 60%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    opacity: 0,
+    y: 30,
+    duration: 0.6,
+    stagger: 0.05,
+    ease: "power3.out"
+});
