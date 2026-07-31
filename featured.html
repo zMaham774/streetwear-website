@@ -226,6 +226,65 @@
             </div>
         </section>
 
+        <!-- THIS WEEK'S DROP -->
+        <section id="weekly-drop" class="relative overflow-hidden bg-[#0a0a0a] min-h-screen
+                                      flex items-center px-6 md:px-16 py-24">
+
+            <!-- Background image -->
+            <img src="images/week-drop.JPG" alt="This Week's Drop"
+                class="absolute inset-0 w-full h-full object-cover opacity-45 brightness-125" />
+
+            <!-- Gradient overlay - heavier on the left so text stays readable -->
+            <div class="absolute inset-0 bg-gradient-to-r
+                  from-[#0a0a0a] via-[#0a0a0a]/75 to-[#0a0a0a]/30"></div>
+            <div class="absolute inset-0 bg-gradient-to-t
+                  from-[#0a0a0a] via-transparent to-[#0a0a0a]/40"></div>
+
+            <!-- Content -->
+            <div class="relative z-10 max-w-xl" data-wd-content>
+
+                <div class="flex items-center gap-4 mb-6">
+                    <span class="block w-10 h-px bg-[#c9a84c]/60"></span>
+                    <span class="text-[#c9a84c] text-[0.6rem] font-semibold
+                       tracking-[0.35em] uppercase font-body">
+                        This Week's Drop
+                    </span>
+                </div>
+
+                <h2 class="font-heading text-4xl md:text-6xl text-[#f5f5f0] leading-[0.95] tracking-wide mb-6">
+                    The Aurel<br>Volt Runner
+                </h2>
+
+                <p class="font-serif italic text-[#f5f5f0]/70 text-base md:text-lg
+                  leading-relaxed mb-8">
+                    A silhouette built from three seasons of prototypes - reworked cushioning,
+                    a reflective volt overlay, and a sole unit we've never shipped before.
+                    This is the one piece we'd tell you to move fast on.
+                </p>
+
+                <div class="flex items-center gap-4 mb-10">
+                    <span class="text-[#f5f5f0] text-xl font-semibold font-body">Rs. 16,500</span>
+                    <span class="text-[#c9a84c] text-[0.62rem] font-bold tracking-[0.15em]
+                       uppercase font-body border border-[#c9a84c]/40 px-2.5 py-1">
+                        Only 12 Left
+                    </span>
+                </div>
+
+                <a href="shop.html" class="group inline-flex items-center gap-3
+                  bg-[#c9a84c] text-[#0a0a0a] font-body font-bold
+                  text-[0.65rem] tracking-[0.22em] uppercase
+                  px-9 py-4 border border-[#c9a84c]
+                  hover:bg-transparent hover:text-[#c9a84c]
+                  transition-all duration-300">
+                    Shop This Drop
+                    <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"
+                        class="group-hover:translate-x-1 transition-transform duration-300">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7-7 7M21 12H3" />
+                    </svg>
+                </a>
+            </div>
+        </section>
+
     </main>
 
     <script type="module" src="featured.js"></script>

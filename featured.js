@@ -373,3 +373,18 @@ if (!isTouchDevice) {
     });
 
 }
+
+/* THIS WEEK'S DROP entrance */
+
+gsap.from("[data-wd-content]", {
+    scrollTrigger: {
+        trigger: "#weekly-drop",
+        start: "top 70%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    opacity: 0,
+    y: 40,
+    duration: 0.9,
+    ease: "power3.out"
+});
