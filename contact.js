@@ -248,3 +248,62 @@ gsap.to("[data-map-wrap]", {
     duration: 0.8,
     ease: "power3.out"
 });
+
+/* FAQ ACCORDION LOGIC */
+
+const faqItems = document.querySelectorAll("[data-faq-item]");
+
+faqItems.forEach(item => {
+    const question = item.querySelector(".faq-question");
+    const answer = item.querySelector(".faq-answer");
+
+    question.addEventListener("click", () => {
+        const isOpen = item.classList.contains("open");
+
+        /* Close all other items - accordion behavior, one open at a time */
+        faqItems.forEach(other => {
+            if (other !== item) {
+                other.classList.remove("open");
+                other.querySelector(".faq-answer").style.maxHeight = "0px";
+            }
+        });
+
+        if (isOpen) {
+            item.classList.remove("open");
+            answer.style.maxHeight = "0px";
+        } else {
+            item.classList.add("open");
+            answer.style.maxHeight = answer.scrollHeight + "px";
+        }
+    });
+});
+
+/* Scroll animations */
+gsap.set("[data-faq-header]", { opacity: 0, y: 30 });
+gsap.to("[data-faq-header]", {
+    scrollTrigger: {
+        trigger: "#contact-faq",
+        start: "top 80%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    opacity: 1,
+    y: 0,
+    duration: 0.8,
+    ease: "power3.out"
+});
+
+gsap.set("[data-faq-item]", { opacity: 0, y: 20 });
+gsap.to("[data-faq-item]", {
+    scrollTrigger: {
+        trigger: "[data-faq-list]",
+        start: "top 78%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    opacity: 1,
+    y: 0,
+    duration: 0.6,
+    stagger: 0.08,
+    ease: "power3.out"
+});

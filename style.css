@@ -1581,3 +1581,20 @@ body::after {
   letter-spacing: 0.05em;
   will-change: transform;
 }
+
+/* FAQ ACCORDION */
+
+.faq-question {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.faq-answer {
+  transition: max-height 0.4s ease;
+}
+
+/* Rotate the plus icon into an X when the item is open */
+.faq-item.open .faq-icon {
+  transform: rotate(45deg);
+}
