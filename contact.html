@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AUREL — Contact Us</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Open+Sans:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.0.45/dist/lenis.min.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Custom Cursor -->
+    <div id="cur-dot"></div>
+    <div id="cur-ring"></div>
+
+    <!-- ANNOUNCEMENT BAR -->
+    <div id="anno-bar">
+        <div class="ticker-wrap">
+            <span>Free Shipping on Orders Over Rs. 5,000</span>
+            <span class="ticker-sep">◆</span>
+            <span>New Drop Every Friday — Be First</span>
+            <span class="ticker-sep">◆</span>
+            <span>Authentic Luxury Streetwear</span>
+            <span class="ticker-sep">◆</span>
+            <span>Easy Returns Within 7 Days</span>
+            <span class="ticker-sep">◆</span>
+            <span>Members Get Early Access to Drops</span>
+            <span class="ticker-sep">◆</span>
+            <span>Free Shipping on Orders Over Rs. 5,000</span>
+            <span class="ticker-sep">◆</span>
+            <span>New Drop Every Friday — Be First</span>
+            <span class="ticker-sep">◆</span>
+            <span>Authentic Luxury Streetwear</span>
+            <span class="ticker-sep">◆</span>
+            <span>Easy Returns Within 7 Days</span>
+            <span class="ticker-sep">◆</span>
+            <span>Members Get Early Access to Drops</span>
+            <span class="ticker-sep">◆</span>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav id="nav">
+        <button id="ham" aria-label="Open menu">
+            <b></b><b></b><b></b>
+        </button>
+        <ul class="nav-center">
+            <li><a href="men.html">Men</a></li>
+            <li><a href="women.html">Women</a></li>
+            <li><a href="kids.html">Kids</a></li>
+            <li class="nav-logo-item">
+                <a href="index.html" class="logo">AUREL</a>
+            </li>
+            <li><a href="brands.html">Brands</a></li>
+            <li><a href="featured.html">Featured</a></li>
+            <li><a href="sale.html" class="sale">Sale</a></li>
+        </ul>
+        <div class="nav-right">
+            <button class="icon-btn" aria-label="Search">
+                <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="7.5" />
+                    <path stroke-linecap="round" d="m21 21-4.5-4.5" />
+                </svg>
+            </button>
+            <button class="icon-btn" id="acc-btn" aria-label="Account">
+                <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                    <circle cx="12" cy="7" r="4" />
+                </svg>
+            </button>
+            <button class="icon-btn" aria-label="Cart">
+                <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <path d="M16 10a4 4 0 0 1-8 0" />
+                </svg>
+                <span class="badge">2</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- FULL SCREEN MENU -->
+    <div id="fs-menu">
+        <div id="fsl">
+            <button id="fs-close">
+                <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" d="M6 18 18 6M6 6l12 12" />
+                </svg>
+                Close
+            </button>
+            <div class="fs-label">
+                <div class="fs-label-line"></div>
+                <span>Collections & Pages</span>
+            </div>
+            <ul id="fs-links">
+                <li><a href="index.html" data-p="home"> <span class="n">01</span>Home</a></li>
+                <li><a href="men.html" data-p="men"> <span class="n">02</span>Men</a></li>
+                <li><a href="women.html" data-p="women"> <span class="n">03</span>Women</a></li>
+                <li><a href="kids.html" data-p="kids"> <span class="n">04</span>Kids</a></li>
+                <li><a href="brands.html" data-p="brands"> <span class="n">05</span>Brands</a></li>
+                <li><a href="featured.html" data-p="featured"><span class="n">06</span>Featured</a></li>
+                <li><a href="sale.html" data-p="sale"><span class="n">07</span>Sale</a></li>
+                <li><a href="shop.html" data-p="shop"> <span class="n">08</span>Shop All</a></li>
+                <li><a href="about.html" data-p="about"> <span class="n">09</span>About</a></li>
+                <li><a href="contact.html" data-p="contact"> <span class="n">10</span>Contact</a></li>
+            </ul>
+            <div id="fs-bot">
+                <div class="fs-contact">
+                    <a href="mailto:info@aurel.com">info@aurel.com</a>
+                    <a href="tel:+923000000000">+92-300-0000000</a>
+                    <a href="shop.html" class="fs-shop-link">Shop New Arrivals →</a>
+                </div>
+                <div class="fs-social">
+                    <a href="#">IG</a>
+                    <a href="#">TT</a>
+                    <a href="#">PIN</a>
+                </div>
+            </div>
+        </div>
+        <div id="fsr">
+            <img id="fsr-img" src="images/contact.jfif" alt="Collection preview" />
+            <div id="fsr-label">
+                <p id="fsr-txt">"Let's Talk"</p>
+                <span id="fsr-sub">Get in Touch</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main>
+
+        <!-- HERO  -->
+        <section id="contact-hero" class="relative w-full pt-40 pb-20 px-6 md:px-16
+                                       overflow-hidden">
+
+            <!-- Background image -->
+            <div class="absolute inset-0 z-0">
+                <img src="images/contact-hero.png" alt="AUREL Store"
+                    class="w-full h-full object-cover object-center opacity-65" />
+            </div>
+
+            <!-- Dark overlay for readability -->
+            <div class="absolute inset-0 z-0 bg-gradient-to-b
+                  from-[#0a0a0a]/80 via-[#0a0a0a]/70 to-[#0a0a0a]">
+            </div>
+
+            <div class="relative z-10 max-w-7xl mx-auto">
+
+                <!-- Breadcrumb -->
+                <div class="flex items-center gap-2 mb-6" data-ch-crumb>
+                    <a href="index.html" class="text-[#888880] text-[0.6rem]
+                    tracking-[0.15em] uppercase font-body
+                    hover:text-[#c9a84c] transition-colors">
+                        Home
+                    </a>
+                    <span class="text-[#888880]/40 text-[0.6rem]">/</span>
+                    <span class="text-[#c9a84c] text-[0.6rem] tracking-[0.15em] uppercase font-body">
+                        Contact
+                    </span>
+                </div>
+
+                <!-- Heading -->
+                <div data-ch-heading>
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="block w-8 h-px bg-[#c9a84c]"></span>
+                        <span class="text-[#c9a84c] text-[0.6rem] font-semibold
+                         tracking-[0.3em] uppercase font-body">
+                            We'd Love to Hear From You
+                        </span>
+                    </div>
+                    <h1 class="font-heading text-6xl md:text-8xl text-[#f5f5f0]
+                     leading-none tracking-wide mb-6">
+                        Get In Touch
+                    </h1>
+                    <p class="text-[#888880] text-sm md:text-base font-body leading-relaxed max-w-lg" data-ch-sub>
+                        Questions about an order, a collaboration idea, or just want
+                        to say hi, our team usually replies within 24 hours.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT FORM + INFO SPLIT -->
+        <section id="contact-main" class="relative bg-[#0a0a0a] py-20 md:py-28 px-6 md:px-16">
+
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-10">
+
+                <!-- LEFT - Form -->
+                <div class="lg:col-span-7" data-cf-form>
+
+                    <h2 class="font-heading text-3xl md:text-4xl text-[#f5f5f0] tracking-wide mb-2">
+                        Send Us a Message
+                    </h2>
+                    <p class="text-[#888880] text-sm font-body mb-8">
+                        Fill out the form below and we'll get back to you shortly.
+                    </p>
+
+                    <form id="contact-form" class="space-y-6">
+
+                        <!-- Name + Email row -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+                            <div>
+                                <label for="cf-name" class="block text-[#888880] text-[0.6rem]
+                       tracking-[0.15em] uppercase font-body mb-2">
+                                    Full Name
+                                </label>
+                                <input type="text" id="cf-name" required placeholder="Your name" class="w-full bg-[#111111] border border-white/10
+                         text-[#f5f5f0] placeholder-[#888880]/40
+                         text-sm font-body px-4 py-3.5 outline-none
+                         focus:border-[#c9a84c]/50 transition-colors duration-300" />
+                            </div>
+
+                            <div>
+                                <label for="cf-email" class="block text-[#888880] text-[0.6rem]
+                       tracking-[0.15em] uppercase font-body mb-2">
+                                    Email Address
+                                </label>
+                                <input type="email" id="cf-email" required placeholder="your@email.com" class="w-full bg-[#111111] border border-white/10
+                         text-[#f5f5f0] placeholder-[#888880]/40
+                         text-sm font-body px-4 py-3.5 outline-none
+                         focus:border-[#c9a84c]/50 transition-colors duration-300" />
+                            </div>
+
+                        </div>
+
+                        <!-- Subject dropdown -->
+                        <div>
+                            <label for="cf-subject" class="block text-[#888880] text-[0.6rem]
+                     tracking-[0.15em] uppercase font-body mb-2">
+                                Subject
+                            </label>
+                            <div class="relative">
+                                <select id="cf-subject" required class="w-full appearance-none bg-[#111111] border border-white/10
+                         text-[#f5f5f0] text-sm font-body px-4 py-3.5 pr-10 outline-none
+                         focus:border-[#c9a84c]/50 transition-colors duration-300 cursor-pointer">
+                                    <option value="" disabled selected class="text-[#888880]">Select a topic</option>
+                                    <option value="general" class="bg-[#111111]">General Inquiry</option>
+                                    <option value="order" class="bg-[#111111]">Order Support</option>
+                                    <option value="wholesale" class="bg-[#111111]">Wholesale / Partnership</option>
+                                    <option value="press" class="bg-[#111111]">Press Inquiry</option>
+                                </select>
+                                <svg class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none
+                           w-3.5 h-3.5 text-[#888880]" fill="none" stroke="currentColor" stroke-width="2"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Message -->
+                        <div>
+                            <label for="cf-message" class="block text-[#888880] text-[0.6rem]
+                     tracking-[0.15em] uppercase font-body mb-2">
+                                Message
+                            </label>
+                            <textarea id="cf-message" required rows="5" placeholder="Tell us what's on your mind..."
+                                class="w-full bg-[#111111] border border-white/10
+                       text-[#f5f5f0] placeholder-[#888880]/40
+                       text-sm font-body px-4 py-3.5 outline-none resize-none
+                       focus:border-[#c9a84c]/50 transition-colors duration-300"></textarea>
+                        </div>
+
+                        <!-- Submit button -->
+                        <button type="submit" id="cf-submit-btn" class="group flex items-center justify-center gap-3 bg-[#c9a84c] text-[#0a0a0a]
+                     font-body font-bold text-[0.65rem] tracking-[0.22em] uppercase
+                     px-10 py-4 border border-[#c9a84c] w-full sm:w-fit
+                     hover:bg-transparent hover:text-[#c9a84c]
+                     transition-all duration-300">
+                            <span id="cf-btn-text">Send Message</span>
+                            <svg id="cf-btn-icon" width="13" height="13" fill="none" stroke="currentColor"
+                                stroke-width="1.5" viewBox="0 0 24 24"
+                                class="group-hover:translate-x-1 transition-transform duration-300">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                            </svg>
+                        </button>
+
+                    </form>
+
+                    <!-- Success message -->
+                    <div id="cf-success" class="hidden flex-col items-start gap-3 py-6">
+                        <div class="w-10 h-10 border border-[#c9a84c]/40 flex items-center justify-center">
+                            <svg width="16" height="16" fill="none" stroke="#c9a84c" stroke-width="1.5"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                            </svg>
+                        </div>
+                        <p class="text-[#c9a84c] text-sm tracking-wide uppercase font-body font-semibold">
+                            Message Sent
+                        </p>
+                        <p class="text-[#888880] text-sm font-body">
+                            Thanks for reaching out - we'll get back to you within 24 hours.
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- RIGHT - Contact Info -->
+                <div class="lg:col-span-5 lg:pl-6" data-cf-info>
+
+                    <div class="border border-white/8 bg-[#111111]/40 p-8 md:p-10 h-full">
+
+                        <h3 class="font-heading text-2xl text-[#f5f5f0] tracking-wide mb-8">
+                            Contact Details
+                        </h3>
+
+                        <div class="space-y-7">
+
+                            <!-- Address -->
+                            <div class="flex items-start gap-4">
+                                <div class="w-9 h-9 border border-[#c9a84c]/25 flex items-center
+                            justify-center flex-shrink-0">
+                                    <svg width="14" height="14" fill="none" stroke="#c9a84c" stroke-width="1.5"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round"
+                                            d="M17.657 16.657L13.414 20.9a2 2 0 0 1-2.827 0l-4.244-4.243a8 8 0 1 1 11.314 0z" />
+                                        <circle cx="12" cy="11" r="3" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-[#c9a84c] text-[0.55rem] tracking-[0.2em] uppercase font-body mb-1">
+                                        Visit Our Store
+                                    </p>
+                                    <p class="text-[#f5f5f0] text-sm font-body leading-relaxed">
+                                        Gulberg III, MM Alam Road<br>Lahore, Pakistan
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Phone -->
+                            <div class="flex items-start gap-4">
+                                <div class="w-9 h-9 border border-[#c9a84c]/25 flex items-center
+                            justify-center flex-shrink-0">
+                                    <svg width="14" height="14" fill="none" stroke="#c9a84c" stroke-width="1.5"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round"
+                                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.22 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6.08 6.08l1.27-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-[#c9a84c] text-[0.55rem] tracking-[0.2em] uppercase font-body mb-1">
+                                        Call Us
+                                    </p>
+                                    <a href="tel:+923000000000" class="text-[#f5f5f0] text-sm font-body
+                            hover:text-[#c9a84c] transition-colors">
+                                        +92-300-0000000
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="flex items-start gap-4">
+                                <div class="w-9 h-9 border border-[#c9a84c]/25 flex items-center
+                            justify-center flex-shrink-0">
+                                    <svg width="14" height="14" fill="none" stroke="#c9a84c" stroke-width="1.5"
+                                        viewBox="0 0 24 24">
+                                        <rect x="2" y="4" width="20" height="16" rx="2" />
+                                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-[#c9a84c] text-[0.55rem] tracking-[0.2em] uppercase font-body mb-1">
+                                        Email Us
+                                    </p>
+                                    <a href="mailto:info@aurel.com" class="text-[#f5f5f0] text-sm font-body
+                            hover:text-[#c9a84c] transition-colors">
+                                        info@aurel.com
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Store Hours -->
+                            <div class="flex items-start gap-4">
+                                <div class="w-9 h-9 border border-[#c9a84c]/25 flex items-center
+                            justify-center flex-shrink-0">
+                                    <svg width="14" height="14" fill="none" stroke="#c9a84c" stroke-width="1.5"
+                                        viewBox="0 0 24 24">
+                                        <circle cx="12" cy="12" r="9" />
+                                        <path stroke-linecap="round" d="M12 7v5l3 3" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <p class="text-[#c9a84c] text-[0.55rem] tracking-[0.2em] uppercase font-body mb-1">
+                                        Store Hours
+                                    </p>
+                                    <p class="text-[#f5f5f0] text-sm font-body leading-relaxed">
+                                        Mon–Sat: 11am – 9pm<br>Sun: 12pm – 7pm
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <script src="contact.js"></script>
+
+</body>
+
+</html>
