@@ -232,3 +232,19 @@ if (contactForm) {
         }, 1200);
     });
 }
+
+/* MAP SECTION ANIMATION */
+
+gsap.set("[data-map-wrap]", { opacity: 0, y: 30 });
+gsap.to("[data-map-wrap]", {
+    scrollTrigger: {
+        trigger: "#contact-map",
+        start: "top 82%",
+        toggleActions: "play none none none",
+        once: true
+    },
+    opacity: 1,
+    y: 0,
+    duration: 0.8,
+    ease: "power3.out"
+});
