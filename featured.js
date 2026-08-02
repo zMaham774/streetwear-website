@@ -463,11 +463,13 @@ function buildTrendingCard(p) {
                     group-hover:scale-105" />
         <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100
                     transition-opacity duration-400 flex items-end justify-center pb-4">
-          <button class="bg-[#f5f5f0] text-[#0a0a0a] text-[0.55rem] font-bold
+          <button class="quick-add-btn bg-[#f5f5f0] text-[#0a0a0a] text-[0.55rem] font-bold
                          tracking-[0.15em] uppercase px-4 py-2
                          translate-y-3 group-hover:translate-y-0
                          transition-transform duration-350
-                         hover:bg-[#c9a84c]">
+                         hover:bg-[#c9a84c]"
+                  data-id="featured-trend-${p.id}" data-name="${p.name}"
+                  data-price="${p.price}" data-img="${p.img}">
             Quick Add
           </button>
         </div>
