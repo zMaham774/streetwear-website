@@ -222,7 +222,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const checkoutBtn = document.getElementById("cart-checkout-btn");
   if (checkoutBtn) {
     checkoutBtn.addEventListener("click", () => {
-      showCartToast("Checkout coming soon — thanks for your patience!");
+      showCartToast("Just a frontend demo here, no real checkout or payment processing");
     });
   }
 

@@ -1635,6 +1635,17 @@ body::after {
   flex-shrink: 0;
 }
 
+@media (max-width: 380px) {
+  .cart-item-img {
+    width: 60px;
+    height: 75px;
+  }
+
+  .cart-item {
+    gap: 0.75rem;
+  }
+}
+
 .cart-qty-btn {
   width: 22px;
   height: 22px;
@@ -1673,6 +1684,15 @@ body::after {
 /* Toast notification */
 #cart-toast {
   transition: opacity 0.35s ease, transform 0.35s ease;
+  max-width: calc(100vw - 2rem);
+  width: max-content;
+}
+
+#cart-toast-text {
+  /* Let long messages wrap onto a second line inside the toast
+     instead of forcing a single nowrap line that pushes width out. */
+  white-space: normal;
+  word-break: break-word;
 }
 
 #cart-toast.show {
@@ -1681,7 +1701,7 @@ body::after {
   pointer-events: auto;
 }
 
-/* Lock body scroll while drawer is open (JS toggles this class) */
+/* Lock body scroll while drawer is open */
 body.cart-open {
   overflow: hidden;
 }
