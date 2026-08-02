@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AUREL — Luxury Streetwear</title>
+  <title>AUREL - Luxury Streetwear</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,7 +29,7 @@
 
 <body>
 
-  <!-- ── CUSTOM CURSOR ── -->
+  <!-- CUSTOM CURSOR -->
   <div id="cur-dot"></div>
   <div id="cur-ring"></div>
 
@@ -63,14 +63,14 @@
   <!-- MAIN HORIZONTAL NAVBAR -->
   <nav id="nav">
 
-    <!-- Left — Hamburger -->
+    <!-- Left - Hamburger -->
     <button id="ham" aria-label="Open menu">
       <b></b>
       <b></b>
       <b></b>
     </button>
 
-    <!-- Center — Links + Logo in middle -->
+    <!-- Center - Links + Logo in middle -->
     <ul class="nav-center">
       <li><a href="men.html">Men</a></li>
       <li><a href="women.html">Women</a></li>
@@ -83,7 +83,7 @@
       <li><a href="sale.html" class="sale">Sale</a></li>
     </ul>
 
-    <!-- Right — Icons -->
+    <!-- Right - Icons -->
     <div class="nav-right">
       <!-- Search -->
       <button class="icon-btn" aria-label="Search">
@@ -100,7 +100,7 @@
         </svg>
       </button>
       <!-- Cart -->
-      <button class="icon-btn" aria-label="Cart (2 items)">
+      <button class="icon-btn" aria-label="Cart">
         <svg width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
           <path stroke-linecap="round" d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
           <line x1="3" y1="6" x2="21" y2="6" />
@@ -165,7 +165,95 @@
         <span id="fsr-sub">AUREL — 2025 Collection</span>
       </div>
     </div>
+  </div>
 
+  <!-- CART DRAWER -->
+
+  <!-- Overlay -->
+  <div id="cart-overlay" class="fixed inset-0 bg-black/60 z-[998] hidden"></div>
+
+  <!-- Drawer -->
+  <aside id="cart-drawer" class="fixed top-0 right-0 h-full w-full sm:w-[420px]
+              bg-[#0d0d0d] border-l border-white/10 z-[999]
+              flex flex-col translate-x-full">
+
+    <!-- Header -->
+    <div class="flex items-center justify-between px-6 py-6 border-b border-white/8
+              flex-shrink-0">
+      <h2 class="font-heading text-2xl text-[#f5f5f0] tracking-wide">
+        Your Cart
+      </h2>
+      <button id="cart-close" class="w-9 h-9 flex items-center justify-center border border-white/10
+             text-[#888880] hover:border-[#c9a84c] hover:text-[#c9a84c]
+             transition-all duration-300">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" d="M6 18 18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Items list (scrollable) -->
+    <div id="cart-items" class="flex-1 overflow-y-auto px-6 py-2">
+      <!-- Cart line items rendered here via JS -->
+    </div>
+
+    <!-- Empty state -->
+    <div id="cart-empty" class="hidden flex-1 flex flex-col items-center
+              justify-center text-center px-6 gap-4">
+      <div class="w-14 h-14 border border-white/10 flex items-center justify-center">
+        <svg width="22" height="22" fill="none" stroke="#888880" stroke-width="1.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <path d="M16 10a4 4 0 0 1-8 0" />
+        </svg>
+      </div>
+      <p class="text-[#f5f5f0] text-sm font-body">Your cart is empty</p>
+      <p class="text-[#888880] text-xs font-body max-w-[220px]">
+        Looks like you haven't added anything yet.
+      </p>
+      <a href="shop.html" class="mt-2 inline-flex items-center gap-2 border border-[#c9a84c]/40
+              text-[#c9a84c] text-[0.58rem] font-semibold tracking-[0.2em]
+              uppercase font-body px-6 py-3
+              hover:bg-[#c9a84c] hover:text-[#0a0a0a] transition-all duration-300">
+        Start Shopping
+      </a>
+    </div>
+
+    <!-- Footer - subtotal + checkout (hidden when empty) -->
+    <div id="cart-footer" class="flex-shrink-0 border-t border-white/8 px-6 py-6">
+
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-[#888880] text-[0.65rem] tracking-[0.15em] uppercase font-body">
+          Subtotal
+        </span>
+        <span id="cart-subtotal" class="text-[#f5f5f0] text-lg font-heading">
+          Rs. 0
+        </span>
+      </div>
+      <p class="text-[#888880]/60 text-[0.6rem] font-body mb-5">
+        Shipping and taxes calculated at checkout.
+      </p>
+
+      <button id="cart-checkout-btn" class="w-full bg-[#c9a84c] text-[#0a0a0a] font-body font-bold
+             text-[0.65rem] tracking-[0.22em] uppercase py-4
+             border border-[#c9a84c] hover:bg-transparent hover:text-[#c9a84c]
+             transition-all duration-300">
+        Checkout
+      </button>
+    </div>
+  </aside>
+
+  <!-- Toast notification (for "added to cart" feedback + checkout placeholder) -->
+  <div id="cart-toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[1000]
+            bg-[#0d0d0d] border border-[#c9a84c]/40 px-6 py-3.5
+            flex items-center gap-3 opacity-0 pointer-events-none
+            translate-y-4">
+    <svg width="14" height="14" fill="none" stroke="#c9a84c" stroke-width="1.5" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+    </svg>
+    <span id="cart-toast-text" class="text-[#f5f5f0] text-xs font-body">
+      Added to cart
+    </span>
   </div>
 
   <!-- MAIN CONTENT -->
@@ -366,7 +454,7 @@
       <!-- Product Cards Grid -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
 
-        <!-- ── CARD 1 ── -->
+        <!-- CARD 1 -->
         <div class="product-card group relative" data-featured-card>
 
           <!-- Image Container -->
@@ -390,7 +478,8 @@
                          tracking-[0.2em] uppercase px-6 py-3
                          translate-y-4 group-hover:translate-y-0
                          transition-transform duration-400 ease-out
-                         hover:bg-[#c9a84c] hover:text-[#0a0a0a]">
+                         hover:bg-[#c9a84c] hover:text-[#0a0a0a]" data-id="oversized-hoodie"
+                data-name="Oversized Hoodie" data-price="8500" data-img="images/F1.jfif">
                 Quick Add
               </button>
             </div>
@@ -425,7 +514,7 @@
 
         </div>
 
-        <!-- ── CARD 2 ── -->
+        <!-- CARD 2 -->
         <div class="product-card group relative mt-0 md:mt-10" data-featured-card>
 
           <div class="relative overflow-hidden bg-[#111111] aspect-[3/4] mb-4">
@@ -445,7 +534,8 @@
                          tracking-[0.2em] uppercase px-6 py-3
                          translate-y-4 group-hover:translate-y-0
                          transition-transform duration-400 ease-out
-                         hover:bg-[#c9a84c]">
+                         hover:bg-[#c9a84c]" data-id="cargo-jacket" data-name="Cargo Jacket" data-price="14000"
+                data-img="images/F2.jfif">
                 Quick Add
               </button>
             </div>
@@ -478,7 +568,7 @@
 
         </div>
 
-        <!-- ── CARD 3 ── -->
+        <!-- CARD 3 -->
         <div class="product-card group relative" data-featured-card>
 
           <div class="relative overflow-hidden bg-[#111111] aspect-[3/4] mb-4">
@@ -498,7 +588,8 @@
                          tracking-[0.2em] uppercase px-6 py-3
                          translate-y-4 group-hover:translate-y-0
                          transition-transform duration-400 ease-out
-                         hover:bg-[#c9a84c]">
+                         hover:bg-[#c9a84c]" data-id="street-runner" data-name="Street Runner" data-price="18500"
+                data-img="images/F3.jfif">
                 Quick Add
               </button>
             </div>
@@ -531,7 +622,7 @@
 
         </div>
 
-        <!-- ── CARD 4 ── -->
+        <!-- CARD 4 -->
         <div class="product-card group relative mt-0 md:mt-10" data-featured-card>
 
           <div class="relative overflow-hidden bg-[#111111] aspect-[3/4] mb-4">
@@ -551,7 +642,8 @@
                          tracking-[0.2em] uppercase px-6 py-3
                          translate-y-4 group-hover:translate-y-0
                          transition-transform duration-400 ease-out
-                         hover:bg-[#c9a84c]">
+                         hover:bg-[#c9a84c]" data-id="track-pants" data-name="Track Pants" data-price="5500"
+                data-img="images/F4.jfif">
                 Quick Add
               </button>
             </div>
@@ -702,7 +794,6 @@
             Skate & Street
           </span>
         </a>
-
       </div>
 
       <!-- Second row of brands -->
@@ -873,7 +964,6 @@
               </svg>
             </span>
           </div>
-
         </div>
 
         <!-- Corner number -->
@@ -883,10 +973,9 @@
                  transition-colors duration-700 leading-none">
           01
         </span>
-
       </a>
 
-      <!-- ── RIGHT — WOMEN'S ── -->
+      <!-- RIGHT - WOMEN'S -->
       <a href="women.html" class="split-panel group relative w-full md:w-1/2 h-[60vw] md:h-full overflow-hidden"
         data-split-panel>
 
@@ -944,7 +1033,6 @@
               </svg>
             </span>
           </div>
-
         </div>
 
         <!-- Corner number -->
@@ -954,9 +1042,7 @@
                  transition-colors duration-700 leading-none">
           02
         </span>
-
       </a>
-
     </section>
 
     <!-- NEW ARRIVALS GRID -->
@@ -1940,11 +2026,10 @@
           AUREL
         </div>
       </div>
-
     </footer>
   </main>
+  <script src="cart.js"></script>
   <script src="index.js"></script>
-
 </body>
 
 </html>
