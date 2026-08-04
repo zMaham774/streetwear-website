@@ -1582,6 +1582,12 @@ body::after {
   will-change: transform;
 }
 
+@media (max-width: 767px) {
+  .sale-badge-2d {
+    font-size: 1.6rem;
+  }
+}
+
 /* FAQ ACCORDION */
 
 .faq-question {
